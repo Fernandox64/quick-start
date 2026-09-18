@@ -1,0 +1,21 @@
+uuid: 95bec566-8e7b-4881-96aa-df0d692a472f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_title
+    - paragraphs.paragraphs_type.az_cards
+_core:
+  default_config_hash: 5-oxxbQOpKIslrAWVhym9yaiz0fHTp4CwU6bmMpJHQc
+id: paragraph.az_cards.field_az_title
+field_name: field_az_title
+entity_type: paragraph
+bundle: az_cards
+label: 'Card group title'
+description: 'Add a custom title above these cards.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

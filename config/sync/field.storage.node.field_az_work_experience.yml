@@ -1,0 +1,23 @@
+uuid: b94fca08-46a1-47f7-92ac-157c83941667
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Tp63kKvrY-AiD4g4RvSoBhMI5v2KwYQ0eybhWF5El7Y
+id: node.field_az_work_experience
+field_name: field_az_work_experience
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

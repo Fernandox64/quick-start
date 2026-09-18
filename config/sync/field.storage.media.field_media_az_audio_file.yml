@@ -1,0 +1,25 @@
+uuid: 3dacabd1-1668-47a2-ab21-85db337f688d
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - media
+_core:
+  default_config_hash: dPpNvDliZlGSFY-4t1Q3uwPFQ4HmtKf4s3KNdHRN2F0
+id: media.field_media_az_audio_file
+field_name: field_media_az_audio_file
+entity_type: media
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

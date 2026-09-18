@@ -1,0 +1,13 @@
+uuid: 3920c921-839e-4b8c-add8-14241c0efbe5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: CTvI_Viavz3OC26b6wpASM0-PRK8W-0xRbXzXbAFZbs
+id: media.az_square
+label: 'Square (220X220px)'
+description: ''
+targetEntityType: media
+cache: true

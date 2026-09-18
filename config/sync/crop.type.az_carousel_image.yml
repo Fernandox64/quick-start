@@ -1,0 +1,14 @@
+uuid: 8a91dbf9-f469-479a-b4de-b60c5e683761
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hr8NRE55KBUFAylzhKPMBHN5xnCT8YbIg0nrWhctqA8
+label: 'Carousel Image'
+id: az_carousel_image
+description: 'Carousel crop type is used where carousel images are displayed.'
+aspect_ratio: '162:73'
+soft_limit_width: 1296
+soft_limit_height: 584
+hard_limit_width: null
+hard_limit_height: null

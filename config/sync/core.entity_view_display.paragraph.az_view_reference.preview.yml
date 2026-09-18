@@ -1,0 +1,56 @@
+uuid: c613058c-d5db-472d-a52c-438545eda74a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.az_view_reference.field_az_title
+    - field.field.paragraph.az_view_reference.field_az_view_reference
+    - paragraphs.paragraphs_type.az_view_reference
+  module:
+    - field_group
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_title:
+      children:
+        - field_az_title
+      label: Title
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ''
+        id: ''
+        element: h2
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: e3t-GdqeNEook0XTiVfwQ-l_5COJxr-Bk4y7uoQMX3E
+id: paragraph.az_view_reference.preview
+targetEntityType: paragraph
+bundle: az_view_reference
+mode: preview
+content:
+  field_az_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_az_view_reference:
+    type: viewsreference_label_formatter
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

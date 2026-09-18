@@ -1,0 +1,32 @@
+uuid: ac2c96fa-eea1-4ea4-98c5-f65ad01eaf72
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.az_events
+  module:
+    - system
+    - views
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: 6dwPwePwp4hT-PXaYPFsoaTSPWV39YLm0y3de7i08ag
+id: views_block__az_events_az_sidebar
+theme: az_barrio
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:az_events-az_sidebar'
+settings:
+  id: 'views_block:az_events-az_sidebar'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/events/*'

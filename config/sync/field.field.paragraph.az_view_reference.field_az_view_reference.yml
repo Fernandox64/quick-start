@@ -1,0 +1,46 @@
+uuid: cda9e06c-ab36-4760-94c5-44bf679b1375
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_view_reference
+    - paragraphs.paragraphs_type.az_view_reference
+  module:
+    - viewsreference
+_core:
+  default_config_hash: rPTzAqcnY4nM092hlTnmv5EXpkRQFL8Nn3eLqMrOzNo
+id: paragraph.az_view_reference.field_az_view_reference
+field_name: field_az_view_reference
+entity_type: paragraph
+bundle: az_view_reference
+label: View
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    default: default
+    block: block
+    page: page
+  preselect_views:
+    az_carousel: az_carousel
+    az_courses: az_courses
+    az_events: az_events
+    az_news: az_news
+    az_opportunity: az_opportunity
+    az_page_by_category: az_page_by_category
+    az_person: az_person
+    az_publications: az_publications
+  enabled_settings:
+    pager: pager
+    offset: offset
+    argument: argument
+    title: title
+    limit: limit
+field_type: viewsreference

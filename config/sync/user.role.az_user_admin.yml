@@ -1,0 +1,19 @@
+uuid: 6356eba6-6a7a-4d3c-83f8-07c8e29d474b
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_delegation
+    - user
+_core:
+  default_config_hash: fN9jY0QtK7IA-sEKOlDwNLjLUNMqOB4dSx4YDkaFruw
+id: az_user_admin
+label: 'User administrator'
+weight: -4
+is_admin: false
+permissions:
+  - 'administer users'
+  - 'assign az_content_admin role'
+  - 'assign az_content_editor role'
+  - 'assign az_profile_editor role'
+  - 'assign az_user_admin role'

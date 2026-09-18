@@ -1,0 +1,13 @@
+uuid: 4f49be21-16a5-48a9-924d-0f4ea1dcdce7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: GAJwarokm353LnH_bQvizZNUCabEXWCCg7ZMf4o8Jw8
+id: media.az_small
+label: 'Small (360px)'
+description: ''
+targetEntityType: media
+cache: true

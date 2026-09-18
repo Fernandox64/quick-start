@@ -1,0 +1,46 @@
+uuid: 0b252c0e-eff4-4718-abe8-445d9bc8bd2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_main_content
+    - node.type.az_news
+    - paragraphs.paragraphs_type.az_cards
+    - paragraphs.paragraphs_type.az_photo_gallery
+    - paragraphs.paragraphs_type.az_text
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: DK2hYa7MhoRyzScv9M0SPqJ2ewRB2JRF9zL4rWIjvJw
+id: node.az_news.field_az_main_content
+field_name: field_az_main_content
+entity_type: node
+bundle: az_news
+label: 'Extra Page Elements'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      az_cards: az_cards
+      az_photo_gallery: az_photo_gallery
+      az_text: az_text
+    negate: 0
+    target_bundles_drag_drop:
+      az_cards:
+        weight: 4
+        enabled: true
+      az_photo_gallery:
+        weight: 6
+        enabled: true
+      az_text:
+        weight: 5
+        enabled: true
+      az_view_reference:
+        weight: 7
+        enabled: false
+field_type: entity_reference_revisions

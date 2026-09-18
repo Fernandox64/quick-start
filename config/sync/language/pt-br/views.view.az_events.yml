@@ -1,0 +1,75 @@
+display:
+  default:
+    display_title: Principal
+    display_options:
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Redefinir
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Ascendente
+          sort_desc_label: Decrescente
+      arguments:
+        term_node_tid_depth:
+          exception:
+            title: Tudo
+  az_grid:
+    display_options:
+      title: Eventos
+  az_grid_images:
+    display_options:
+      title: Eventos
+  az_past_grid_images:
+    display_options:
+      title: Eventos
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento
+  az_past_row:
+    display_options:
+      title: Eventos
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento
+  az_sidebar:
+    display_options:
+      arguments:
+        term_node_tid_depth:
+          exception:
+            title: Tudo
+        nid:
+          exception:
+            title: Tudo
+  page_1:
+    display_options:
+      filters:
+        term_node_tid_depth:
+          expose:
+            label: Categoria

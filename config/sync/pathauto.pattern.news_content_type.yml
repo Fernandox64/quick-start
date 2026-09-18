@@ -1,0 +1,26 @@
+uuid: 138b0ab9-96db-41d5-a6e3-a975b5c065a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.az_news
+  module:
+    - node
+_core:
+  default_config_hash: tXercPObbF548bXf52GX-b83E-b7zqoBT2hlIY-Nx-k
+id: news_content_type
+label: 'News Content Type'
+type: 'canonical_entities:node'
+pattern: '/news/[node:title]'
+selection_criteria:
+  07e97b57-dc82-453f-8cc0-5495a8e14ceb:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      az_news: az_news
+    uuid: 07e97b57-dc82-453f-8cc0-5495a8e14ceb
+selection_logic: and
+weight: -5
+relationships: {  }

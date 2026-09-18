@@ -1,0 +1,16 @@
+uuid: a5ce473f-cf19-4113-a62d-c6c886df0420
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_user_admin
+  module:
+    - user
+_core:
+  default_config_hash: UchOCVLXjWor-N3cZRzZ5DZtxjlqK_Z9G7asuDvmFaI
+id: user_remove_role_action.az_user_admin
+label: 'Remove the User administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: az_user_admin

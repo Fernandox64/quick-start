@@ -1,0 +1,726 @@
+uuid: ba87f0e3-18ce-4be6-94dc-bff2e7d18525
+langcode: en
+status: true
+dependencies:
+  theme:
+    - az_barrio
+id: config_sync.theme.az_barrio
+snapshotSet: config_sync
+extensionType: theme
+extensionName: az_barrio
+items:
+  -
+    collection: ''
+    name: az_barrio.settings
+    data:
+      langcode: en
+      favicon:
+        use_default: true
+      features:
+        comment_user_picture: true
+        comment_user_verification: true
+        favicon: true
+        node_user_picture: true
+      logo:
+        path: profiles/custom/az_quickstart/themes/custom/az_barrio/images/logo.png
+        use_default: false
+      bootstrap_barrio_library: production
+      bootstrap_barrio_source: ''
+      bootstrap_barrio_fluid_container: 0
+      bootstrap_barrio_container: container
+      bootstrap_barrio_region_clean_header: 0
+      bootstrap_barrio_region_class_header: col-md
+      bootstrap_barrio_region_clean_highlighted: 0
+      bootstrap_barrio_region_class_highlighted: col-md
+      bootstrap_barrio_region_clean_breadcrumb: 0
+      bootstrap_barrio_region_class_breadcrumb: col-md
+      bootstrap_barrio_region_clean_content: 0
+      bootstrap_barrio_region_class_content: ''
+      bootstrap_barrio_region_clean_sidebar_first: 0
+      bootstrap_barrio_region_class_sidebar_first: ''
+      bootstrap_barrio_region_clean_sidebar_second: 0
+      bootstrap_barrio_region_class_sidebar_second: ''
+      bootstrap_barrio_sidebar_position: both
+      bootstrap_barrio_content_offset: 0
+      bootstrap_barrio_sidebar_collapse: 0
+      bootstrap_barrio_sidebar_first_width: 3
+      bootstrap_barrio_sidebar_first_offset: 0
+      bootstrap_barrio_sidebar_second_width: 3
+      bootstrap_barrio_sidebar_second_offset: 0
+      bootstrap_barrio_hide_node_label: 0
+      bootstrap_barrio_breadcrumb_divider: ''
+      bootstrap_barrio_button: 1
+      bootstrap_barrio_button_size: ''
+      bootstrap_barrio_button_type: primary
+      bootstrap_barrio_button_outline: 0
+      bootstrap_barrio_navbar_flyout: false
+      bootstrap_barrio_navbar_slide: false
+      bootstrap_barrio_navbar_offcanvas: ''
+      bootstrap_barrio_messages_widget: default
+      bootstrap_barrio_messages_widget_toast_delay: 10000
+      bootstrap_barrio_float_label: '0'
+      bootstrap_barrio_checkbox: ''
+      bootstrap_barrio_sidebar_first_affix: 0
+      bootstrap_barrio_sidebar_second_affix: 0
+      bootstrap_barrio_scroll_spy: ''
+      bootstrap_barrio_system_messages: ''
+      bootstrap_barrio_table_style: ''
+      bootstrap_barrio_table_hover: 1
+      bootstrap_barrio_table_head: ''
+      bootstrap_barrio_image_fluid: false
+      bootstrap_barrio_tabs_style: ''
+      bootstrap_barrio_enable_color: false
+      bootstrap_barrio_region_clean_alert: 0
+      bootstrap_barrio_region_class_alert: ''
+      bootstrap_barrio_region_clean_header_ua_utilities: 0
+      bootstrap_barrio_region_class_header_ua_utilities: 'd-none d-lg-flex col-auto'
+      bootstrap_barrio_region_clean_branding: 0
+      bootstrap_barrio_region_class_branding: ''
+      bootstrap_barrio_region_clean_header_2: 0
+      bootstrap_barrio_region_class_header_2: row
+      bootstrap_barrio_region_clean_navigation: 0
+      bootstrap_barrio_region_class_navigation: ''
+      bootstrap_barrio_region_clean_navigation_offcanvas: 0
+      bootstrap_barrio_region_class_navigation_offcanvas: ''
+      bootstrap_barrio_region_clean_help: 0
+      bootstrap_barrio_region_class_help: col-md
+      bootstrap_barrio_region_clean_content_featured: 0
+      bootstrap_barrio_region_class_content_featured: ''
+      bootstrap_barrio_region_clean_content_top: 0
+      bootstrap_barrio_region_class_content_top: col-md
+      bootstrap_barrio_region_clean_content_2_col_1: 0
+      bootstrap_barrio_region_class_content_2_col_1: col-md-6
+      bootstrap_barrio_region_clean_content_2_col_2: 0
+      bootstrap_barrio_region_class_content_2_col_2: col-md-6
+      bootstrap_barrio_region_clean_content_3_col_1: 0
+      bootstrap_barrio_region_class_content_3_col_1: col-md-4
+      bootstrap_barrio_region_clean_content_3_col_2: 0
+      bootstrap_barrio_region_class_content_3_col_2: col-md-4
+      bootstrap_barrio_region_clean_content_3_col_3: 0
+      bootstrap_barrio_region_class_content_3_col_3: col-md-4
+      bootstrap_barrio_region_clean_full_width_content_bottom: 0
+      bootstrap_barrio_region_class_full_width_content_bottom: ''
+      bootstrap_barrio_region_clean_content_4_col_1: 0
+      bootstrap_barrio_region_class_content_4_col_1: col-md-3
+      bootstrap_barrio_region_clean_content_4_col_2: 0
+      bootstrap_barrio_region_class_content_4_col_2: col-md-3
+      bootstrap_barrio_region_clean_content_4_col_3: 0
+      bootstrap_barrio_region_class_content_4_col_3: col-md-3
+      bootstrap_barrio_region_clean_content_4_col_4: 0
+      bootstrap_barrio_region_class_content_4_col_4: col-md-3
+      bootstrap_barrio_region_clean_content_bottom: 0
+      bootstrap_barrio_region_class_content_bottom: col-md
+      bootstrap_barrio_region_clean_footer: 0
+      bootstrap_barrio_region_class_footer: 'col-12 col-sm-7 col-md-8 col-lg-8'
+      bootstrap_barrio_region_clean_footer_sub: 0
+      bootstrap_barrio_region_class_footer_sub: col-md
+      bootstrap_barrio_region_clean_footer_sub_menus: 1
+      bootstrap_barrio_region_class_footer_sub_menus: col-md
+      bootstrap_barrio_region_clean_az_page_bottom: 0
+      bootstrap_barrio_region_class_az_page_bottom: ''
+      bootstrap_barrio_region_width_alert: 0
+      bootstrap_barrio_region_width_header_ua_utilities: 0
+      bootstrap_barrio_region_width_branding: 0
+      bootstrap_barrio_region_width_header_2: 0
+      bootstrap_barrio_region_width_navigation: 0
+      bootstrap_barrio_region_width_navigation_offcanvas: 0
+      bootstrap_barrio_region_width_help: 0
+      bootstrap_barrio_region_width_content_featured: 0
+      bootstrap_barrio_region_width_content_top: 0
+      bootstrap_barrio_region_width_content_2_col_1: 0
+      bootstrap_barrio_region_width_content_2_col_2: 0
+      bootstrap_barrio_region_width_content_3_col_1: 0
+      bootstrap_barrio_region_width_content_3_col_2: 0
+      bootstrap_barrio_region_width_content_3_col_3: 0
+      bootstrap_barrio_region_width_full_width_content_bottom: 0
+      bootstrap_barrio_region_width_content_4_col_1: 0
+      bootstrap_barrio_region_width_content_4_col_2: 0
+      bootstrap_barrio_region_width_content_4_col_3: 0
+      bootstrap_barrio_region_width_content_4_col_4: 0
+      bootstrap_barrio_region_width_content_bottom: 0
+      bootstrap_barrio_region_width_footer: 0
+      bootstrap_barrio_region_width_footer_sub: 0
+      bootstrap_barrio_region_width_footer_sub_menus: 0
+      bootstrap_barrio_region_width_az_page_bottom: 0
+      bootstrap_barrio_region_width_header: 0
+      bootstrap_barrio_region_width_highlighted: 0
+      bootstrap_barrio_region_width_breadcrumb: 0
+      bootstrap_barrio_region_width_sidebar_first: 0
+      bootstrap_barrio_region_width_sidebar_second: 0
+      bootstrap_barrio_region_width_content: 0
+      external_links: true
+      wordmark: true
+      az_header_blue: true
+      land_acknowledgment: true
+      info_security_privacy: true
+      copyright_notice: 'The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu" target="_blank">The University of Arizona</a>.'
+      az_back_to_top: true
+      az_bootstrap_source: cdn
+      az_bootstrap_cdn_version_css: stable
+      az_bootstrap_cdn_version_js: stable
+      az_bootstrap_minified: true
+      az_barrio_font: true
+      az_barrio_material_symbols_rounded: true
+      az_barrio_material_design_sharp_icons: false
+      az_barrio_az_icons: true
+      az_barrio_az_icons_source: cdn
+      az_icons_minified: true
+      az_icons_cdn_version: stable
+      sticky_footer: true
+      az_barrio_logo_svg_inline: false
+      az_barrio_footer_logo_svg_inline: false
+      az_remove_sidebar_menu_mobile: true
+      az_navbar_fullscreen: false
+      primary_logo_alt_text: '[site:name] | Home'
+      primary_logo_title_text: '[site:name] | Home'
+      footer_logo_link_destination: null
+      footer_logo_alt_text: '[site:name] | Home'
+      footer_logo_title_text: '[site:name] | Home'
+      footer_logo_path: profiles/custom/az_quickstart/themes/custom/az_barrio/images/logo.png
+      footer_default_logo: true
+      header_one_col_classes: 'col-12 col-sm-6 col-lg-4'
+      header_two_col_classes: 'col-12 col-sm-6 col-lg-8'
+      _core:
+        default_config_hash: PFsfZUOKxCNs0SsGxVAneWQIfeco6pp76dRV_x-jlDk
+  -
+    collection: ''
+    name: block.block.az_barrio_branding
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_branding
+      theme: az_barrio
+      region: branding
+      weight: -9
+      provider: null
+      plugin: system_branding_block
+      settings:
+        id: system_branding_block
+        label: 'Site branding'
+        label_display: '0'
+        provider: system
+        use_site_logo: true
+        use_site_name: false
+        use_site_slogan: false
+      visibility: {  }
+      _core:
+        default_config_hash: js6sSSrn43_sel4BZMQAKFoYcJ1yjHxJtDeszZp_grA
+  -
+    collection: ''
+    name: block.block.az_barrio_breadcrumbs
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_breadcrumbs
+      theme: az_barrio
+      region: breadcrumb
+      weight: 0
+      provider: null
+      plugin: system_breadcrumb_block
+      settings:
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        label_display: '0'
+        provider: system
+      visibility:
+        request_path:
+          id: request_path
+          negate: true
+          pages: '<front>'
+      _core:
+        default_config_hash: xqF8VkoDw3LjDM9lwQhluuTd9lVvQX9upVturV1aED8
+  -
+    collection: ''
+    name: block.block.az_barrio_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_content
+      theme: az_barrio
+      region: content
+      weight: 0
+      provider: null
+      plugin: system_main_block
+      settings:
+        id: system_main_block
+        label: 'Main page content'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: JSxQa38T5rqgQNeIymiVLhS_hIu9RBQ1B06gGC4lF64
+  -
+    collection: ''
+    name: block.block.az_barrio_footer
+    data:
+      langcode: en
+      status: false
+      dependencies:
+        config:
+          - system.menu.footer
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_footer
+      theme: az_barrio
+      region: footer
+      weight: -6
+      provider: null
+      plugin: 'system_menu_block:footer'
+      settings:
+        id: 'system_menu_block:footer'
+        label: 'Footer menu'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: 0
+        expand_all_items: false
+      visibility: {  }
+      _core:
+        default_config_hash: tOs360N0aBho29F9vpnEk-6pyKZgq19-Jucrnq4ExUE
+  -
+    collection: ''
+    name: block.block.az_barrio_help
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - help
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_help
+      theme: az_barrio
+      region: content
+      weight: -30
+      provider: null
+      plugin: help_block
+      settings:
+        id: help_block
+        label: Help
+        label_display: '0'
+        provider: help
+      visibility:
+        request_path:
+          id: request_path
+          pages: '/node/*/layout'
+          negate: true
+          context_mapping: {  }
+      _core:
+        default_config_hash: 3udC5YeSMW6vYte1NkzzRhT6sYHlYoCwOtChKC8c0WY
+  -
+    collection: ''
+    name: block.block.az_barrio_local_actions
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+        theme:
+          - az_barrio
+      id: az_barrio_local_actions
+      theme: az_barrio
+      region: content
+      weight: -20
+      provider: null
+      plugin: local_actions_block
+      settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+      visibility: {  }
+      _core:
+        default_config_hash: gl-ZJdNcnyxocS5CG-0IaqMA9PlwNFux5SteednDTfA
+  -
+    collection: ''
+    name: block.block.az_barrio_local_tasks
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+        theme:
+          - az_barrio
+      id: az_barrio_local_tasks
+      theme: az_barrio
+      region: content
+      weight: -40
+      provider: null
+      plugin: local_tasks_block
+      settings:
+        id: local_tasks_block
+        label: Tabs
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: true
+      visibility: {  }
+      _core:
+        default_config_hash: WZUhcDvP69duA9Cr4YY9E3ZyQhJ-wpxftZ3Ry5GY6qs
+  -
+    collection: ''
+    name: block.block.az_barrio_messages
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_messages
+      theme: az_barrio
+      region: help
+      weight: 0
+      provider: null
+      plugin: system_messages_block
+      settings:
+        id: system_messages_block
+        label: 'Status messages'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: pW7xjIYq64f4uH3718cwkn3bf1gQJ1gz7uOKh1fi7no
+  -
+    collection: ''
+    name: block.block.az_barrio_mobilenavblock
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_core
+        theme:
+          - az_barrio
+      id: az_barrio_mobilenavblock
+      theme: az_barrio
+      region: navigation_offcanvas
+      weight: 1
+      provider: null
+      plugin: mobile_nav_block
+      settings:
+        id: mobile_nav_block
+        label: 'Mobile Nav Block'
+        label_display: '0'
+        provider: az_core
+        menu_id: main
+      visibility: {  }
+      _core:
+        default_config_hash: k5j1BcF93oMi9O57rbxDPN9xNVFSGgPailNja1uQ3wQ
+  -
+    collection: ''
+    name: block.block.az_barrio_offcanvas_searchform
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - search
+        theme:
+          - az_barrio
+      id: az_barrio_offcanvas_searchform
+      theme: az_barrio
+      region: navigation_offcanvas
+      weight: 0
+      provider: null
+      plugin: search_form_block
+      settings:
+        id: search_form_block
+        label: Search
+        label_display: '0'
+        provider: search
+        page_id: ''
+      visibility: {  }
+      _core:
+        default_config_hash: rtAhqxeYucCLs048RrYMbUvUFvIKu1EC5Swj5diE4-s
+  -
+    collection: ''
+    name: block.block.az_barrio_page_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_page_title
+      theme: az_barrio
+      region: content
+      weight: -50
+      provider: null
+      plugin: page_title_block
+      settings:
+        id: page_title_block
+        label: 'Page title'
+        label_display: '0'
+        provider: core
+      visibility:
+        request_path:
+          id: request_path
+          pages: "/person/*\r\n/news/*"
+          negate: true
+      _core:
+        default_config_hash: s5Zb9L3wQGEDw2PtD5KMm_dKDr-mU51mq--kErqaxds
+  -
+    collection: ''
+    name: block.block.az_barrio_powered
+    data:
+      langcode: en
+      status: false
+      dependencies:
+        module:
+          - block_class
+          - system
+        theme:
+          - az_barrio
+      id: az_barrio_powered
+      theme: az_barrio
+      region: footer
+      weight: -5
+      provider: null
+      plugin: system_powered_by_block
+      settings:
+        id: system_powered_by_block
+        label: 'Powered by Drupal'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: aN1etcCTMQtnF-QlTGU4V6-qCoztdhKDpux14ut5J8g
+  -
+    collection: ''
+    name: block.block.az_barrio_search
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_class
+          - search
+        theme:
+          - az_barrio
+      id: az_barrio_search
+      theme: az_barrio
+      region: header_ua_utilities
+      weight: -5
+      provider: null
+      plugin: search_form_block
+      settings:
+        id: search_form_block
+        label: Search
+        label_display: '0'
+        provider: search
+        page_id: ''
+      visibility: {  }
+      _core:
+        default_config_hash: T69eEFyHni_Ba09n_5x12hJQtUlh7M4B1OQwK3TSXW8
+  -
+    collection: ''
+    name: block.block.az_barrio_sidebar_menu
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - system.menu.main
+        module:
+          - block_class
+          - menu_block
+        theme:
+          - az_barrio
+      id: az_barrio_sidebar_menu
+      theme: az_barrio
+      region: sidebar_first
+      weight: 0
+      provider: null
+      plugin: 'menu_block:main'
+      settings:
+        id: 'menu_block:main'
+        label: 'Sidebar menu'
+        label_display: visible
+        provider: menu_block
+        follow: false
+        follow_parent: active
+        level: 2
+        depth: 0
+        expand_all_items: false
+        parent: 'main:'
+        suggestion: sidebar
+        label_type: root
+        label_link: false
+        expand: false
+      visibility: {  }
+      _core:
+        default_config_hash: 1tciBRPcEzWUoBDlglwfjr7o6WNKjxz4wufKqhBqU7Y
+  -
+    collection: ''
+    name: block.block.exposedformaz_eventspage_1
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - views.view.az_events
+        module:
+          - block_class
+          - system
+          - views
+        theme:
+          - az_barrio
+      id: exposedformaz_eventspage_1
+      theme: az_barrio
+      region: sidebar_second
+      weight: 0
+      provider: null
+      plugin: 'views_exposed_filter_block:az_events-page_1'
+      settings:
+        id: 'views_exposed_filter_block:az_events-page_1'
+        label: ''
+        label_display: '0'
+        provider: views
+        views_label: ''
+      visibility:
+        request_path:
+          id: request_path
+          pages: /calendar
+          negate: false
+      _core:
+        default_config_hash: IgrqAsaF7B4yZoa4vcphXOSCZRdPXhLsoQU-mbGTfYU
+  -
+    collection: ''
+    name: block.block.views_block__az_events_az_sidebar
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - views.view.az_events
+        module:
+          - block_class
+          - system
+          - views
+        theme:
+          - az_barrio
+      id: views_block__az_events_az_sidebar
+      theme: az_barrio
+      region: sidebar_second
+      weight: 0
+      provider: null
+      plugin: 'views_block:az_events-az_sidebar'
+      settings:
+        id: 'views_block:az_events-az_sidebar'
+        label: ''
+        label_display: visible
+        provider: views
+        views_label: ''
+        items_per_page: none
+        context_mapping: {  }
+      visibility:
+        request_path:
+          id: request_path
+          pages: '/events/*'
+          negate: false
+      _core:
+        default_config_hash: 6dwPwePwp4hT-PXaYPFsoaTSPWV39YLm0y3de7i08ag
+  -
+    collection: ''
+    name: block.block.views_block__az_news_az_sidebar
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - views.view.az_news
+        module:
+          - block_class
+          - system
+          - views
+        theme:
+          - az_barrio
+      id: views_block__az_news_az_sidebar
+      theme: az_barrio
+      region: sidebar_second
+      weight: -8
+      provider: null
+      plugin: 'views_block:az_news-az_sidebar'
+      settings:
+        id: 'views_block:az_news-az_sidebar'
+        label: ''
+        label_display: visible
+        provider: views
+        views_label: ''
+        items_per_page: none
+        context_mapping: {  }
+      visibility:
+        request_path:
+          id: request_path
+          pages: '/news/*'
+          negate: false
+      _core:
+        default_config_hash: jobKerLJevdtDgAS6XVpjhDOpHH3TxSu8mGdGOJmjF8
+  -
+    collection: ''
+    name: block.block.views_block__az_news_marquee
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - views.view.az_news
+        module:
+          - block_class
+          - system
+          - views
+        theme:
+          - az_barrio
+      id: views_block__az_news_marquee
+      theme: az_barrio
+      region: content
+      weight: -3
+      provider: null
+      plugin: 'views_block:az_news-marquee'
+      settings:
+        id: 'views_block:az_news-marquee'
+        label: ''
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: none
+        context_mapping: {  }
+      visibility:
+        request_path:
+          id: request_path
+          pages: /news-teasers
+          negate: false
+      _core:
+        default_config_hash: mgdcuqoefFh7nNQ_pZT0nUSYuZVZSRufVOsLUyd49Yo

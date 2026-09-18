@@ -1,0 +1,23 @@
+uuid: ca5afb6c-5d5d-4116-a01b-9db74fa8236a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_phone
+    - paragraphs.paragraphs_type.az_contact
+  module:
+    - telephone
+_core:
+  default_config_hash: IdneduRZOOp2ZUxUvp3YMmud37q5Bj9ZQvJsCQhm-PM
+id: paragraph.az_contact.field_az_phone
+field_name: field_az_phone
+entity_type: paragraph
+bundle: az_contact
+label: 'Contact Phone'
+description: '<strong>Suggested format:</strong> 520-626-0000'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

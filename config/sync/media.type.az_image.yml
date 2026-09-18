@@ -1,0 +1,21 @@
+uuid: 5973f5a0-9cb9-441a-a252-5cc924a524f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_az_image
+_core:
+  default_config_hash: niu9U2db1EpETETF9XGU60ScVFmtC7gYKW0AVGRQ0NI
+id: az_image
+label: Image
+description: 'Use local images for reusable media.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_az_image
+field_map:
+  name: name

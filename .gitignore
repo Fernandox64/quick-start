@@ -1,0 +1,74 @@
+# Tudo que o "composer install" reconstroi sozinho a partir do composer.lock
+# (core, profile Arizona Quickstart, modulos/temas/bibliotecas contrib) fica
+# de fora do git - so o codigo proprio (web/modules/custom) e a config vao.
+/vendor/
+/web/core/
+/web/profiles/custom/az_quickstart/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/libraries/
+/drush/Commands/contrib/
+
+# Gerado pelo composer scaffold (drupal-scaffold) a cada install.
+/web/autoload.php
+/web/index.php
+/web/robots.txt
+/web/update.php
+/web/.htaccess
+/web/sites/default/default.services.yml
+/web/sites/default/default.settings.php
+
+# Gerado pelo entrypoint do container a cada boot - nunca vai pro git
+# (ver docker/entrypoint.sh e o include em web/sites/default/settings.php).
+/web/sites/default/settings.local.php
+
+# Cache de derivativos de imagem (estilos) - o Drupal regenera sozinho.
+/web/sites/default/files/styles/
+/web/sites/default/files/php/
+/web/sites/default/files/css/
+/web/sites/default/files/js/
+
+# DDEV (ferramenta so de desenvolvimento local, nao entra na imagem de producao).
+/.ddev/
+
+# Copia crua do repositorio do az_quickstart (upstream) que ficou solta na raiz
+# do projeto por causa do bootstrap inicial via DDEV - nao e usada pelo site
+# (o docroot real e "web/", ver .ddev/config.quickstart.yaml). Achado ao
+# preparar o repo para o GitHub; mantido fora do git so por seguranca, o ideal
+# e apagar essas pastas do disco quando sobrar tempo.
+/az_quickstart.info.yml
+/az_quickstart.install
+/az_quickstart.links.menu.yml
+/az_quickstart.post_update.php
+/az_quickstart.profile
+/modules/
+/themes/
+/assets/
+/recipes/
+/test/
+/libraries/
+/drush/
+/.yarn/
+/.yarnrc.yml
+/.tugboat/
+/.lando.yml
+/.probo.yaml
+/CONTRIBUTING.md
+/RELEASES.md
+/LICENSE.txt
+/COPYRIGHT.txt
+/package.json
+/yarn.lock
+/phpcs.xml.dist
+/phpstan.neon
+/phpstan-contrib.neon
+/phpunit.xml.dist
+/quickstart_branch.sh
+/index.html
+/index.nginx-debian.html
+
+node_modules/
+*.log
+.DS_Store
+.env
+!.env.example

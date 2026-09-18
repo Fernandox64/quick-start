@@ -1,0 +1,26 @@
+uuid: 7f3c25d7-9a2d-4a9a-b3de-d9eedca0208a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.az_event
+  module:
+    - node
+_core:
+  default_config_hash: OSC9Sg3sy7siIqiqxOj6SMrmkcdB5hQw4ku_b1gkx1Q
+id: az_event_url_pattern
+label: 'Event Content Type'
+type: 'canonical_entities:node'
+pattern: '/events/[node:title]'
+selection_criteria:
+  62829e66-f973-46f9-aa96-aa6372276a42:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      az_event: az_event
+    uuid: 62829e66-f973-46f9-aa96-aa6372276a42
+selection_logic: and
+weight: -5
+relationships: {  }

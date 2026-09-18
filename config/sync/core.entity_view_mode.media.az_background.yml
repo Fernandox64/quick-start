@@ -1,0 +1,13 @@
+uuid: 18e191d0-92f0-4e6e-ac19-e4c1415fed06
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 3NPmo11jUGNsK3hpNhCDhIplLsv3D9nJ4J9svefswwg
+id: media.az_background
+label: Background
+description: ''
+targetEntityType: media
+cache: true

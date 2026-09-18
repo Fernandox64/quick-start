@@ -1,0 +1,14 @@
+uuid: a345df39-4305-4be0-9640-07224be4b6f9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1jO0LK4Ey-sCEE3plWBd-7t7V_Om9DNfCnlvjC-w_Ok
+label: 'Medium full-width background'
+id: az_full_width_bg_medium
+description: "Minimum crop width  991px, or the image will be scaled up and will possibly be blurry.\t"
+aspect_ratio: ''
+soft_limit_width: 991
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

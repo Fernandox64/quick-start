@@ -1,0 +1,14 @@
+uuid: 62da8cbe-cf99-4485-8ea9-6abec57c2c7e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2TroUvdNyuOHVDsPUeNz3leEEQjtNr99UJHGBPpU5CA
+label: Large
+id: az_large
+description: 'Large (scale to 1140px wide) '
+aspect_ratio: ''
+soft_limit_width: 1000
+soft_limit_height: null
+hard_limit_width: 1000
+hard_limit_height: null

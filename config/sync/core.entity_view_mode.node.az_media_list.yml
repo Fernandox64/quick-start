@@ -1,0 +1,13 @@
+uuid: 86aa338b-3156-498d-9500-761762d2625e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: fQCukQY4P5-Qii5S0kw_XuEJDU14nRgBq0USXF9SYzs
+id: node.az_media_list
+label: 'Media List'
+description: ''
+targetEntityType: node
+cache: true

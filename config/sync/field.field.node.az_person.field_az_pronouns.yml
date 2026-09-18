@@ -1,0 +1,21 @@
+uuid: 5d948cc6-8972-43b0-ba6a-a27429102513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_pronouns
+    - node.type.az_person
+_core:
+  default_config_hash: IKiG-ziub18Lx5-yo7Qs5rnVpN1jCrLbkeyewFWFt10
+id: node.az_person.field_az_pronouns
+field_name: field_az_pronouns
+entity_type: node
+bundle: az_person
+label: Pronouns
+description: "Recommended formatting: \r\n<ul>\r\n<li>\"she, her, hers\"</li>\r\n<li>\"they, them, theirs\"</li>\r\n<li>\"he, him, his\"</li>\r\n</ul>"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

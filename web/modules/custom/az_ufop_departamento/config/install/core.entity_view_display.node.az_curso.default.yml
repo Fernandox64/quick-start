@@ -1,0 +1,42 @@
+uuid: 606944c7-a957-4c6f-89b6-a1e4aa119076
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.az_curso.field_az_curso_categoria
+    - field.field.node.az_curso.field_az_curso_link
+    - node.type.az_curso
+  module:
+    - link
+    - user
+id: node.az_curso.default
+targetEntityType: node
+bundle: az_curso
+mode: default
+content:
+  field_az_curso_categoria:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_az_curso_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

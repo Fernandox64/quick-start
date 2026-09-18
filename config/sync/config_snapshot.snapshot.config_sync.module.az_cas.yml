@@ -1,0 +1,20 @@
+uuid: 80bca123-c016-4a89-9619-9d820dbc0061
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_cas
+id: config_sync.module.az_cas
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_cas
+items:
+  -
+    collection: ''
+    name: az_cas.settings
+    data:
+      disable_login_form: true
+      disable_admin_add_user_button: true
+      disable_password_recovery_link: true
+      _core:
+        default_config_hash: jGDLR-SiwNR2yt4iNNIA65tNeTnasQ2QV4F7r0cJvbc

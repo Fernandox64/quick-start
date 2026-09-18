@@ -1,0 +1,21 @@
+translation_sync: true
+search: false
+type: hidden
+content_types:
+  az_event: none
+  az_flexible_page: user
+  az_news: none
+  az_person: none
+  az_publication: all
+  az_carousel_item: none
+  az_course: none
+content_type_modes:
+  az_event: {  }
+  az_flexible_page:
+    - full
+  az_news: {  }
+  az_person: {  }
+  az_publication:
+    - az_publication_reference
+  az_carousel_item: {  }
+  az_course: {  }

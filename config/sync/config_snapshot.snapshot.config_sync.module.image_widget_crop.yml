@@ -1,0 +1,47 @@
+uuid: 33ef9b8b-4f61-4682-a259-598e0f88725a
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_widget_crop
+id: config_sync.module.image_widget_crop
+snapshotSet: config_sync
+extensionType: module
+extensionName: image_widget_crop
+items:
+  -
+    collection: ''
+    name: image.style.crop_thumbnail
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: crop_thumbnail
+      label: 'Crop thumbnail'
+      effects:
+        8fc26706-68dc-4eb7-8121-33e3936ed55f:
+          uuid: 8fc26706-68dc-4eb7-8121-33e3936ed55f
+          id: image_scale
+          weight: 1
+          data:
+            width: 400
+            height: null
+            upscale: false
+      _core:
+        default_config_hash: N1S0PHZeyxfFqgzB-sDeGPaxi0dDOL8NUiP_d6WXSV0
+  -
+    collection: ''
+    name: image_widget_crop.settings
+    data:
+      settings:
+        library_url: ''
+        css_url: ''
+        crop_preview_image_style: crop_thumbnail
+        crop_list: {  }
+        crop_types_required: {  }
+        warn_multiple_usages: false
+        show_default_crop: true
+        notify_apply: false
+        notify_update: true
+      _core:
+        default_config_hash: UYGkeE2iH3UGp9lBPsELb3VSgHz9vkMJeaGzcYwE7Uw

@@ -1,0 +1,118 @@
+uuid: 26064d2a-565c-46b1-a6d4-99cf60935f8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_text_background
+id: config_sync.module.az_paragraphs_text_background
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_text_background
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_text_background.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_text_background.field_az_text_area
+          - paragraphs.paragraphs_type.az_text_background
+        module:
+          - text
+      id: paragraph.az_text_background.default
+      targetEntityType: paragraph
+      bundle: az_text_background
+      mode: default
+      content:
+        field_az_text_area:
+          weight: 0
+          settings:
+            rows: 5
+            placeholder: ''
+          third_party_settings: {  }
+          type: text_textarea
+          region: content
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: a1L-2EWfoXv2ExU6CLIiGFlaLpDu5bKM_833n8GHINk
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_text_background.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_text_background.field_az_text_area
+          - paragraphs.paragraphs_type.az_text_background
+        module:
+          - text
+      id: paragraph.az_text_background.default
+      targetEntityType: paragraph
+      bundle: az_text_background
+      mode: default
+      content:
+        field_az_text_area:
+          weight: 0
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          type: text_default
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: _JBwhgHvQH_S-JEvuHDsRg-VYz40iIZtAy84dV76NDo
+  -
+    collection: ''
+    name: field.field.paragraph.az_text_background.field_az_text_area
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_text_area
+          - paragraphs.paragraphs_type.az_text_background
+        module:
+          - text
+      id: paragraph.az_text_background.field_az_text_area
+      field_name: field_az_text_area
+      entity_type: paragraph
+      bundle: az_text_background
+      label: Text
+      description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats: {  }
+      field_type: text_long
+      _core:
+        default_config_hash: hCBtXCjGyoZPmCJ_g8dtRjbBjoDowdowQwtmgbB2tPQ
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_text_background
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_text_background
+      label: 'Text with Background'
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_cards_paragraph_behavior:
+          enabled: false
+        az_text_background_paragraph_behavior:
+          enabled: true
+        az_default_paragraph_behavior:
+          enabled: false
+      _core:
+        default_config_hash: 7f3GHda1wfjny9vmBc1yie3s9f5z0yPM9R0xLTIlaAc

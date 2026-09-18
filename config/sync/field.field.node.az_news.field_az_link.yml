@@ -1,0 +1,25 @@
+uuid: 64b3334e-3506-4887-999b-54055ddb70ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_link
+    - node.type.az_news
+  module:
+    - link
+_core:
+  default_config_hash: URdvgnVele3zrG-v4NO98-al94CmxTn7pHwp7d-bUQU
+id: node.az_news.field_az_link
+field_name: field_az_link
+entity_type: node
+bundle: az_news
+label: 'Link to external news'
+description: 'In most cases, leave this field blank. Enter an external URL if you want the news listings for this article to link directly to a news story on another website (e.g. University of Arizona News or an external publication).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

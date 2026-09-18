@@ -1,0 +1,24 @@
+uuid: c00448db-4a3d-4249-8a19-ed8d099b6bbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_body
+    - node.type.az_event
+  module:
+    - text
+_core:
+  default_config_hash: 8r-qSsQp6vwXOcXf7CRhAz47_oX995kJlcaK-Eb9jj4
+id: node.az_event.field_az_body
+field_name: field_az_body
+entity_type: node
+bundle: az_event
+label: 'Event Description'
+description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

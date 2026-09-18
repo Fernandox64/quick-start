@@ -1,0 +1,22 @@
+uuid: 49577f48-a734-4d33-ae84-ab907dd75b97
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: ID63QcXWbaupw-8ynP8uXxrZA9ndXtsTZiJ4WYzMxu8
+id: node.field_az_published
+field_name: field_az_published
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

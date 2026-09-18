@@ -1,0 +1,106 @@
+name: Create Release
+on:
+   workflow_dispatch:
+    inputs:
+      version:
+        description: The version to tag and release
+        required: true
+      pre_release:
+        description: Is this a pre-release?
+        required: false
+        default: false
+        type: boolean
+      make_latest:
+        description: Should this be made the latest release?
+        required: false
+        default: false
+        type: boolean
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+      - name: Setup PHP
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
+        with:
+          php-version: '8.3'
+      - name: Create Tag
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          sed -i "/version: /d" az_quickstart.info.yml
+          echo -e "version: ${{ github.event.inputs.version }}" >> az_quickstart.info.yml
+          git add az_quickstart.info.yml
+          git commit -m "Preparing to tag ${{ github.event.inputs.version }}."
+          git push
+          git tag ${{ github.event.inputs.version }}
+          git push origin ${{ github.event.inputs.version }}
+      - name: Set variables
+        run: |
+          if [ $(git ls-remote --heads https://github.com/az-digital/az-quickstart-scaffolding.git $GITHUB_REF_NAME | wc -l) = 1 ]; then
+            echo "SCAFFOLD_BRANCH=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
+          else
+            echo "SCAFFOLD_BRANCH=main" >> ${GITHUB_ENV}
+          fi
+      - name: Clone scaffolding repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: az-digital/az-quickstart-scaffolding
+          path: az_quickstart
+          ref: ${{ env.SCAFFOLD_BRANCH }}
+      - name: Build project
+        run: |
+          cd az_quickstart
+          composer config repositories.az_quickstart vcs https://github.com/az-digital/az_quickstart.git
+          composer config use-github-api false
+          composer require --no-update az-digital/az_quickstart:${{ github.event.inputs.version }}
+          composer install --no-dev -o
+      - name: Zip Assets
+        run: |
+          zip -r -x\*.git* az_quickstart.zip az_quickstart
+      - name: Tar Assets
+        run: |
+          tar --exclude '*.git*' -c -z -f az_quickstart.tar.gz az_quickstart
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          draft: false
+          make_latest: ${{ github.event.inputs.make_latest }}
+          prerelease: ${{ github.event.inputs.pre_release }}
+          files: |
+            ./az_quickstart.zip
+            ./az_quickstart.tar.gz
+
+      - name: Set info file version back to dev
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          sed -i "/version: /d" az_quickstart.info.yml
+          echo -e "version: ${{ github.ref_name }}-dev" >> az_quickstart.info.yml
+          git add az_quickstart.info.yml
+          git commit -m "Back to dev."
+          git push
+
+  dispatch:
+    needs: build
+    strategy:
+      matrix:
+        repo:
+          - az-digital/az-quickstart-pantheon
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify dependencies
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
+        with:
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: az_quickstart_release
+          client-payload: '{"version": "${{ github.event.inputs.version }}", "make_latest": "${{ github.event.inputs.make_latest }}"}'

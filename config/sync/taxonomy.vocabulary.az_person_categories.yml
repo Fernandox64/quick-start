@@ -1,0 +1,11 @@
+uuid: 4d93d482-cb0a-4302-bb67-f271f67b9884
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zv5190zHIKFi6oLaaYFBk7CgHm4Nnba7t7iqfVOFKRM
+name: 'Person Categories'
+vid: az_person_categories
+description: 'Taxonomy for categorizing people'
+weight: 0
+new_revision: false

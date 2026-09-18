@@ -1,0 +1,304 @@
+uuid: 8da250fa-79aa-4901-9d1f-bdc11ff3e0cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.az_event.field_az_attachments
+    - field.field.node.az_event.field_az_body
+    - field.field.node.az_event.field_az_contacts
+    - field.field.node.az_event.field_az_enterprise_attributes
+    - field.field.node.az_event.field_az_event_category
+    - field.field.node.az_event.field_az_event_date
+    - field.field.node.az_event.field_az_featured_image_as_thumb
+    - field.field.node.az_event.field_az_link
+    - field.field.node.az_event.field_az_location
+    - field.field.node.az_event.field_az_media_thumbnail_image
+    - field.field.node.az_event.field_az_metatag
+    - field.field.node.az_event.field_az_photos
+    - field.field.node.az_event.field_az_subheading
+    - field.field.node.az_event.field_az_summary
+    - field.field.node.az_event.field_az_trellis_id
+    - node.type.az_event
+  module:
+    - date_ap_style
+    - entity_reference_revisions
+    - field_group
+    - file
+    - link
+    - smart_title
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_subtitle_div:
+      children:
+        - field_az_subheading
+      label: 'Subtitle Div'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'lead mb-4'
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_category_div:
+      children:
+        - field_az_event_category
+      label: 'Category Div'
+      parent_name: group_wrapper
+      region: content
+      weight: 11
+      format_type: html_element
+      format_settings:
+        classes: 'clearfix pt-2'
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_when_where_row:
+      children:
+        - group_when_column
+        - group_where_column
+      label: 'When/Where Row'
+      parent_name: group_wrapper
+      region: content
+      weight: 8
+      format_type: html_element
+      format_settings:
+        classes: 'row mb-5'
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_contacts_attach_row:
+      children:
+        - group_contacts_column
+        - group_attachments_column
+      label: 'Contacts/Attachments Row'
+      parent_name: group_wrapper
+      region: content
+      weight: 12
+      format_type: html_element
+      format_settings:
+        classes: row
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_when_column:
+      children:
+        - field_az_event_date
+      label: When
+      parent_name: group_when_where_row
+      region: content
+      weight: 13
+      format_type: html_element
+      format_settings:
+        classes: col-md-6
+        id: ''
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_where_column:
+      children:
+        - field_az_location
+      label: Where
+      parent_name: group_when_where_row
+      region: content
+      weight: 14
+      format_type: html_element
+      format_settings:
+        classes: col-md-6
+        id: ''
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_contacts_column:
+      children:
+        - field_az_contacts
+      label: Contacts
+      parent_name: group_contacts_attach_row
+      region: content
+      weight: 8
+      format_type: html_element
+      format_settings:
+        classes: col-md-6
+        id: ''
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_attachments_column:
+      children:
+        - field_az_attachments
+      label: Attachments
+      parent_name: group_contacts_attach_row
+      region: content
+      weight: 9
+      format_type: html_element
+      format_settings:
+        classes: col-md-6
+        id: ''
+        element: div
+        show_label: true
+        label_element: h2
+        label_element_classes: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_wrapper:
+      children:
+        - field_az_photos
+        - group_when_where_row
+        - field_az_body
+        - group_category_div
+        - group_contacts_attach_row
+      label: Wrapper
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: mb-5
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+  smart_title:
+    enabled: false
+_core:
+  default_config_hash: nv6EUi-iI6vvWO-AKdIawe-apYEzttNlGQsSd46GbB4
+id: node.az_event.default
+targetEntityType: node
+bundle: az_event
+mode: default
+content:
+  field_az_attachments:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_az_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_az_contacts:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_az_event_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_az_event_date:
+    type: daterange_ap_style
+    label: hidden
+    settings:
+      always_display_year: true
+      use_today: true
+      cap_today: true
+      display_day: false
+      display_time: true
+      hide_date: false
+      time_before_date: false
+      display_noon_and_midnight: true
+      capitalize_noon_and_midnight: true
+      use_all_day: true
+      separator: endash
+      timezone: ''
+      month_only: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_az_location:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_az_photos:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: az_large
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_az_subheading:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+hidden:
+  az_event_day: true
+  az_event_month: true
+  field_az_enterprise_attributes: true
+  field_az_featured_image_as_thumb: true
+  field_az_link: true
+  field_az_media_thumbnail_image: true
+  field_az_metatag: true
+  field_az_summary: true
+  field_az_trellis_id: true
+  langcode: true
+  links: true
+  smart_title: true

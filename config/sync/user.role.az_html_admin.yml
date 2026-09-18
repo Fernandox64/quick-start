@@ -1,0 +1,16 @@
+uuid: 12631919-a1fb-4e87-b8a3-208bd45e4540
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - filter
+_core:
+  default_config_hash: 9Z5tzlOZd4DqcdTIhyORgGghK5aLghhBM_iePovA8-A
+id: az_html_admin
+label: 'HTML administrator'
+weight: -3
+is_admin: false
+permissions:
+  - 'use text format full_html'

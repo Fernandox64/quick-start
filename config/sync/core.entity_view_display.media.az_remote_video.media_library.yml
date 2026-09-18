@@ -1,0 +1,37 @@
+uuid: 3ee47b20-e785-4495-884d-4654d148b514
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.az_remote_video.field_media_az_image
+    - field.field.media.az_remote_video.field_media_az_oembed_video
+    - image.style.medium
+    - media.type.az_remote_video
+  module:
+    - image
+_core:
+  default_config_hash: e680szYGkrCJQ9mleaWMp7OYnOWEn3MVMEOG2waIdR4
+id: media.az_remote_video.media_library
+targetEntityType: media
+bundle: az_remote_video
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_az_image: true
+  field_media_az_oembed_video: true
+  langcode: true
+  name: true
+  uid: true

@@ -1,0 +1,243 @@
+uuid: d055c6a0-e8a6-440d-b33b-567ea09e3a07
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_contact
+id: config_sync.module.az_paragraphs_contact
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_contact
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_contact.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_contact.field_az_email
+          - field.field.paragraph.az_contact.field_az_phone
+          - field.field.paragraph.az_contact.field_az_title
+          - paragraphs.paragraphs_type.az_contact
+        module:
+          - telephone
+      id: paragraph.az_contact.default
+      targetEntityType: paragraph
+      bundle: az_contact
+      mode: default
+      content:
+        field_az_email:
+          weight: 1
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+          type: email_default
+          region: content
+        field_az_phone:
+          weight: 2
+          settings:
+            placeholder: ''
+          third_party_settings: {  }
+          type: telephone_default
+          region: content
+        field_az_title:
+          weight: 0
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+          type: string_textfield
+          region: content
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: ZwVVDZoV3pkpp42Z9aosq8h-U8Oa3vNvVp1LbCm_mjY
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_contact.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_contact.field_az_email
+          - field.field.paragraph.az_contact.field_az_phone
+          - field.field.paragraph.az_contact.field_az_title
+          - paragraphs.paragraphs_type.az_contact
+        module:
+          - field_group
+          - telephone
+      third_party_settings:
+        field_group:
+          group_contact_name:
+            children:
+              - field_az_title
+            parent_name: ''
+            weight: 0
+            format_type: html_element
+            region: content
+            format_settings:
+              id: ''
+              classes: 'fw-bold mt-3'
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+            label: 'Contact Name'
+      id: paragraph.az_contact.default
+      targetEntityType: paragraph
+      bundle: az_contact
+      mode: default
+      content:
+        field_az_email:
+          weight: 2
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          type: email_mailto
+          region: content
+        field_az_phone:
+          weight: 3
+          label: hidden
+          settings:
+            title: ''
+          third_party_settings: {  }
+          type: telephone_link
+          region: content
+        field_az_title:
+          weight: 1
+          label: hidden
+          settings:
+            link_to_entity: false
+          third_party_settings: {  }
+          type: string
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: rk8zAphw8S8_uRadjOTE_Vvk0DtStmwaRTMYyWr7C5s
+  -
+    collection: ''
+    name: field.field.paragraph.az_contact.field_az_email
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_email
+          - paragraphs.paragraphs_type.az_contact
+      id: paragraph.az_contact.field_az_email
+      field_name: field_az_email
+      entity_type: paragraph
+      bundle: az_contact
+      label: 'Contact Email'
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: email
+      _core:
+        default_config_hash: UK4kftXX5VOByE2yEA1PV3AOIRfVAXvnySAxD5x16NU
+  -
+    collection: ''
+    name: field.field.paragraph.az_contact.field_az_phone
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_phone
+          - paragraphs.paragraphs_type.az_contact
+        module:
+          - telephone
+      id: paragraph.az_contact.field_az_phone
+      field_name: field_az_phone
+      entity_type: paragraph
+      bundle: az_contact
+      label: 'Contact Phone'
+      description: '<strong>Suggested format:</strong> 520-626-0000'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: telephone
+      _core:
+        default_config_hash: r37JHbXUb3aVIpx-kg6miyB8ZLjlC2tzX83LNzT8GUY
+  -
+    collection: ''
+    name: field.field.paragraph.az_contact.field_az_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_title
+          - paragraphs.paragraphs_type.az_contact
+      id: paragraph.az_contact.field_az_title
+      field_name: field_az_title
+      entity_type: paragraph
+      bundle: az_contact
+      label: 'Contact Name'
+      description: 'Full name if possible.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: string
+      _core:
+        default_config_hash: cgRiU1xFAmh9t48pvhQSSy4r8FpdzIhyZ5d61hnqxQA
+  -
+    collection: ''
+    name: field.storage.node.field_az_contacts
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - entity_reference_revisions
+          - node
+          - paragraphs
+      id: node.field_az_contacts
+      field_name: field_az_contacts
+      entity_type: node
+      type: entity_reference_revisions
+      settings:
+        target_type: paragraph
+      module: entity_reference_revisions
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: Hyy6xLoDcLCJaZ-ICT9lZ41iIIhOtkHyR3eQ6iRXqfA
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_contact
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_contact
+      label: Contact
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_default_paragraph_behavior:
+          enabled: true
+      _core:
+        default_config_hash: cI_MiUSVq90lAHQYU6XSja8KreCMxLZ0RMyQQg9Mm3s

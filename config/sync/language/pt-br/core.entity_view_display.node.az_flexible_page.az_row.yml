@@ -1,0 +1,14 @@
+third_party_settings:
+  field_group:
+    group_link:
+      label: Link
+    group_row:
+      label: Linha
+    group_media:
+      label: Mídia
+    group_column:
+      label: Coluna
+    group_heading:
+      label: Cabeçalho
+    group_summary:
+      label: Resumo

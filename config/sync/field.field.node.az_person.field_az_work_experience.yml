@@ -1,0 +1,21 @@
+uuid: 9ff43b6f-9b45-4fe0-8e8b-7a42fdad3524
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_work_experience
+    - node.type.az_person
+_core:
+  default_config_hash: dV7Q-9xKsLDogXlqcMlD3HQNjAG2xxLE405ttoF7PwY
+id: node.az_person.field_az_work_experience
+field_name: field_az_work_experience
+entity_type: node
+bundle: az_person
+label: 'Work Experience'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

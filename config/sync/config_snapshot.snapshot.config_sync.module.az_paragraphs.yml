@@ -1,0 +1,615 @@
+uuid: 5fd19a61-55d4-41a3-bb43-fcf64d35217e
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+id: config_sync.module.az_paragraphs
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs
+items:
+  -
+    collection: ''
+    name: editor.editor.az_standard
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - filter.format.az_standard
+        module:
+          - ckeditor5
+      format: az_standard
+      editor: ckeditor5
+      settings:
+        toolbar:
+          items:
+            - undo
+            - redo
+            - '|'
+            - bold
+            - strikethrough
+            - italic
+            - superscript
+            - subscript
+            - specialCharacters
+            - '|'
+            - link
+            - '|'
+            - bulletedList
+            - numberedList
+            - '|'
+            - alignment
+            - indent
+            - outdent
+            - '|'
+            - bootstrapGrid
+            - insertTable
+            - horizontalLine
+            - blockQuote
+            - '|'
+            - heading
+            - style
+            - '|'
+            - drupalMedia
+            - icon
+            - az_embed_content
+            - az_embed_content_block
+            - '|'
+            - code
+            - codeBlock
+            - '|'
+            - showBlocks
+            - sourceEditing
+            - removeFormat
+        plugins:
+          ckeditor5_alignment:
+            enabled_alignments:
+              - center
+              - justify
+              - left
+              - right
+          ckeditor5_codeBlock:
+            languages:
+              -
+                label: 'Plain text'
+                language: plaintext
+              -
+                label: C
+                language: c
+              -
+                label: 'C#'
+                language: cs
+              -
+                label: C++
+                language: cpp
+              -
+                label: CSS
+                language: css
+              -
+                label: Diff
+                language: diff
+              -
+                label: HTML
+                language: html
+              -
+                label: Java
+                language: java
+              -
+                label: JavaScript
+                language: javascript
+              -
+                label: PHP
+                language: php
+              -
+                label: Python
+                language: python
+              -
+                label: Ruby
+                language: ruby
+              -
+                label: TypeScript
+                language: typescript
+              -
+                label: XML
+                language: xml
+          ckeditor5_heading:
+            enabled_headings:
+              - heading1
+              - heading2
+              - heading3
+              - heading4
+              - heading5
+              - heading6
+          ckeditor5_list:
+            properties:
+              reversed: false
+              startIndex: true
+              styles: true
+            multiBlock: true
+          ckeditor5_sourceEditing:
+            allowed_tags:
+              - '<abbr>'
+              - '<address>'
+              - '<cite>'
+              - '<dl>'
+              - '<dt>'
+              - '<dd>'
+              - '<div class name id data-*>'
+              - '<span class name id>'
+              - '<img src alt data-entity-type data-entity-uuid>'
+              - '<footer class>'
+              - '<blockquote class>'
+              - '<ul class>'
+              - '<ol class>'
+              - '<li class>'
+              - '<h1 class name id>'
+              - '<h2 class name id>'
+              - '<h3 class name id>'
+              - '<h4 class name id>'
+              - '<h5 class name id>'
+              - '<h6 class name id>'
+              - '<table class>'
+              - '<tbody class>'
+              - '<thead class>'
+              - '<tfoot class>'
+              - '<th class scope>'
+              - '<td class>'
+              - '<tr class colspan rowspan>'
+              - '<hr class>'
+              - '<a class target name id title>'
+              - '<drupal-entity data-entity-type data-embed-button alt title data-align data-caption data-entity-embed-display data-entity-embed-display-settings data-view-mode data-entity-uuid data-langcode>'
+              - '<drupal-media title>'
+              - '<p class>'
+          ckeditor5_style:
+            styles:
+              -
+                label: 'Button Red'
+                element: '<a class="btn btn-red">'
+              -
+                label: 'Button Blue'
+                element: '<a class="btn btn-blue">'
+              -
+                label: 'Button Sky'
+                element: '<a class="btn btn-sky">'
+              -
+                label: 'Button White (Red Text)'
+                element: '<a class="btn btn-white-text-red">'
+              -
+                label: 'Button White (Blue Text)'
+                element: '<a class="btn btn-white-text-blue">'
+              -
+                label: 'Button Outline Red'
+                element: '<a class="btn btn-outline-red">'
+              -
+                label: 'Button Outline Blue'
+                element: '<a class="btn btn-outline-blue">'
+              -
+                label: 'Button Outline White'
+                element: '<a class="btn btn-outline-white">'
+              -
+                label: 'Button Outline Sky'
+                element: '<a class="btn btn-outline-sky">'
+              -
+                label: 'Button Link'
+                element: '<a class="btn btn-link">'
+              -
+                label: 'Text White'
+                element: '<span class="text-white">'
+              -
+                label: 'Text Sky'
+                element: '<span class="text-sky">'
+              -
+                label: 'Text Oasis'
+                element: '<span class="text-oasis">'
+              -
+                label: 'Text Azurite'
+                element: '<span class="text-azurite">'
+              -
+                label: 'Text Blue'
+                element: '<span class="text-blue">'
+              -
+                label: 'Text Midnight'
+                element: '<span class="text-midnight">'
+              -
+                label: 'Text Dark Silver'
+                element: '<span class="text-dark-silver">'
+              -
+                label: 'Text Ash'
+                element: '<span class="text-ash">'
+              -
+                label: 'Capitalized Text'
+                element: '<span class="text-capitalize">'
+              -
+                label: 'UPPERCASE TEXT'
+                element: '<span class="text-uppercase">'
+              -
+                label: 'lowercase text'
+                element: '<span class="text-lowercase">'
+              -
+                label: 'Triangle Bullets'
+                element: '<ul class="az-list-triangles">'
+              -
+                label: 'Focus Point Bullets'
+                element: '<ul class="az-list-focus-points">'
+              -
+                label: 'Checkmark Bullets'
+                element: '<ul class="az-list-checkmarks">'
+              -
+                label: 'Unordered List Pills'
+                element: '<ul class="nav nav-pills">'
+              -
+                label: 'Badge Red'
+                element: '<span class="badge text-bg-red">'
+              -
+                label: 'Badge Blue'
+                element: '<span class="badge text-bg-blue">'
+              -
+                label: 'Badge Success'
+                element: '<span class="badge text-bg-success">'
+              -
+                label: 'Badge Info'
+                element: '<span class="badge text-bg-info">'
+              -
+                label: 'Badge Warning'
+                element: '<span class="badge text-bg-warning">'
+              -
+                label: 'Badge Danger'
+                element: '<span class="badge text-bg-danger">'
+              -
+                label: 'Text Size Small'
+                element: '<span class="small">'
+              -
+                label: 'Text Size Lead'
+                element: '<span class="lead">'
+              -
+                label: 'Text Size H1'
+                element: '<span class="h1">'
+              -
+                label: 'Text Size H2'
+                element: '<span class="h2">'
+              -
+                label: 'Text Size H3'
+                element: '<span class="h3">'
+              -
+                label: 'Text Size H4'
+                element: '<span class="h4">'
+              -
+                label: 'Text Size H5'
+                element: '<span class="h5">'
+              -
+                label: 'Text Size H6'
+                element: '<span class="h6">'
+              -
+                label: 'Text Align Top'
+                element: '<span class="align-top">'
+              -
+                label: 'Text Align Middle'
+                element: '<span class="align-middle">'
+              -
+                label: 'Text Align Bottom'
+                element: '<span class="align-bottom">'
+              -
+                label: 'Zero Margin Bottom'
+                element: '<p class="mb-0">'
+              -
+                label: Blockquote
+                element: '<blockquote class="blockquote">'
+              -
+                label: 'Blockquote Center'
+                element: '<blockquote class="blockquote text-center">'
+              -
+                label: 'Blockquote Right'
+                element: '<blockquote class="blockquote text-end">'
+              -
+                label: 'Blockquote Footer'
+                element: '<footer class="blockquote-footer">'
+              -
+                label: 'Bordered table'
+                element: '<table class="table table-bordered">'
+              -
+                label: 'Hover table'
+                element: '<table class="table table-hover">'
+              -
+                label: 'Small table'
+                element: '<table class="table table-sm">'
+              -
+                label: 'Striped table'
+                element: '<table class="table table-striped">'
+              -
+                label: 'Dark table'
+                element: '<table class="table table-dark">'
+              -
+                label: 'Dark table heading'
+                element: '<thead class="table-dark">'
+          ckeditor_bs_grid_grid:
+            use_cdn: false
+            cdn_url: ''
+            available_columns:
+              - '1'
+              - '2'
+              - '3'
+              - '4'
+              - '5'
+              - '6'
+              - '7'
+              - '8'
+              - '9'
+              - '10'
+              - '11'
+              - '12'
+            available_breakpoints:
+              - xs
+              - sm
+              - md
+              - lg
+              - xl
+              - xxl
+          ckeditor_indentblock_indent:
+            enable: true
+          linkit_extension:
+            linkit_enabled: true
+            linkit_profile: az_linkit
+          media_media:
+            allow_view_mode_override: true
+      image_upload:
+        status: false
+      _core:
+        default_config_hash: V6oYECINZqljUr5MZ2LwRUIDpqKLhOjGlR8QKDvnf9A
+  -
+    collection: ''
+    name: embed.button.az_embed_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_card
+          - core.entity_view_mode.node.az_media_list
+          - core.entity_view_mode.node.az_row
+          - core.entity_view_mode.node.full
+          - core.entity_view_mode.node.teaser
+        module:
+          - entity_embed
+          - node
+      label: 'Embed Content'
+      id: az_embed_content
+      type_id: entity
+      type_settings:
+        entity_type: node
+        bundles: {  }
+        display_plugins:
+          - 'view_mode:node.az_card'
+          - 'view_mode:node.az_media_list'
+          - 'view_mode:node.az_row'
+          - 'view_mode:node.full'
+          - 'view_mode:node.teaser'
+      icon:
+        uri: 'public://embed_buttons/post_add_FILL0_wght400_GRAD0_opsz24.svg'
+        data: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iMjQiPjxwYXRoIGQ9Ik0zMjAtNTIwdi04MGgzMjB2ODBIMzIwWm0wIDEyMHYtODBoMzIwdjgwSDMyMFptMCAxMjB2LTgwaDMyMHY4MEgzMjBabTM2MC0zMjB2LTgwaC04MHYtODBoODB2LTgwaDgwdjgwaDgwdjgwaC04MHY4MGgtODBaTTEyMC0xMjB2LTcyMGg0NDB2ODBIMjAwdjU2MGg1NjB2LTM2MGg4MHY0NDBIMTIwWiIvPjwvc3ZnPg==
+      icon_uuid: null
+      _core:
+        default_config_hash: siCYTaMIrgZVU2hDjkB-SJBZYh0PQagOT_b2xbF9Xh0
+  -
+    collection: ''
+    name: embed.button.az_embed_content_block
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.block_content.full
+        module:
+          - block_content
+          - entity_embed
+      label: 'Embed Content Block'
+      id: az_embed_content_block
+      type_id: entity
+      type_settings:
+        entity_type: block_content
+        bundles: {  }
+        display_plugins:
+          - 'view_mode:block_content.full'
+      icon:
+        uri: 'public://embed_buttons/dashboard_customize_FILL0_wght400_GRAD0_opsz24.svg'
+        data: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iMjQiPjxwYXRoIGQ9Ik0xMjAtODQwaDMyMHYzMjBIMTIwdi0zMjBabTgwIDgwdjE2MC0xNjBabTMyMC04MGgzMjB2MzIwSDUyMHYtMzIwWm04MCA4MHYxNjAtMTYwWk0xMjAtNDQwaDMyMHYzMjBIMTIwdi0zMjBabTgwIDgwdjE2MC0xNjBabTQ0MC04MGg4MHYxMjBoMTIwdjgwSDcyMHYxMjBoLTgwdi0xMjBINTIwdi04MGgxMjB2LTEyMFptLTQwLTMyMHYxNjBoMTYwdi0xNjBINjAwWm0tNDAwIDB2MTYwaDE2MHYtMTYwSDIwMFptMCA0MDB2MTYwaDE2MHYtMTYwSDIwMFoiLz48L3N2Zz4=
+      icon_uuid: null
+      _core:
+        default_config_hash: hgOgEGMJ4XzfkbGftAY0EwOIlUK7coSV8PwB7gKl6vc
+  -
+    collection: ''
+    name: field.storage.node.field_az_main_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - entity_reference_revisions
+          - node
+          - paragraphs
+      id: node.field_az_main_content
+      field_name: field_az_main_content
+      entity_type: node
+      type: entity_reference_revisions
+      settings:
+        target_type: paragraph
+      module: entity_reference_revisions
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: pxcYymJpB29Imr6avDNQO_aQeg-pSZYgpHZw5ViiYog
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_cards
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_card
+          - paragraphs
+      id: paragraph.field_az_cards
+      field_name: field_az_cards
+      entity_type: paragraph
+      type: az_card
+      settings: {  }
+      module: az_card
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: jeR5jMDJmyzpdArF1gJjYxEdkoDdAoq1ouZZv4jay0Y
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_email
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - paragraphs
+      id: paragraph.field_az_email
+      field_name: field_az_email
+      entity_type: paragraph
+      type: email
+      settings: {  }
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: r5Mnch7Za1ZQyr-H3LhuHZRCdOhj_QRIbHWJtgOw1ww
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_full_html
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - paragraphs
+          - text
+      id: paragraph.field_az_full_html
+      field_name: field_az_full_html
+      entity_type: paragraph
+      type: text_long
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 79t2-hrc0bTSAmCWRD6W9CHHLamLyPfjjeFSjxLL2Mk
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_media
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - media
+          - paragraphs
+      id: paragraph.field_az_media
+      field_name: field_az_media
+      entity_type: paragraph
+      type: entity_reference
+      settings:
+        target_type: media
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: iUn1FxI3VArzTi_MPWWVEU2H9DD-yhZg8PXgrZE0Z0E
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_phone
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - paragraphs
+          - telephone
+      id: paragraph.field_az_phone
+      field_name: field_az_phone
+      entity_type: paragraph
+      type: telephone
+      settings: {  }
+      module: telephone
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: to-1uZNmvjjWDvjpXaDaEkndLjjgyauQZsDkDk5I4aA
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_text_area
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - paragraphs
+          - text
+      id: paragraph.field_az_text_area
+      field_name: field_az_text_area
+      entity_type: paragraph
+      type: text_long
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: d2yib0eLlWx9uiHs46IimK9DrbJXTvRRfbJftBjQaI4
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - paragraphs
+      id: paragraph.field_az_title
+      field_name: field_az_title
+      entity_type: paragraph
+      type: string
+      settings:
+        max_length: 255
+        is_ascii: false
+        case_sensitive: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 1HWqhHqy7MlWfOc6CzK01bWT-1BuNSkZT--O5XylzGQ

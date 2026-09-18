@@ -1,0 +1,1478 @@
+uuid: 9bdc73ac-b60b-4815-aabc-b8b5d8e63284
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_core
+id: config_sync.module.az_core
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_core
+items:
+  -
+    collection: ''
+    name: az_core.settings
+    data:
+      monitoring_page:
+        enabled: false
+        path: ''
+      enterprise_attributes:
+        locked: true
+      _core:
+        default_config_hash: swrsrVouO9MFBd59r_X-Z7QmWMuqW8K_gmB_K1U4Fnc
+  -
+    collection: ''
+    name: core.entity_form_display.taxonomy_term.az_enterprise_attributes.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_key
+          - field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_type
+          - taxonomy.vocabulary.az_enterprise_attributes
+        module:
+          - path
+          - text
+      id: taxonomy_term.az_enterprise_attributes.default
+      targetEntityType: taxonomy_term
+      bundle: az_enterprise_attributes
+      mode: default
+      content:
+        description:
+          type: text_textarea
+          weight: 3
+          region: content
+          settings:
+            rows: 5
+            placeholder: ''
+          third_party_settings: {  }
+        field_az_attribute_key:
+          type: string_textfield
+          weight: 1
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        field_az_attribute_type:
+          type: string_textfield
+          weight: 2
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        name:
+          type: string_textfield
+          weight: 0
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        path:
+          type: path
+          weight: 4
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        status:
+          type: boolean_checkbox
+          weight: 5
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: yqIBfnQNAEMO0wHl30hjWI0Lf9Qv8V2kPxMOJx2Y-JU
+  -
+    collection: ''
+    name: core.entity_view_display.taxonomy_term.az_enterprise_attributes.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_key
+          - field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_type
+          - taxonomy.vocabulary.az_enterprise_attributes
+        module:
+          - text
+      id: taxonomy_term.az_enterprise_attributes.default
+      targetEntityType: taxonomy_term
+      bundle: az_enterprise_attributes
+      mode: default
+      content:
+        description:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden:
+        field_az_attribute_key: true
+        field_az_attribute_type: true
+      _core:
+        default_config_hash: yXmun36zxnm6Uzix0e0ylMpBguwJuAJtgtUSlIjkf7A
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_card
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_card
+      label: Card
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: aueO3ZY5XnIFkJtaBkC1msywATVgn3gSDGlghXxSJqg
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_card_alternate
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_card_alternate
+      label: 'Card Alternate'
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: 2lctqz2y335t3kxNhDmb5fZUbJmbd8BC_W4G20Fx4Bo
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_feature
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+        enforced:
+          module:
+            - az_core
+      id: node.az_feature
+      label: Feature
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: tPlnKvQczdG6iXwaUUWQAQLlfKpRnGG27iajKTkgYdo
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_marquee
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_marquee
+      label: Marquee
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: bkIkGYhqdVYvGZ2NwSQV9iHg-l3G_rc5sHMJsEQPF58
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_media_list
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_media_list
+      label: 'Media List'
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: UbJdrqFufJ_NpyY3IMFsiXzU8JW2VYgZQu6Gd2wPkG0
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_medium_media_list
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_medium_media_list
+      label: 'Medium Media List'
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: wV5w_1I7Zq3hY9_jIbTkjRO2FKrBNeuvjPGoSn9m5Js
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_minimal_media_list
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_minimal_media_list
+      label: 'Minimal Media List'
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: kX4m4S7qD_FilU8BTYYVXT_CFXwQIQ_PFTFOPyazOL8
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_row
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_row
+      label: Row
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: qgOTBEK7t3iODP-WrwyLz_crsxJzJTCPsOmF4gii5Ug
+  -
+    collection: ''
+    name: core.entity_view_mode.node.az_row_with_background
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.az_row_with_background
+      label: 'Row with Background'
+      description: ''
+      targetEntityType: node
+      cache: true
+      _core:
+        default_config_hash: sMueUn3k9nVCwaM3Q1HWWi_yudMdm08kUuIPxKg84ok
+  -
+    collection: ''
+    name: core.entity_view_mode.taxonomy_term.az_badge
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - taxonomy
+      id: taxonomy_term.az_badge
+      label: Badge
+      description: ''
+      targetEntityType: taxonomy_term
+      cache: true
+      _core:
+        default_config_hash: XwPBImdYrAf-iuPaYUez_pICPgsgvIM7bFlgP4HDiM0
+  -
+    collection: ''
+    name: field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_key
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.taxonomy_term.field_az_attribute_key
+          - taxonomy.vocabulary.az_enterprise_attributes
+      id: taxonomy_term.az_enterprise_attributes.field_az_attribute_key
+      field_name: field_az_attribute_key
+      entity_type: taxonomy_term
+      bundle: az_enterprise_attributes
+      label: 'Attribute Key'
+      description: ''
+      required: true
+      translatable: false
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: string
+      _core:
+        default_config_hash: DWsUi_hrWaLUjdiYI_9vCmqFCJuvggT0ceX6e3_Jmks
+  -
+    collection: ''
+    name: field.field.taxonomy_term.az_enterprise_attributes.field_az_attribute_type
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.taxonomy_term.field_az_attribute_type
+          - taxonomy.vocabulary.az_enterprise_attributes
+      id: taxonomy_term.az_enterprise_attributes.field_az_attribute_type
+      field_name: field_az_attribute_type
+      entity_type: taxonomy_term
+      bundle: az_enterprise_attributes
+      label: 'Attribute Type'
+      description: ''
+      required: false
+      translatable: false
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: string
+      _core:
+        default_config_hash: 0bo6gzwfz_YjsdJofdqil22eRMD6B9gki1-J5OE0Rcw
+  -
+    collection: ''
+    name: field.storage.block_content.body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_content
+          - text
+      id: block_content.body
+      field_name: body
+      entity_type: block_content
+      type: text_with_summary
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: true
+      custom_storage: false
+      _core:
+        default_config_hash: eS0snV_L3dx9shtWRTzm5eblwOJ7qKWC9IE-4GMTDFc
+  -
+    collection: ''
+    name: field.storage.node.field_az_address
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - text
+      id: node.field_az_address
+      field_name: field_az_address
+      entity_type: node
+      type: text_long
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: ikmCUn0XZFNejpYR65_XvYkUW055ulG4UTVdY8BWbjI
+  -
+    collection: ''
+    name: field.storage.node.field_az_attachments
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - file
+          - node
+      id: node.field_az_attachments
+      field_name: field_az_attachments
+      entity_type: node
+      type: file
+      settings:
+        display_field: false
+        display_default: false
+        uri_scheme: public
+        target_type: file
+      module: file
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 8LcO0eB8qCUQKcisRa_MmrDOJ6glUeK-aaiRN8XfC6U
+  -
+    collection: ''
+    name: field.storage.node.field_az_body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - text
+      id: node.field_az_body
+      field_name: field_az_body
+      entity_type: node
+      type: text_long
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: Hcm2VntVNwdQ5U8v2ZIqEWfw0wVF-OoqDyEbz_XFJUU
+  -
+    collection: ''
+    name: field.storage.node.field_az_byline
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_byline
+      field_name: field_az_byline
+      entity_type: node
+      type: string
+      settings:
+        max_length: 255
+        is_ascii: false
+        case_sensitive: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: sdtfUVZT1TezLVO7lLTSLEGSYyNGpzk_ncPA_LQFVKs
+  -
+    collection: ''
+    name: field.storage.node.field_az_email
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_email
+      field_name: field_az_email
+      entity_type: node
+      type: email
+      settings: {  }
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 3ws3xu5sNbedX_D3t3KAQ3J3EALRZ_E_hEZWgMAADUw
+  -
+    collection: ''
+    name: field.storage.node.field_az_enterprise_attributes
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - taxonomy
+      id: node.field_az_enterprise_attributes
+      field_name: field_az_enterprise_attributes
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: taxonomy_term
+      module: core
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: iTWVqLUmmNCHyAYijzE_sj6VR1hU0jCXROhlEWaE2Xw
+  -
+    collection: ''
+    name: field.storage.node.field_az_expiration_date
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - datetime
+          - node
+      id: node.field_az_expiration_date
+      field_name: field_az_expiration_date
+      entity_type: node
+      type: datetime
+      settings:
+        datetime_type: datetime
+      module: datetime
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: MG-j1MH86BMyG7Ivh0_ktfriopIBTRWh0087_6koYj8
+  -
+    collection: ''
+    name: field.storage.node.field_az_featured_image_as_thumb
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_featured_image_as_thumb
+      field_name: field_az_featured_image_as_thumb
+      entity_type: node
+      type: boolean
+      settings: {  }
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 5-5BEHVh_s_fSQxJYhTgStAkcbYCODwHUGWxpyQy71g
+  -
+    collection: ''
+    name: field.storage.node.field_az_link
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - link
+          - node
+      id: node.field_az_link
+      field_name: field_az_link
+      entity_type: node
+      type: link
+      settings: {  }
+      module: link
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: dLI9YHqjww9ELfudRFL6k-HqiNrPaz25yqyOPKfm3bk
+  -
+    collection: ''
+    name: field.storage.node.field_az_links
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - link
+          - node
+      id: node.field_az_links
+      field_name: field_az_links
+      entity_type: node
+      type: link
+      settings: {  }
+      module: link
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: dm2EnYRZLEjsgjaHtcf2Juju-ovqWI82egOf2BLV7h4
+  -
+    collection: ''
+    name: field.storage.node.field_az_location
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - link
+          - node
+      id: node.field_az_location
+      field_name: field_az_location
+      entity_type: node
+      type: link
+      settings: {  }
+      module: link
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: f5CLpXb5mPr-cO2NmDuVtWC6x3W2V3gvs-4kfjsuJ8Q
+  -
+    collection: ''
+    name: field.storage.node.field_az_media_image
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - media
+          - node
+      id: node.field_az_media_image
+      field_name: field_az_media_image
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: media
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: LGGT3VvJS9U8o8dWW0cdtNF7OrMSiCIwc4A38ZI1tVo
+  -
+    collection: ''
+    name: field.storage.node.field_az_media_thumbnail_image
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - media
+          - node
+      id: node.field_az_media_thumbnail_image
+      field_name: field_az_media_thumbnail_image
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: media
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: XRAMm8F09xUN1CnCu3iEf4BVX-4ww_y6toEPp4w6A8U
+  -
+    collection: ''
+    name: field.storage.node.field_az_phones
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - telephone
+      id: node.field_az_phones
+      field_name: field_az_phones
+      entity_type: node
+      type: telephone
+      settings: {  }
+      module: telephone
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: NT_ER6b9MVPVzxb1Hheskzqy2bn1eIcYuoTu9205R7w
+  -
+    collection: ''
+    name: field.storage.node.field_az_photos
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - media
+          - node
+      id: node.field_az_photos
+      field_name: field_az_photos
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: media
+      module: core
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 86B9E-LX6XL15Oo-KURT3KDjHfNrOMvhRmXGeZw5Now
+  -
+    collection: ''
+    name: field.storage.node.field_az_published
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - datetime
+          - node
+      id: node.field_az_published
+      field_name: field_az_published
+      entity_type: node
+      type: datetime
+      settings:
+        datetime_type: date
+      module: datetime
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: IsAbpLllNmnWgIRWG4OqC8HUOhC044BMQ4LHiIbCErY
+  -
+    collection: ''
+    name: field.storage.node.field_az_short_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_short_title
+      field_name: field_az_short_title
+      entity_type: node
+      type: string
+      settings:
+        max_length: 255
+        is_ascii: false
+        case_sensitive: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: pLPnyatD0oB17g-LV_EZV1RC95IRBfdiherrRLs6zIo
+  -
+    collection: ''
+    name: field.storage.node.field_az_subheading
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - text
+      id: node.field_az_subheading
+      field_name: field_az_subheading
+      entity_type: node
+      type: text
+      settings:
+        max_length: 255
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: BOKwrSYDrWHM33RxA4dBwv0E5M0mRIm61o01CMzVLSE
+  -
+    collection: ''
+    name: field.storage.node.field_az_suffix
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_suffix
+      field_name: field_az_suffix
+      entity_type: node
+      type: string
+      settings:
+        max_length: 255
+        case_sensitive: false
+        is_ascii: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: RdDJxvq2TGin6qm75qZ7evZ9OXwo28ooS1GKeKkmFso
+  -
+    collection: ''
+    name: field.storage.node.field_az_summary
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - text
+      id: node.field_az_summary
+      field_name: field_az_summary
+      entity_type: node
+      type: text_long
+      settings: {  }
+      module: text
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: Pd5uYBmryUqhNyAWs_yBtxuJTtG29kK-MI4UqC7Z3R4
+  -
+    collection: ''
+    name: field.storage.taxonomy_term.field_az_attribute_key
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - taxonomy
+      id: taxonomy_term.field_az_attribute_key
+      field_name: field_az_attribute_key
+      entity_type: taxonomy_term
+      type: string
+      settings:
+        max_length: 255
+        case_sensitive: false
+        is_ascii: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: juDiel-D-WutsfhgqVIcZZF6ZZln-tE1f1ymlmg_n8c
+  -
+    collection: ''
+    name: field.storage.taxonomy_term.field_az_attribute_type
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - taxonomy
+      id: taxonomy_term.field_az_attribute_type
+      field_name: field_az_attribute_type
+      entity_type: taxonomy_term
+      type: string
+      settings:
+        max_length: 255
+        case_sensitive: false
+        is_ascii: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: EhjWhA5xvCMi6gFk0uw5fWDq7to_MLUwS5hUuQLNi8A
+  -
+    collection: ''
+    name: image.style.az_enterprise_thumbnail
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        enforced:
+          module:
+            - az_core
+      name: az_enterprise_thumbnail
+      label: 'Enterprise Thumbnail'
+      effects:
+        d0865519-b2ae-4869-93fa-d5b8ecb8f114:
+          uuid: d0865519-b2ae-4869-93fa-d5b8ecb8f114
+          id: image_scale
+          weight: 1
+          data:
+            width: 230
+            height: 150
+            upscale: true
+        3414fda7-70b8-41fe-9cf1-9af34d5df4d5:
+          uuid: 3414fda7-70b8-41fe-9cf1-9af34d5df4d5
+          id: image_convert
+          weight: 2
+          data:
+            extension: webp
+      _core:
+        default_config_hash: D_iPbYCV_ucEH_OgzlXlgfMx8-cOKC5Pte55u57C1LQ
+  -
+    collection: ''
+    name: image.style.az_enterprise_thumbnail_small
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        enforced:
+          module:
+            - az_core
+      name: az_enterprise_thumbnail_small
+      label: 'Enterprise Thumbnail Small'
+      effects:
+        52c2e99e-2c6a-4683-ab16-932a1debaf76:
+          uuid: 52c2e99e-2c6a-4683-ab16-932a1debaf76
+          id: image_scale
+          weight: 1
+          data:
+            width: 190
+            height: 124
+            upscale: true
+        d076f8eb-c27b-44cb-a98d-deb9c3ac6bcf:
+          uuid: d076f8eb-c27b-44cb-a98d-deb9c3ac6bcf
+          id: image_convert
+          weight: 2
+          data:
+            extension: webp
+      _core:
+        default_config_hash: pKyo1wuf42lUsDhNuh_TyejqnEO5Mqgmc966gQ-37Ik
+  -
+    collection: ''
+    name: image.style.az_tiny_thumbnail
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        enforced:
+          module:
+            - az_core
+      name: az_tiny_thumbnail
+      label: 'Tiny thumbnail (50x50)'
+      effects:
+        34546b60-01f5-4c37-b6fa-b06280530a0b:
+          uuid: 34546b60-01f5-4c37-b6fa-b06280530a0b
+          id: image_scale_and_crop
+          weight: 1
+          data:
+            width: 50
+            height: 50
+            anchor: center-center
+        f2e29e0b-4190-4691-9c01-59e0ac3b6035:
+          uuid: f2e29e0b-4190-4691-9c01-59e0ac3b6035
+          id: image_convert
+          weight: 2
+          data:
+            extension: webp
+      _core:
+        default_config_hash: SCdbmpwQJNQibDLWs1lwTQHqkAXZBQaJOEYtAVSVf0Q
+  -
+    collection: ''
+    name: linkit.linkit_profile.az_linkit
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - image.style.az_tiny_thumbnail
+        module:
+          - file
+          - image
+          - node
+        enforced:
+          module:
+            - az_core
+      label: 'Quickstart LinkIt'
+      id: az_linkit
+      description: 'Provides easy linking to Quickstart content and media for site editors.'
+      matchers:
+        3a30add7-6018-45d3-afea-c0c311ac4bc9:
+          id: 'entity:node'
+          uuid: 3a30add7-6018-45d3-afea-c0c311ac4bc9
+          settings:
+            metadata: 'Path: [node:url:path] | ID: [node:nid]'
+            bundles:
+              az_flexible_page: az_flexible_page
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        829301bf-f4fa-42e3-a3fe-4c89a8868633:
+          id: 'entity:file'
+          uuid: 829301bf-f4fa-42e3-a3fe-4c89a8868633
+          settings:
+            metadata: 'Created: [file:created:custom:M j Y - g:i a] | Modified: [file:changed:custom:M j Y - g:i a] | ID: [file:fid]'
+            bundles: null
+            group_by_bundle: null
+            substitution_type: file
+            limit: 100
+            file_extensions: 'pdf doc docx pps ppt xlsx xls png jpg jpeg webp'
+            file_status: 1
+            images:
+              show_dimensions: false
+              show_thumbnail: true
+              thumbnail_image_style: az_tiny_thumbnail
+          weight: 0
+        b1491acc-6a1b-4122-998c-311aaa699e48:
+          id: 'entity:node'
+          uuid: b1491acc-6a1b-4122-998c-311aaa699e48
+          settings:
+            metadata: 'Date: [node:field_az_event_date:value-custom:M j Y - g:i a]'
+            bundles:
+              az_event: az_event
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        1d0eb8f7-5cd7-4d1b-9503-1a06dfdef879:
+          id: 'entity:node'
+          uuid: 1d0eb8f7-5cd7-4d1b-9503-1a06dfdef879
+          settings:
+            metadata: 'Publication date: [node:field_az_published:date:custom:M j Y]'
+            bundles:
+              az_news: az_news
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        5b479f8e-72a3-4398-91d2-fbd9e07b7cb0:
+          id: 'entity:node'
+          uuid: 5b479f8e-72a3-4398-91d2-fbd9e07b7cb0
+          settings:
+            metadata: '[node:field_az_titles]'
+            bundles:
+              az_person: az_person
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        27dc18e6-17cf-46c9-9852-96d6d34b8e59:
+          id: 'entity:node'
+          uuid: 27dc18e6-17cf-46c9-9852-96d6d34b8e59
+          settings:
+            metadata: '[node:field_az_course_term]'
+            bundles:
+              az_course: az_course
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        5115b30e-5340-4e09-9980-afc9e4eee793:
+          id: 'entity:node'
+          uuid: 5115b30e-5340-4e09-9980-afc9e4eee793
+          settings:
+            metadata: '[node:field_az_program_date:start_date:custom:M j Y - ][node:field_az_program_date:end_date:custom:M j Y]'
+            bundles:
+              az_opportunity: az_opportunity
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+        754ab04b-d3f3-421f-a38b-4af90b8d115c:
+          id: 'entity:node'
+          uuid: 754ab04b-d3f3-421f-a38b-4af90b8d115c
+          settings:
+            metadata: '[node:field_az_publication_link]'
+            bundles:
+              az_publication: az_publication
+            group_by_bundle: true
+            substitution_type: canonical
+            limit: 100
+            include_unpublished: false
+          weight: 0
+      _core:
+        default_config_hash: DBdi41Fw9-XxIHdAQEK_TtZh1XSB3SDqw7xB2dkTPZw
+  -
+    collection: ''
+    name: search.page.content_exclude_az_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - search_exclude
+      id: content_exclude_az_content
+      label: Content
+      path: node
+      weight: 0
+      plugin: search_exclude_node_search
+      configuration:
+        rankings: {  }
+        excluded_bundles:
+          az_carousel_item: az_carousel_item
+      _core:
+        default_config_hash: wIUmaFjA35cMIlaL7dDWl08vceYalAP7xMmtvcc1UKg
+  -
+    collection: ''
+    name: smart_title.settings
+    data:
+      smart_title:
+        - 'node:az_carousel_item'
+        - 'node:az_course'
+        - 'node:az_event'
+        - 'node:az_news'
+        - 'node:az_flexible_page'
+        - 'node:az_opportunity'
+        - 'node:az_person'
+        - 'node:az_publication'
+        - 'taxonomy_term:az_event_categories'
+        - 'taxonomy_term:az_news_tags'
+        - 'taxonomy_term:az_page_categories'
+        - 'taxonomy_term:az_person_categories'
+        - 'taxonomy_term:az_person_categories_secondary'
+      _core:
+        default_config_hash: 5_TO-h956TYonKXpm86AJYYJBVneoiEhvK7m95eOg38
+  -
+    collection: ''
+    name: taxonomy.vocabulary.az_enterprise_attributes
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: 'Enterprise Attributes'
+      vid: az_enterprise_attributes
+      description: 'Tags for interfacing with integrations at the University of Arizona'
+      weight: 0
+      new_revision: false
+      _core:
+        default_config_hash: zMV1KWFAs07dAFcxFAFDtN0HuJLAMlZte6xt7jsdvxc
+  -
+    collection: ''
+    name: views.view.az_taxonomy
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_row
+          - core.entity_view_mode.node.rss
+        module:
+          - node
+          - taxonomy
+          - user
+      id: az_taxonomy
+      label: 'Taxonomy List Pages'
+      module: taxonomy
+      description: 'Content belonging to a certain taxonomy term.'
+      tag: default
+      base_table: node_field_data
+      base_field: nid
+      display:
+        default:
+          id: default
+          display_title: Default
+          display_plugin: default
+          position: 0
+          display_options:
+            fields: {  }
+            pager:
+              type: mini
+              options:
+                offset: 0
+                pagination_heading_level: h4
+                items_per_page: 10
+                total_pages: 0
+                id: 0
+                tags:
+                  next: ››
+                  previous: ‹‹
+                expose:
+                  items_per_page: false
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options: '5, 10, 25, 50'
+                  items_per_page_options_all: false
+                  items_per_page_options_all_label: '- All -'
+                  offset: false
+                  offset_label: Offset
+            exposed_form:
+              type: basic
+              options:
+                submit_button: Apply
+                reset_button: false
+                reset_button_label: Reset
+                exposed_sorts_label: 'Sort by'
+                expose_sort_order: true
+                sort_asc_label: Asc
+                sort_desc_label: Desc
+            access:
+              type: perm
+              options:
+                perm: 'access content'
+            cache:
+              type: tag
+              options: {  }
+            empty: {  }
+            sorts:
+              sticky:
+                id: sticky
+                table: taxonomy_index
+                field: sticky
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: standard
+                order: DESC
+                expose:
+                  label: ''
+                  field_identifier: sticky
+                exposed: false
+              created:
+                id: created
+                table: taxonomy_index
+                field: created
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: DESC
+                expose:
+                  label: ''
+                  field_identifier: created
+                exposed: false
+                granularity: second
+            arguments:
+              tid:
+                id: tid
+                table: taxonomy_index
+                field: tid
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: taxonomy_index_tid
+                default_action: 'not found'
+                exception:
+                  value: ''
+                  title_enable: false
+                  title: All
+                title_enable: true
+                title: '{{ arguments.tid }}'
+                default_argument_type: fixed
+                default_argument_options:
+                  argument: ''
+                summary_options:
+                  base_path: ''
+                  count: true
+                  override: false
+                  items_per_page: 25
+                summary:
+                  sort_order: asc
+                  number_of_records: 0
+                  format: default_summary
+                specify_validation: true
+                validate:
+                  type: 'entity:taxonomy_term'
+                  fail: 'not found'
+                validate_options:
+                  bundles: {  }
+                  access: true
+                  operation: view
+                  multiple: 0
+                break_phrase: false
+                add_table: false
+                require_value: false
+                reduce_duplicates: false
+            filters:
+              langcode:
+                id: langcode
+                table: node_field_data
+                field: langcode
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                entity_field: langcode
+                plugin_id: language
+                operator: in
+                value:
+                  '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+                group: 1
+                exposed: false
+                expose:
+                  operator_id: ''
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: ''
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                  reduce: false
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+              status:
+                id: status
+                table: taxonomy_index
+                field: status
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: boolean
+                operator: '='
+                value: '1'
+                group: 1
+                exposed: false
+                expose:
+                  operator_id: ''
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: ''
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+            style:
+              type: default
+              options:
+                grouping: {  }
+                row_class: ''
+                default_row_class: true
+                uses_fields: false
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_row
+            query:
+              type: views_query
+              options:
+                query_comment: ''
+                disable_sql_rewrite: false
+                distinct: false
+                replica: false
+                query_tags: {  }
+            relationships: {  }
+            link_display: page_1
+            link_url: ''
+            header: {  }
+            footer: {  }
+            display_extenders: {  }
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        feed_1:
+          id: feed_1
+          display_title: Feed
+          display_plugin: feed
+          position: 2
+          display_options:
+            pager:
+              type: some
+              options:
+                offset: 0
+                items_per_page: 10
+            style:
+              type: rss
+              options:
+                grouping: {  }
+                uses_fields: false
+                description: ''
+            row:
+              type: node_rss
+              options:
+                relationship: none
+                view_mode: rss
+            query:
+              type: views_query
+              options: {  }
+            display_extenders: {  }
+            path: taxonomy/term/%/feed
+            displays:
+              page_1: page_1
+              default: '0'
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        page_1:
+          id: page_1
+          display_title: Page
+          display_plugin: page
+          position: 1
+          display_options:
+            query:
+              type: views_query
+              options: {  }
+            defaults:
+              css_class: false
+            css_class: add-pager-top-margin
+            display_extenders: {  }
+            path: taxonomy/term/%
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+      _core:
+        default_config_hash: EhzeebmC2JogBpBPib5pKqds2DA0M3o3xNYudsiZKEA

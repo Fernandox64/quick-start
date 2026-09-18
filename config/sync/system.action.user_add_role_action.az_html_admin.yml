@@ -1,0 +1,16 @@
+uuid: 365d791b-60fa-4958-9c50-d9b58c38b649
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_html_admin
+  module:
+    - user
+_core:
+  default_config_hash: qegJ7fd0MqIdYWTCUiaYmStyJSzFLv2GrnbAv40BAug
+id: user_add_role_action.az_html_admin
+label: 'Add the HTML administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: az_html_admin

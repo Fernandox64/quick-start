@@ -1,0 +1,16 @@
+uuid: 1c042a6d-8639-4b6b-824f-6e8708d77dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_profile_editor
+  module:
+    - user
+_core:
+  default_config_hash: N5TS_fN0r-Ya8Qi-d4tPYoLObrz-JZgbZmLRABV1Dg4
+id: user_remove_role_action.az_profile_editor
+label: 'Remove the Profile editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: az_profile_editor

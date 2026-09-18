@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: x1F558egEVKzBFEc0l32_Dklg7vLVyoeZ2GsrqNyceE
+threshold:
+  requirements_warning: 172800
+  requirements_error: 1209600
+logging: false

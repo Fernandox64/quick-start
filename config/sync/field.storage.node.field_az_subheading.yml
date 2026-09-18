@@ -1,0 +1,22 @@
+uuid: 5cce80e0-32f0-41b8-ba17-2ca15eacb1a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: i0kcp5pGNDRu5HofijFa1yhbl5gjpbyJS9nE-eIdF4o
+id: node.field_az_subheading
+field_name: field_az_subheading
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

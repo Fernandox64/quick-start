@@ -1,0 +1,10 @@
+uuid: 7a0ed923-e49e-4a75-b732-8cddfbb6589f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: e-HO-ePwd92hYJRtzs5kR_kJhI45hkFyNqQOvjhfCfQ
+id: az_event_day
+label: 'Event Day'
+locked: false
+pattern: d

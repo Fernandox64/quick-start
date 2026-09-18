@@ -1,0 +1,142 @@
+uuid: f7c093eb-fb10-45b8-90dd-2c0c2fb5fb5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - metatag
+id: config_sync.module.metatag
+snapshotSet: config_sync
+extensionType: module
+extensionName: metatag
+items:
+  -
+    collection: ''
+    name: metatag.metatag_defaults.403
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: '403'
+      label: '403 access denied'
+      tags:
+        robots: noindex
+        canonical_url: '[site:url]'
+        shortlink: '[site:url]'
+      _core:
+        default_config_hash: RDCkFL0NDt75Gwioooxo1iuA1S50xTVsBOgX__c6wTw
+  -
+    collection: ''
+    name: metatag.metatag_defaults.404
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: '404'
+      label: '404 page not found'
+      tags:
+        canonical_url: '[site:url]'
+        shortlink: '[site:url]'
+      _core:
+        default_config_hash: puBstSLDz8mbaWU357zaqQDBGMGsJzG0j-TQNQkjg20
+  -
+    collection: ''
+    name: metatag.metatag_defaults.front
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: front
+      label: 'Front page'
+      tags:
+        canonical_url: '[site:url]'
+        shortlink: '[site:url]'
+      _core:
+        default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+  -
+    collection: ''
+    name: metatag.metatag_defaults.global
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: global
+      label: Global
+      tags:
+        canonical_url: '[site:url]'
+        og_site_name: '[site:name]'
+        og_url: '[site:url]'
+        shortlink: '[site:url]'
+        twitter_cards_type: summary
+        schema_organization_description: '[site:slogan]'
+        schema_organization_name: 'University of Arizona [site:name]'
+        schema_organization_parent_organization: 'a:6:{s:5:"@type";s:23:"EducationalOrganization";s:3:"@id";s:24:"https://www.arizona.edu/";s:4:"name";s:21:"University of Arizona";s:3:"url";s:24:"https://www.arizona.edu/";s:6:"sameAs";s:240:"https://www.facebook.com/uarizona,https://x.com/uarizona,https://www.instagram.com/uarizona,https://linkedin.com/edu/university-of-arizona-17783,https://www.youtube.com/universityofarizona,https://en.wikipedia.org/wiki/University_of_Arizona";s:7:"address";a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:22:"1401 E University Blvd";s:15:"addressLocality";s:6:"Tucson";s:13:"addressRegion";s:2:"AZ";s:10:"postalCode";s:5:"85721";s:14:"addressCountry";s:2:"US";}}'
+        schema_organization_type: CollegeOrUniversity
+        schema_organization_url: '[site:url]'
+        title: '[current-page:title] | [site:name]'
+      _core:
+        default_config_hash: VfucSmsxP3D3A1Y_6kzAw-HheSC04_LQ4uzPM4UMmwY
+      uuid: 3387d020-e17f-4af6-9541-9a3e3e38a23c
+  -
+    collection: ''
+    name: metatag.metatag_defaults.node
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: node
+      label: Content
+      tags:
+        canonical_url: '[node:az-canonical-absolute-url]'
+        description: '[node:field_az_summary]'
+        og_description: '[node:field_az_summary]'
+        og_image: '[node:field_az_media_image:entity:field_media_az_image]'
+        og_title: '[node:title]'
+        og_url: '[node:az-canonical-absolute-url]'
+        title: '[node:title] | [site:name]'
+      _core:
+        default_config_hash: 6VN6TtTSeyQIi-23blJQTk0z1YDfWXO9bI_ZTheDdKY
+      uuid: bb8ae067-a4b0-4ee8-81a1-492035ed7705
+  -
+    collection: ''
+    name: metatag.metatag_defaults.taxonomy_term
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: taxonomy_term
+      label: 'Taxonomy term'
+      tags:
+        canonical_url: '[term:url]'
+        description: '[term:description]'
+        title: '[term:name] | [site:name]'
+      _core:
+        default_config_hash: 92bXZdyYJ5xqukdfmGRr_CYcwm1vfuS8b8aJ7X_G7E0
+  -
+    collection: ''
+    name: metatag.metatag_defaults.user
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: user
+      label: User
+      tags:
+        canonical_url: '[user:url]'
+        description: '[site:name]'
+        title: '[user:display-name] | [site:name]'
+      _core:
+        default_config_hash: MvQPTbQx0Vxwy0ordSHyixdZmLCMpvMdLD69dlwkrKc
+  -
+    collection: ''
+    name: metatag.settings
+    data:
+      entity_type_groups: {  }
+      separator: ''
+      tag_trim_method: beforeValue
+      tag_trim_maxlength: {  }
+      tag_scroll_max_height: ''
+      use_maxlength: true
+      tag_trim_end: '|.,-:;/+&([{"'''
+      trim_suffix: ''
+      _core:
+        default_config_hash: xF-yd0bqa4S5zWER0Kasv-BK0-xGEegxnFERohs2QTs

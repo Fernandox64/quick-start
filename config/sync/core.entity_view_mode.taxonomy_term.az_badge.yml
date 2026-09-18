@@ -1,0 +1,13 @@
+uuid: 81617b19-1d60-42f4-add3-294ff30cdb6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: 3RLLCeGhqNxl8ez5WX3Kn0byu-wqprOPKoxnYFSk4nU
+id: taxonomy_term.az_badge
+label: Badge
+description: ''
+targetEntityType: taxonomy_term
+cache: true

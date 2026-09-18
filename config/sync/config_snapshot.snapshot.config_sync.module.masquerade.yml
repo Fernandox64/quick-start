@@ -1,0 +1,18 @@
+uuid: f90a8c88-49df-4f45-977e-8fa50cdb0666
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+id: config_sync.module.masquerade
+snapshotSet: config_sync
+extensionType: module
+extensionName: masquerade
+items:
+  -
+    collection: ''
+    name: masquerade.settings
+    data:
+      update_user_last_access: false
+      _core:
+        default_config_hash: eCQ24ejs0wqkx4JLFdGMME3I2C-8KtL54L9L_oNN3js

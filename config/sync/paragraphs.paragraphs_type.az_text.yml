@@ -1,0 +1,16 @@
+uuid: 2b9a5734-3e1a-4624-b98b-5a4b82f0c122
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+_core:
+  default_config_hash: pL1rinh33QvHrr646F1-QmaQIi_jdXugZrjd_IGcntE
+id: az_text
+label: Text
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  az_default_paragraph_behavior:
+    enabled: true

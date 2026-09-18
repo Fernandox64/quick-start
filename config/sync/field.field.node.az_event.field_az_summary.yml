@@ -1,0 +1,26 @@
+uuid: f1c695de-e51d-4765-a40a-68ec0342996d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_summary
+    - filter.format.plain_text
+    - node.type.az_event
+  module:
+    - text
+_core:
+  default_config_hash: AxUOTdN3gYf7fXbAVyjyjD4fyw_An7PF8irF-80HAW4
+id: node.az_event.field_az_summary
+field_name: field_az_summary
+entity_type: node
+bundle: az_event
+label: Summary
+description: 'Used in Event lists, Event Teasers, and Event metadata.<br /><strong>Suggested character limit:</strong> 160.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

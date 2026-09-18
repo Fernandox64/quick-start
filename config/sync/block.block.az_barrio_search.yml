@@ -1,0 +1,23 @@
+uuid: 001594f0-badb-45b3-9301-fe8c6b45e419
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: T69eEFyHni_Ba09n_5x12hJQtUlh7M4B1OQwK3TSXW8
+id: az_barrio_search
+theme: az_barrio
+region: header_ua_utilities
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

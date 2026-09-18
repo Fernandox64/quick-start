@@ -1,0 +1,22 @@
+uuid: 47199eca-bb65-4c0d-afe8-2226d13b329b
+langcode: en
+status: true
+dependencies:
+  module:
+    - honeypot
+    - media
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: gNb06fhgq97eiQnOkVOTtUO1yBjw_4FVa0tK6FdEO1w
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access shortcuts'
+  - 'bypass honeypot protection'
+  - 'search content'
+  - 'view media'

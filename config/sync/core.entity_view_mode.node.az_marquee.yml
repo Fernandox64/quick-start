@@ -1,0 +1,13 @@
+uuid: efb549d2-f439-4858-9108-bdaac72cebbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 9Xo0yU0KqArjirJMkDQNjN5-DDwgFq_wwc1li6QC8yQ
+id: node.az_marquee
+label: Marquee
+description: ''
+targetEntityType: node
+cache: true

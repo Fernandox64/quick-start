@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Carrossel de Noticias/Editais recentes, no padrao do componente
+ * "carousel" do Bootstrap 5 (ja carregado pelo arizona-bootstrap-js).
+ *
+ * Variaveis disponiveis:
+ * - slides: lista de { title, summary, url, image_url }
+ #}
+<div id="az-ufop-noticias-carousel" class="carousel slide az-ufop-noticias-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    {% for slide in slides %}
+      <button type="button" data-bs-target="#az-ufop-noticias-carousel" data-bs-slide-to="{{ loop.index0 }}"
+        class="{{ loop.first ? 'active' : '' }}" {% if loop.first %}aria-current="true"{% endif %}
+        aria-label="Notícia {{ loop.index }}"></button>
+    {% endfor %}
+  </div>
+  <div class="carousel-inner">
+    {% for slide in slides %}
+      <div class="carousel-item {{ loop.first ? 'active' : '' }}">
+        <a href="{{ slide.url }}" class="az-ufop-carousel-slide" style="background-image: url('{{ slide.image_url }}');">
+          <div class="az-ufop-carousel-caption">
+            <span class="az-ufop-carousel-eyebrow">Notícias</span>
+            <h3>{{ slide.title }}</h3>
+            {% if slide.summary %}
+              <p>{{ slide.summary }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  {% if slides|length > 1 %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#az-ufop-noticias-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#az-ufop-noticias-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próxima</span>
+    </button>
+  {% endif %}
+</div>

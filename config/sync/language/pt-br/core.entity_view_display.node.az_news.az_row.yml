@@ -1,0 +1,10 @@
+third_party_settings:
+  field_group:
+    group_story_link:
+      label: Link
+    group_media:
+      label: Linha
+    group_media_body:
+      label: Corpo
+    group_media_right:
+      label: Mídia

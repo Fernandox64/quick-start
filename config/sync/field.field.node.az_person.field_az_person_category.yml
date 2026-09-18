@@ -1,0 +1,31 @@
+uuid: 929d69cf-b078-47cd-a46c-c328a4d7ad6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_person_category
+    - node.type.az_person
+    - taxonomy.vocabulary.az_person_categories
+_core:
+  default_config_hash: 4wqGJLSknl6tWdKpz4g53COeEnAtP4ea1UHZZahqzrQ
+id: node.az_person.field_az_person_category
+field_name: field_az_person_category
+entity_type: node
+bundle: az_person
+label: Category
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      az_person_categories: az_person_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

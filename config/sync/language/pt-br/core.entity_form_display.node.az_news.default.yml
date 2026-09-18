@@ -1,0 +1,8 @@
+content:
+  field_az_contacts:
+    settings:
+      title: Contato
+  field_az_main_content:
+    settings:
+      title: Parágrafo
+      title_plural: Parágrafos

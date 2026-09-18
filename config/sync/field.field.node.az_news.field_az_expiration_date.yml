@@ -1,0 +1,26 @@
+uuid: 1d25f0b5-7ff5-4211-b790-aaf1b2e52219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_expiration_date
+    - node.type.az_news
+  module:
+    - datetime
+_core:
+  default_config_hash: vPjtCMd_m7mXdovqISAVhEn0hVh96vcKGM6FwkswTa4
+id: node.az_news.field_az_expiration_date
+field_name: field_az_expiration_date
+entity_type: node
+bundle: az_news
+label: 'Expiration Date'
+description: 'The date and time this news item drops out of website displays.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

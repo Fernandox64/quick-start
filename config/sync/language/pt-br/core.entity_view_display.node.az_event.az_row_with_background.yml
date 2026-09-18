@@ -1,0 +1,12 @@
+third_party_settings:
+  field_group:
+    group_link:
+      label: Link
+    group_card:
+      label: Cartão
+    group_row:
+      label: Linha
+    group_month:
+      label: Mês
+    group_day:
+      label: Dia

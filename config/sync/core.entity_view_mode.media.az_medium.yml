@@ -1,0 +1,13 @@
+uuid: 147bbf94-4d8a-4e79-be1d-f5711476530e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: arxSJY-9FiGR_H2XLg5uLRLsBfFfz8TTDMQ4W9we4Qg
+id: media.az_medium
+label: 'Medium (760px)'
+description: ''
+targetEntityType: media
+cache: true

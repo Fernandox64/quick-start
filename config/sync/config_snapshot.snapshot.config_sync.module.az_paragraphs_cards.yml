@@ -1,0 +1,207 @@
+uuid: 45bdf081-500e-40f1-be05-014bcaa5edda
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_cards
+id: config_sync.module.az_paragraphs_cards
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_cards
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_cards.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_cards.field_az_cards
+          - field.field.paragraph.az_cards.field_az_title
+          - paragraphs.paragraphs_type.az_cards
+        module:
+          - az_card
+      id: paragraph.az_cards.default
+      targetEntityType: paragraph
+      bundle: az_cards
+      mode: default
+      content:
+        field_az_cards:
+          type: az_card
+          weight: 1
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_az_title:
+          type: string_textfield
+          weight: 0
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: VgOS63lJ4_VzbNYIGOZkpbQ9R8HP93SuCMZgNkBbJlA
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_cards.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_cards.field_az_cards
+          - field.field.paragraph.az_cards.field_az_title
+          - paragraphs.paragraphs_type.az_cards
+        module:
+          - az_card
+          - field_group
+      third_party_settings:
+        field_group:
+          group_title:
+            children:
+              - field_az_title
+            label: Title
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: html_element
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              element: h2
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+      id: paragraph.az_cards.default
+      targetEntityType: paragraph
+      bundle: az_cards
+      mode: default
+      content:
+        field_az_cards:
+          type: az_card_default
+          label: hidden
+          settings:
+            interactive_links: true
+          third_party_settings: {  }
+          weight: 1
+          region: content
+        field_az_title:
+          type: string
+          label: hidden
+          settings:
+            link_to_entity: false
+          third_party_settings: {  }
+          weight: 2
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: RJ3o92lNQ-MOsVB4TwhUNUNjaL4vtS6ulNmY3f8Z1iw
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_cards.preview
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.paragraph.preview
+          - field.field.paragraph.az_cards.field_az_cards
+          - field.field.paragraph.az_cards.field_az_title
+          - paragraphs.paragraphs_type.az_cards
+        module:
+          - az_card
+      id: paragraph.az_cards.preview
+      targetEntityType: paragraph
+      bundle: az_cards
+      mode: preview
+      content:
+        field_az_cards:
+          type: az_card_default
+          label: hidden
+          settings:
+            interactive_links: 0
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden:
+        field_az_title: true
+      _core:
+        default_config_hash: RZAAByic9F81pid8X8BwReXsF_6EY156aRhkKKrWAoY
+  -
+    collection: ''
+    name: field.field.paragraph.az_cards.field_az_cards
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_cards
+          - paragraphs.paragraphs_type.az_cards
+        module:
+          - az_card
+      id: paragraph.az_cards.field_az_cards
+      field_name: field_az_cards
+      entity_type: paragraph
+      bundle: az_cards
+      label: Cards
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: az_card
+      _core:
+        default_config_hash: lyo__ShoCqez_7ttlXBrAICae_s4yLmUCcSbbWRjx7o
+  -
+    collection: ''
+    name: field.field.paragraph.az_cards.field_az_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_title
+          - paragraphs.paragraphs_type.az_cards
+      id: paragraph.az_cards.field_az_title
+      field_name: field_az_title
+      entity_type: paragraph
+      bundle: az_cards
+      label: 'Card group title'
+      description: 'Add a custom title above these cards.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: string
+      _core:
+        default_config_hash: zwsXKKhv4u7GocNdBI9mOBcTe6AJiWCXjkCrArXSDuA
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_cards
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_cards
+      label: Cards
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_cards_paragraph_behavior:
+          enabled: true
+      _core:
+        default_config_hash: oJYShOjXeOseKDj9oHppJq0Esw8prus1DfWs-VzSRhY

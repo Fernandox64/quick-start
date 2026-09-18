@@ -1,0 +1,61 @@
+uuid: 33b14725-6f78-43f3-8558-0d958afc4288
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_block_types
+id: config_sync.module.az_block_types
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_block_types
+items:
+  -
+    collection: ''
+    name: field.storage.block_content.field_az_links
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_content
+          - link
+      id: block_content.field_az_links
+      field_name: field_az_links
+      entity_type: block_content
+      type: link
+      settings: {  }
+      module: link
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: cuOSAyUbd9a70DlP52qTIjn5NgeWU2SajNrNyGmSt7g
+  -
+    collection: ''
+    name: field.storage.block_content.field_az_short_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - block_content
+      id: block_content.field_az_short_title
+      field_name: field_az_short_title
+      entity_type: block_content
+      type: string
+      settings:
+        max_length: 255
+        is_ascii: false
+        case_sensitive: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: '-5J4iedjv_lCdAKp71Nat6ngO8LSs21diWQU_T-Lgpo'

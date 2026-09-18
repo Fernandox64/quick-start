@@ -1,0 +1,26 @@
+uuid: f9db257e-6ab2-4c7d-ad78-e999543956e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_research_interests
+    - filter.format.plain_text
+    - node.type.az_person
+  module:
+    - text
+_core:
+  default_config_hash: H6mhZwGbbInE8Pi9fjF0L3V_V30Kflj868Cr13SYMwY
+id: node.az_person.field_az_research_interests
+field_name: field_az_research_interests
+entity_type: node
+bundle: az_person
+label: 'Research Interests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

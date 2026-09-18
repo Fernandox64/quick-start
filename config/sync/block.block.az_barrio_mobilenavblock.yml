@@ -1,0 +1,23 @@
+uuid: e7521c33-a447-43cd-900a-2f48cf1750e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_core
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: k5j1BcF93oMi9O57rbxDPN9xNVFSGgPailNja1uQ3wQ
+id: az_barrio_mobilenavblock
+theme: az_barrio
+region: navigation_offcanvas
+weight: 1
+provider: null
+plugin: mobile_nav_block
+settings:
+  id: mobile_nav_block
+  label: 'Mobile Nav Block'
+  label_display: '0'
+  provider: az_core
+  menu_id: main
+visibility: {  }

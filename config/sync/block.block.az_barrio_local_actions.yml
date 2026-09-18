@@ -1,0 +1,20 @@
+uuid: 8d753b2f-539e-4432-9301-19587eebc399
+langcode: en
+status: true
+dependencies:
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: gl-ZJdNcnyxocS5CG-0IaqMA9PlwNFux5SteednDTfA
+id: az_barrio_local_actions
+theme: az_barrio
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

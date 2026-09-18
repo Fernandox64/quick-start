@@ -1,0 +1,13 @@
+uuid: 7baa2b15-e66a-43ab-ae1d-86b48ff6cc13
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: PEGi1o-QHMQHlQzGIy9dYzhOGnrPCKSia3bwWj_ycas
+id: node.az_medium_media_list
+label: 'Medium Media List'
+description: ''
+targetEntityType: node
+cache: true

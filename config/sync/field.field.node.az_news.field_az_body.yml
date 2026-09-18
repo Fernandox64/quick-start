@@ -1,0 +1,26 @@
+uuid: e272c9f4-880c-4044-89df-946e4a30ece2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_body
+    - filter.format.az_standard
+    - node.type.az_news
+  module:
+    - text
+_core:
+  default_config_hash: v-7DPjlRNw9FVOE_U-ihicJCLdhGzupPcpZI52F3DFY
+id: node.az_news.field_az_body
+field_name: field_az_body
+entity_type: node
+bundle: az_news
+label: 'Article Body'
+description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - az_standard
+field_type: text_long

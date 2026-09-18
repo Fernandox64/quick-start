@@ -1,0 +1,56 @@
+uuid: 54462a51-40fa-46db-8b8a-dd4951515c2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.az_remote_video.field_media_az_image
+    - field.field.media.az_remote_video.field_media_az_oembed_video
+    - media.type.az_remote_video
+  module:
+    - field_group
+    - media
+third_party_settings:
+  field_group:
+    group_16x9:
+      children:
+        - field_media_az_oembed_video
+      label: '16:9 Responsive'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'ratio ratio-16x9 az-default az-media'
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: d_V4E9-MM-DXQTwEdMBkCAGMcGYUDXlFXBfeRqCcJHU
+id: media.az_remote_video.default
+targetEntityType: media
+bundle: az_remote_video
+mode: default
+content:
+  field_media_az_oembed_video:
+    type: oembed
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+      loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_media_az_image: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

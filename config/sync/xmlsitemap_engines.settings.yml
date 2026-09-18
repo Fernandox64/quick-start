@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: JgBInGR_gEYgn1_KIpnIhxrCkTnadNxemqo4q8hkbao
+engines:
+  bing: bing
+  google: google
+custom_urls: ''
+minimum_lifetime: 86400

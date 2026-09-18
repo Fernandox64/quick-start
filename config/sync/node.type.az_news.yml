@@ -1,0 +1,20 @@
+uuid: 7b404ae0-64bf-42a9-8ed5-2f1e0e1800e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: rAfBxgmmHlE2QpChjVuWisCU_sSK16GL5F91FrUmhrw
+name: News
+type: az_news
+description: 'Use this content type to add news stories to your site.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

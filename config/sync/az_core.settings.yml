@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: YzB8LrtYa0ri2bMvH_4drcV8T3OIf3N07yCLCgitjAU
+monitoring_page:
+  enabled: false
+  path: ''
+enterprise_attributes:
+  locked: true

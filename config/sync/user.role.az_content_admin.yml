@@ -1,0 +1,92 @@
+uuid: 9a5d0d2f-154d-45a3-b132-e99db63d1d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.az_audio
+    - media.type.az_document
+    - media.type.az_image
+    - media.type.az_remote_video
+    - media.type.az_video
+    - node.type.az_event
+    - node.type.az_flexible_page
+    - node.type.az_news
+    - node.type.az_person
+    - taxonomy.vocabulary.az_event_categories
+    - taxonomy.vocabulary.az_news_tags
+    - taxonomy.vocabulary.az_page_categories
+    - taxonomy.vocabulary.az_person_categories
+    - taxonomy.vocabulary.az_person_categories_secondary
+  module:
+    - az_core
+    - az_flexible_page
+    - az_google_tag
+    - block
+    - block_class
+    - block_content
+    - easy_breadcrumb
+    - file
+    - language
+    - media
+    - metatag
+    - node
+    - path
+    - redirect
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - xmlsitemap
+_core:
+  default_config_hash: NATl78y3KgkcBV24N0_kuKw5OXRViP3jjMfo_Fgfvu0
+id: az_content_admin
+label: 'Content administrator'
+weight: -5
+is_admin: false
+permissions:
+  - 'access az_quickstart_analytics'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'administer block classes'
+  - 'administer block content'
+  - 'administer blocks'
+  - 'administer easy breadcrumb'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer quickstart configuration'
+  - 'administer redirects'
+  - 'administer shortcuts'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer xmlsitemap'
+  - 'bypass node access'
+  - 'create terms in az_event_categories'
+  - 'create terms in az_news_tags'
+  - 'create terms in az_page_categories'
+  - 'create terms in az_person_categories'
+  - 'create terms in az_person_categories_secondary'
+  - 'customize shortcut links'
+  - 'delete any az_audio media'
+  - 'delete any az_document media'
+  - 'delete any az_event content'
+  - 'delete any az_flexible_page content'
+  - 'delete any az_image media'
+  - 'delete any az_news content'
+  - 'delete any az_person content'
+  - 'delete any az_remote_video media'
+  - 'delete any az_video media'
+  - 'delete any file'
+  - 'delete terms in az_event_categories'
+  - 'delete terms in az_news_tags'
+  - 'delete terms in az_page_categories'
+  - 'delete terms in az_person_categories'
+  - 'delete terms in az_person_categories_secondary'
+  - 'edit terms in az_event_categories'
+  - 'edit terms in az_news_tags'
+  - 'edit terms in az_page_categories'
+  - 'edit terms in az_person_categories'
+  - 'edit terms in az_person_categories_secondary'
+  - 'update any media'
+  - 'use advanced search'
+  - 'use marketing campaign page styles'

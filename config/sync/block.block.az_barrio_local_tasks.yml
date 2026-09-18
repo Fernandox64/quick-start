@@ -1,0 +1,22 @@
+uuid: bccd0707-d259-4f4c-a79c-9a2138795f8d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: WZUhcDvP69duA9Cr4YY9E3ZyQhJ-wpxftZ3Ry5GY6qs
+id: az_barrio_local_tasks
+theme: az_barrio
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

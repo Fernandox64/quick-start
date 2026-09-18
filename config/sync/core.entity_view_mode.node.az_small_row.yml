@@ -1,0 +1,13 @@
+uuid: 426e2729-dfd6-452f-8e1d-176d5c230a7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 5J_8OFrYNiDWE9iIRfZQlFTRQWIak-zmwiUa7hhPvbQ
+id: node.az_small_row
+label: 'Small Row'
+description: ''
+targetEntityType: node
+cache: true

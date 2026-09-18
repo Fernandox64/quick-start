@@ -1,0 +1,12 @@
+third_party_settings:
+  field_group:
+    group_row:
+      label: Linha
+    group_card:
+      label: Cartão
+    group_links:
+      label: Links
+    group_az_name:
+      label: Nome
+    group_tabs:
+      label: Abas

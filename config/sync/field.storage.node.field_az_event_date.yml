@@ -1,0 +1,21 @@
+uuid: e2c4d8f7-1700-4ae5-aa82-e3f0566ecef4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - smart_date
+_core:
+  default_config_hash: NBJb2FlmZb2bgnOB0jJ6Ic3FGm-L0hqECyuALU2Hu6w
+id: node.field_az_event_date
+field_name: field_az_event_date
+entity_type: node
+type: smartdate
+settings: {  }
+module: smart_date
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

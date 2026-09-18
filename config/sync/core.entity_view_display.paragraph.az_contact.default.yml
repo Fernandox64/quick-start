@@ -1,0 +1,63 @@
+uuid: 51c78cfb-c334-4241-8f55-229d938903f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.az_contact.field_az_email
+    - field.field.paragraph.az_contact.field_az_phone
+    - field.field.paragraph.az_contact.field_az_title
+    - paragraphs.paragraphs_type.az_contact
+  module:
+    - field_group
+    - telephone
+third_party_settings:
+  field_group:
+    group_contact_name:
+      children:
+        - field_az_title
+      label: 'Contact Name'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'fw-bold mt-3'
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: bvRmExUJQ-y8-TKgTVwt-dlmGB97uV0Uld8tgYwT2C0
+id: paragraph.az_contact.default
+targetEntityType: paragraph
+bundle: az_contact
+mode: default
+content:
+  field_az_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_az_phone:
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_az_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 701ce11c-7afa-4210-9996-01fdda2275ec
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: aN1etcCTMQtnF-QlTGU4V6-qCoztdhKDpux14ut5J8g
+id: az_barrio_powered
+theme: az_barrio
+region: footer
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

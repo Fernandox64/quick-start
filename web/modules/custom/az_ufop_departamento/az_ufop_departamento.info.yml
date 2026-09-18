@@ -1,0 +1,11 @@
+name: 'UFOP Departamento (extras)'
+type: module
+description: 'Adiciona ao az_quickstart o que faltava para paridade com o site institucional em Laravel: distinção Notícia/Edital, Docente/Funcionário, e o tipo de conteúdo Curso (Graduação/Pós-Graduação).'
+package: 'UFOP'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:az_news
+  - drupal:az_person
+  - drupal:taxonomy
+  - drupal:node
+  - drupal:field

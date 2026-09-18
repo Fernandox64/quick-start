@@ -1,0 +1,71 @@
+display:
+  default:
+    display_title: Principal
+    display_options:
+      title: Diretório
+      fields:
+        field_az_person_category:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Redefinir
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Ascendente
+          sort_desc_label: Decrescente
+      arguments:
+        tid:
+          exception:
+            title: Tudo
+  grid:
+    display_options:
+      fields:
+        field_az_person_category:
+          separator: ', '
+  grid_block_3cols:
+    display_options:
+      fields:
+        field_az_person_category:
+          separator: ', '
+  grid_modal:
+    display_options:
+      fields:
+        nid:
+          separator: ', '
+        field_az_suffix:
+          separator: ', '
+        title:
+          separator: ', '
+        title_1:
+          separator: ', '
+        field_az_media_image:
+          separator: ', '
+        field_az_media_image_1:
+          separator: ', '
+        field_az_email:
+          separator: ', '
+        field_az_body:
+          separator: ', '
+        nothing:
+          admin_label: Cartão
+  grid_modal_3cols:
+    display_options:
+      fields:
+        nid:
+          separator: ', '
+        field_az_suffix:
+          separator: ', '
+        title:
+          separator: ', '
+        title_1:
+          separator: ', '
+        field_az_media_image:
+          separator: ', '
+        field_az_media_image_1:
+          separator: ', '
+        field_az_email:
+          separator: ', '
+        field_az_body:
+          separator: ', '
+        nothing:
+          admin_label: Cartão

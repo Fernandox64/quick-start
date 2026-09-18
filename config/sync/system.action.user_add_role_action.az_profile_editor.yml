@@ -1,0 +1,16 @@
+uuid: 85d4993a-2580-4975-a688-1223bd6d1d57
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_profile_editor
+  module:
+    - user
+_core:
+  default_config_hash: mDKrxacT8Exp7cbwr2cbzx8JPiR7EZt60lg0YLxAnJI
+id: user_add_role_action.az_profile_editor
+label: 'Add the Profile editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: az_profile_editor

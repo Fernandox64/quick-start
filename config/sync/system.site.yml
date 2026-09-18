@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: xw9YKx7QgzQZt891FvWas4dOWZ-tz3P0ewVfnhHEGNA
+langcode: en
+uuid: 48ec5c90-258d-41f2-87e0-28a7227844c6
+name: 'Departamento Modelo (via Laravel)'
+mail: admin@example.com
+slogan: 'Modelo nativo Drupal / Arizona Quickstart para comparacao'
+page:
+  403: ''
+  404: ''
+  front: /node/1003
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: pt-br

@@ -1,0 +1,48 @@
+uuid: 4d6d4773-fd9a-4df5-bc62-5a9e6fbab3b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.az_text_media.field_az_media
+    - field.field.paragraph.az_text_media.field_az_text_area
+    - field.field.paragraph.az_text_media.field_az_title
+    - paragraphs.paragraphs_type.az_text_media
+  module:
+    - media_library
+    - media_library_edit
+    - text
+_core:
+  default_config_hash: Gq6HQ_JdD1mm3qt07tBuYC6oJx1xokrR_MnXaXucYTI
+id: paragraph.az_text_media.default
+targetEntityType: paragraph
+bundle: az_text_media
+mode: default
+content:
+  field_az_media:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: true
+  field_az_text_area:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_az_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

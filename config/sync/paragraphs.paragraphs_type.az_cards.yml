@@ -1,0 +1,16 @@
+uuid: fdf1c358-604e-4f45-a665-a5114532315f
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+_core:
+  default_config_hash: bOLcj1USVTR8WNh_TxG1P6Ic1vtXMNMfRuGkPoHTbOU
+id: az_cards
+label: Cards
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  az_cards_paragraph_behavior:
+    enabled: true

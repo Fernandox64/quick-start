@@ -1,0 +1,43 @@
+uuid: de8b9cb9-4e98-40cf-9a72-84a0364d9cd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.az_card_image
+    - field.field.media.az_image.field_az_caption
+    - field.field.media.az_image.field_az_credit
+    - field.field.media.az_image.field_focal_point_x
+    - field.field.media.az_image.field_focal_point_y
+    - field.field.media.az_image.field_media_az_image
+    - image.style.az_card_image
+    - media.type.az_image
+  module:
+    - image
+_core:
+  default_config_hash: Cx6-GOToKV9e8B3UiOXU3aIEC6Oif9LzDzv-PindDqw
+id: media.az_image.az_card_image
+targetEntityType: media
+bundle: az_image
+mode: az_card_image
+content:
+  field_media_az_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: az_card_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_az_caption: true
+  field_az_credit: true
+  field_focal_point_x: true
+  field_focal_point_y: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

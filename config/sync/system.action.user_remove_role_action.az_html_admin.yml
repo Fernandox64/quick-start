@@ -1,0 +1,16 @@
+uuid: 64b36fce-784f-4b1a-802b-207a018497c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_html_admin
+  module:
+    - user
+_core:
+  default_config_hash: mharDG-cVlRXM1TTAgvV2KNj3n-pkTTnZMQEmGRYHH8
+id: user_remove_role_action.az_html_admin
+label: 'Remove the HTML administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: az_html_admin

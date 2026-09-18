@@ -1,0 +1,29 @@
+uuid: b67c6d0a-1fe3-436e-9b60-0b67bec09f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_attachments
+    - node.type.az_event
+  module:
+    - file
+_core:
+  default_config_hash: stqy0TR0eiHLUZ5dIQ-Ml5NsEgVhxXvIYq9JDZPG8xk
+id: node.az_event.field_az_attachments
+field_name: field_az_attachments
+entity_type: node
+bundle: az_event
+label: Attachments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents
+  file_extensions: pdf
+  max_filesize: '10 MB'
+  description_field: true
+field_type: file

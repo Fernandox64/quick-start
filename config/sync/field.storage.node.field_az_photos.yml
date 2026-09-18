@@ -1,0 +1,22 @@
+uuid: dc96f249-fa9d-41e8-8795-aa51c97b4739
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: GnCgUh4i5ZjnoD00GDcnMEW-G5MoI2tW_hFcPSgXmTQ
+id: node.field_az_photos
+field_name: field_az_photos
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

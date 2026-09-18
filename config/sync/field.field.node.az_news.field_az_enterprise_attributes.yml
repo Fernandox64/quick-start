@@ -1,0 +1,31 @@
+uuid: 62df1023-3504-4c02-bfb4-90df54cc7bf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_enterprise_attributes
+    - node.type.az_news
+    - taxonomy.vocabulary.az_enterprise_attributes
+_core:
+  default_config_hash: bDP7tr5FyuNjwhpaWVrjK0mFa9gli3ssJeK-tECCajg
+id: node.az_news.field_az_enterprise_attributes
+field_name: field_az_enterprise_attributes
+entity_type: node
+bundle: az_news
+label: 'Enterprise Attributes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      az_enterprise_attributes: az_enterprise_attributes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

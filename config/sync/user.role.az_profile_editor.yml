@@ -1,0 +1,40 @@
+uuid: 0037bf12-8b2b-4cbb-8972-6e1501473eb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.az_standard
+    - media.type.az_document
+    - media.type.az_image
+    - node.type.az_person
+  module:
+    - az_core
+    - contextual
+    - file
+    - filter
+    - media
+    - node
+    - system
+    - toolbar
+_core:
+  default_config_hash: Frv3tpatG_c5sO20G2b2Ihh7bOyjTcBbN1FmSB2q5ko
+id: az_profile_editor
+label: 'Profile editor'
+weight: -7
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'create az_document media'
+  - 'create az_image media'
+  - 'delete own az_document media'
+  - 'delete own az_image media'
+  - 'delete own files'
+  - 'edit matching netid content'
+  - 'edit own az_document media'
+  - 'edit own az_image media'
+  - 'edit own az_person content'
+  - 'use text format az_standard'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

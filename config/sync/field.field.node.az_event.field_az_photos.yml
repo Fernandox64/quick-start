@@ -1,0 +1,31 @@
+uuid: 1a16b3e0-64e8-424a-9955-64acc10c4769
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_photos
+    - media.type.az_image
+    - node.type.az_event
+_core:
+  default_config_hash: o-X_KR9Uf7HBEpi2t8mWLYd9wXdG2DDb8ZopWAEELb8
+id: node.az_event.field_az_photos
+field_name: field_az_photos
+entity_type: node
+bundle: az_event
+label: 'Featured Images'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      az_image: az_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

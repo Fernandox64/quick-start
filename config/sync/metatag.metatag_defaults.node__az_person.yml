@@ -1,0 +1,12 @@
+uuid: 004a66a7-31ed-4dee-a083-8af2b556ce73
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SFz-bbLw2AFyNEqr-vfNxSiM4f4SgZPRIbEDZ193e84
+id: node__az_person
+label: 'Content: Person'
+tags:
+  og_type: profile
+  profile_first_name: '[node:field_az_fname]'
+  profile_last_name: '[node:field_az_lname]'

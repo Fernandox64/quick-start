@@ -1,0 +1,29 @@
+# Reclassify various Drupal files as PHP.
+*.install linguist-language=PHP
+*.module linguist-language=PHP
+*.profile linguist-language=PHP
+*.theme linguist-language=PHP
+
+# Classify library folders as vendor code.
+libraries/** linguist-vendored
+
+# Classify generated library files as such.
+*.min.css linguist-generated=true
+*.min.js linguist-generated=true
+
+# Set DDEV command files to lf.
+.ddev/commands/web/install text eol=lf
+.ddev/commands/web/drupal text eol=lf
+.ddev/commands/web/drush text eol=lf
+.ddev/commands/web/phpcbf text eol=lf
+.ddev/commands/web/phpcs text eol=lf
+.ddev/commands/web/phpstan text eol=lf
+.ddev/commands/web/phpstan-contrib text eol=lf
+.ddev/commands/web/phpunit text eol=lf
+
+# Exclude dev files from archives.
+.* export-ignore
+*.neon export-ignore
+*.xml.dist export-ignore
+package.json export-ignore
+yarn.lock export-ignore linguist-generated=true

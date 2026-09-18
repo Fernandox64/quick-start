@@ -1,0 +1,32 @@
+uuid: c29838e6-c4e5-4bd1-ada2-e266b5adab52
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.az_news
+  module:
+    - system
+    - views
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: jobKerLJevdtDgAS6XVpjhDOpHH3TxSu8mGdGOJmjF8
+id: views_block__az_news_az_sidebar
+theme: az_barrio
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'views_block:az_news-az_sidebar'
+settings:
+  id: 'views_block:az_news-az_sidebar'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/news/*'

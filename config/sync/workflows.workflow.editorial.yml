@@ -1,0 +1,54 @@
+uuid: 4328d145-efa2-4843-b1ff-86392f0bee81
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_moderation
+_core:
+  default_config_hash: p4EAX_VyATB3ssd00jHKmdxP4CwPvsiuHul4lvipiGI
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+    unpublished:
+      label: Unpublished
+      weight: 1
+      published: false
+      default_revision: true
+  transitions:
+    az_publish:
+      label: Publish
+      from:
+        - draft
+        - published
+        - unpublished
+      to: published
+      weight: 0
+    az_unpublish:
+      label: Unpublish
+      from:
+        - unpublished
+        - published
+        - draft
+      to: unpublished
+      weight: 1
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: -2
+  entity_types: {  }
+  default_moderation_state: draft

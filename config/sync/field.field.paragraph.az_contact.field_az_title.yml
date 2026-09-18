@@ -1,0 +1,21 @@
+uuid: 638e675b-4f51-4ac7-8138-e827be2fa04f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_title
+    - paragraphs.paragraphs_type.az_contact
+_core:
+  default_config_hash: gGFFLrloVgWZwccNFk0eRJqj02eDnU3D7FksDaGai6I
+id: paragraph.az_contact.field_az_title
+field_name: field_az_title
+entity_type: paragraph
+bundle: az_contact
+label: 'Contact Name'
+description: 'Full name if possible.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

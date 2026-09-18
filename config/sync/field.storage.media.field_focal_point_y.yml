@@ -1,0 +1,22 @@
+uuid: 74f74dcf-7d1d-45ef-be20-787937a942c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: maBT2m6awLrMNR7l4rB6i59VjgzH0fSfDeF_6OI6QLY
+id: media.field_focal_point_y
+field_name: field_focal_point_y
+entity_type: media
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

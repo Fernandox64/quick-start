@@ -1,0 +1,11 @@
+uuid: c372b02d-085d-434c-b063-7d68dfad16d5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eqT2sNQZC9ndUaqg7eRgisoXmV1CebLBixJ2MZ1F6AM
+name: 'Event Categories'
+vid: az_event_categories
+description: 'Taxonomy for categorizing events'
+weight: 0
+new_revision: false

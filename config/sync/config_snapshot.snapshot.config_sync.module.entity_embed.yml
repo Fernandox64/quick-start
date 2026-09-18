@@ -1,0 +1,38 @@
+uuid: dbe15123-ccbc-4cd0-9799-a54d7b02098b
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+id: config_sync.module.entity_embed
+snapshotSet: config_sync
+extensionType: module
+extensionName: entity_embed
+items:
+  -
+    collection: ''
+    name: embed.button.node
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - entity_embed
+          - node
+      label: Node
+      id: node
+      type_id: entity
+      type_settings:
+        entity_type: node
+        bundles: {  }
+        display_plugins: {  }
+      icon_uuid: null
+      _core:
+        default_config_hash: xgvZUh-eaMilacE1XYCQ9nLH-2-meOjCyofXSO82gqg
+  -
+    collection: ''
+    name: entity_embed.settings
+    data:
+      rendered_entity_mode: false
+      _core:
+        default_config_hash: 2qpyZdlgcQidJq1yw1VHXLCl5jDi4dKBWFWLQR4VDfw

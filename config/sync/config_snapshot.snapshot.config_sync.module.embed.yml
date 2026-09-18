@@ -1,0 +1,19 @@
+uuid: deb472ba-1832-47aa-a7b4-67071428791b
+langcode: en
+status: true
+dependencies:
+  module:
+    - embed
+id: config_sync.module.embed
+snapshotSet: config_sync
+extensionType: module
+extensionName: embed
+items:
+  -
+    collection: ''
+    name: embed.settings
+    data:
+      file_scheme: public
+      upload_directory: embed_buttons
+      _core:
+        default_config_hash: Ed6LXVlKotwVS4tx7_rnsL-6NlBoD-PLu3KFPAvpNMc

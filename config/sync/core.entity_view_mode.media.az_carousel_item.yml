@@ -1,0 +1,13 @@
+uuid: d2a4295a-02a3-4f22-adbd-44498ef28776
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: AINkhm02s7EWKq7_4ie3vjrMUoigmWqS4WfOQo0SaEY
+id: media.az_carousel_item
+label: 'Carousel Item'
+description: ''
+targetEntityType: media
+cache: true

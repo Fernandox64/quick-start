@@ -1,0 +1,22 @@
+uuid: 42d2995b-1075-4090-8b53-261cd0cd7219
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: JSxQa38T5rqgQNeIymiVLhS_hIu9RBQ1B06gGC4lF64
+id: az_barrio_content
+theme: az_barrio
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

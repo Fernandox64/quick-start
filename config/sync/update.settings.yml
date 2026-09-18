@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: zT-YWT7pbbxYGLK1kATmL4IBGsIM6a9IePG94woXgfc
+check:
+  disabled_extensions: true
+  interval_days: 1
+fetch:
+  url: null
+  max_attempts: 2
+  timeout: 30
+notification:
+  emails:
+    - noreply@email.arizona.edu
+  threshold: all

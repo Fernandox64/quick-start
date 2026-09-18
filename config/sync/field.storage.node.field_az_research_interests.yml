@@ -1,0 +1,21 @@
+uuid: 1fae72ae-3924-435f-9646-9aec069528bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: v64vR5pSlmE5EBMTzlrLUctjhXX7stdzBQrwjD6-Mv0
+id: node.field_az_research_interests
+field_name: field_az_research_interests
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

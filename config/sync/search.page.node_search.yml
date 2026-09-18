@@ -1,0 +1,15 @@
+uuid: ceef471a-8efb-4eb5-bbb4-c173eb399a0f
+langcode: en
+status: false
+dependencies:
+  module:
+    - search_node
+_core:
+  default_config_hash: DHOQ5n3YlikArKvau7Rr3lXOojtBY1tnGYXAjsqw5Qw
+id: node_search
+label: Content
+path: node
+weight: -10
+plugin: node_search
+configuration:
+  rankings: {  }

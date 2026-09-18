@@ -1,0 +1,3 @@
+error_handling:
+  login_failure_page: /user/login
+login_link_label: 'Login CAS'

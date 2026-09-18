@@ -1,0 +1,10 @@
+third_party_settings:
+  field_group:
+    group_row:
+      label: Linha
+    group_media:
+      label: Mídia
+    group_heading:
+      label: Cabeçalho
+    group_link:
+      label: Link

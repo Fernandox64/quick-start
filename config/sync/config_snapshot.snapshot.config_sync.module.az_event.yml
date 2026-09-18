@@ -1,0 +1,3564 @@
+uuid: 9830c524-5061-41e1-ba2c-bc5b9f1ca37e
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_event
+id: config_sync.module.az_event
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_event
+items:
+  -
+    collection: ''
+    name: core.base_field_override.node.az_event.promote
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - node.type.az_event
+      id: node.az_event.promote
+      field_name: promote
+      entity_type: node
+      bundle: az_event
+      label: 'Promoted to front page'
+      description: ''
+      required: false
+      translatable: true
+      default_value:
+        -
+          value: 0
+      default_value_callback: ''
+      settings:
+        on_label: 'On'
+        off_label: 'Off'
+      field_type: boolean
+      _core:
+        default_config_hash: c_bvfpeUdEIRHrpxzqcbsprmQBxYfJZpSBX2o7RaBrU
+  -
+    collection: ''
+    name: core.date_format.az_event_day
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: az_event_day
+      label: 'Event Day'
+      locked: false
+      pattern: d
+      _core:
+        default_config_hash: 3DhqEtYAWUEcwddg6uI-g5ZABaL_gc8mYk8WslGZ3MM
+  -
+    collection: ''
+    name: core.date_format.az_event_month
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: az_event_month
+      label: 'Event Month'
+      locked: false
+      pattern: M
+      _core:
+        default_config_hash: 0N90gxywnqVkKZmVDWW0WU9na_SBJHa7wOd7IjOZQm8
+  -
+    collection: ''
+    name: core.entity_form_display.node.az_event.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_metatag
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - az_core
+          - field_group
+          - file
+          - link
+          - media_library
+          - media_library_edit
+          - metatag
+          - paragraphs
+          - path
+          - smart_date
+          - smart_date_recur
+          - text
+      third_party_settings:
+        field_group:
+          group_summary:
+            children:
+              - field_az_link
+              - field_az_featured_image_as_thumb
+              - field_az_media_thumbnail_image
+              - field_az_summary
+            label: 'Summary fields'
+            region: content
+            parent_name: ''
+            weight: 16
+            format_type: details_sidebar
+            format_settings:
+              classes: ''
+              show_empty_fields: false
+              id: ''
+              open: true
+              description: 'Summary fields determine how this event appears in feeds, listings and other displays throughout the site.'
+              required_fields: true
+              weight: -10
+      id: node.az_event.default
+      targetEntityType: node
+      bundle: az_event
+      mode: default
+      content:
+        created:
+          type: datetime_timestamp
+          weight: 2
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_az_attachments:
+          type: file_generic
+          weight: 15
+          region: content
+          settings:
+            progress_indicator: throbber
+          third_party_settings: {  }
+        field_az_body:
+          type: text_textarea
+          weight: 13
+          region: content
+          settings:
+            rows: 9
+            placeholder: ''
+          third_party_settings: {  }
+        field_az_contacts:
+          type: entity_reference_paragraphs
+          weight: 17
+          region: content
+          settings:
+            title: Contact
+            title_plural: Contacts
+            edit_mode: open
+            add_mode: dropdown
+            form_display_mode: default
+            default_paragraph_type: _none
+          third_party_settings: {  }
+        field_az_enterprise_attributes:
+          type: attributes_select
+          weight: 10
+          region: content
+          settings:
+            allowed_attributes:
+              Audiences__c: Audiences__c
+              Topic__c: Topic__c
+              Category1__c: Category1__c
+              Event_Format__c: Event_Format__c
+              Arizona_County__c: 0
+              Tribal_Nation__c: 0
+              Display_Name_Formula__c: 0
+          third_party_settings: {  }
+        field_az_event_category:
+          type: options_select
+          weight: 9
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_az_event_date:
+          type: smartdate_default
+          weight: 12
+          region: content
+          settings:
+            modal: false
+            default_duration: 60
+            default_duration_increments: |-
+              30
+              60|1 hour
+              90
+              120|2 hours
+              custom
+            show_extra: false
+            hide_date: false
+            allday: true
+            remove_seconds: false
+            duration_overlay: true
+          third_party_settings:
+            smart_date_recur:
+              modal: true
+              allowed_recur_freq_values:
+                MINUTELY: '0'
+                HOURLY: '0'
+                DAILY: DAILY
+                WEEKLY: WEEKLY
+                MONTHLY: MONTHLY
+                YEARLY: YEARLY
+        field_az_featured_image_as_thumb:
+          type: boolean_checkbox
+          weight: 32
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        field_az_link:
+          type: link_default
+          weight: 31
+          region: content
+          settings:
+            placeholder_url: ''
+            placeholder_title: ''
+          third_party_settings: {  }
+        field_az_location:
+          type: link_default
+          weight: 14
+          region: content
+          settings:
+            placeholder_url: ''
+            placeholder_title: ''
+          third_party_settings: {  }
+        field_az_media_thumbnail_image:
+          type: media_library_widget
+          weight: 33
+          region: content
+          settings:
+            media_types: {  }
+          third_party_settings:
+            media_library_edit:
+              show_edit: true
+        field_az_metatag:
+          type: metatag_firehose
+          weight: 18
+          region: content
+          settings:
+            sidebar: true
+            use_details: true
+          third_party_settings: {  }
+        field_az_photos:
+          type: media_library_widget
+          weight: 11
+          region: content
+          settings:
+            media_types: {  }
+          third_party_settings:
+            media_library_edit:
+              show_edit: true
+        field_az_subheading:
+          type: text_textfield
+          weight: 8
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        field_az_summary:
+          type: text_textarea
+          weight: 34
+          region: content
+          settings:
+            rows: 5
+            placeholder: ''
+          third_party_settings: {  }
+        path:
+          type: path
+          weight: 5
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        promote:
+          type: boolean_checkbox
+          weight: 3
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        status:
+          type: boolean_checkbox
+          weight: 7
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        sticky:
+          type: boolean_checkbox
+          weight: 4
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        title:
+          type: string_textfield
+          weight: 0
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        uid:
+          type: entity_reference_autocomplete
+          weight: 1
+          region: content
+          settings:
+            match_operator: CONTAINS
+            match_limit: 10
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        url_redirects:
+          weight: 6
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+      hidden:
+        field_az_trellis_id: true
+      _core:
+        default_config_hash: IMPsBW1hfpBrales_3abyao4t5ppWJWgcQ4DjdLe9-g
+      uuid: af87a563-8e11-4b70-b1b9-dce55d10412a
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.az_card
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_card
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - az_core
+          - date_ap_style
+          - field_group
+          - smart_title
+          - user
+      third_party_settings:
+        field_group:
+          group_card_clickable:
+            children:
+              - group_link
+            label: 'Card Clickable'
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: html_element
+            format_settings:
+              classes: 'card border-0 text-bg-gray-100 mt-0 mb-4 p-0'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_link:
+            children:
+              - group_date
+              - group_heading
+              - group_summary
+            label: Link
+            parent_name: group_card_clickable
+            region: content
+            weight: 1
+            format_type: link
+            format_settings:
+              classes: 'card-body p-4 stretched-link text-decoration-none'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              target: custom_uri
+              custom_uri: '[node:az-canonical-url]'
+              target_attribute: default
+          group_date:
+            children:
+              - field_az_event_date
+            label: Date
+            parent_name: group_link
+            region: content
+            weight: 5
+            format_type: html_element
+            format_settings:
+              classes: 'text-body-secondary fw-bold small'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_heading:
+            children:
+              - smart_title
+            label: Heading
+            parent_name: group_link
+            region: content
+            weight: 6
+            format_type: html_element
+            format_settings:
+              classes: 'card-title text-chili h5 mt-0 mb-2'
+              id: ''
+              element: h2
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_summary:
+            children:
+              - field_az_summary
+            label: Summary
+            parent_name: group_link
+            region: content
+            weight: 7
+            format_type: html_element
+            format_settings:
+              classes: 'card-text fw-normal small mb-0'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+        smart_title:
+          enabled: true
+          settings:
+            smart_title__link: false
+            smart_title__tag: ''
+            smart_title__classes:
+              - node__title
+      id: node.az_event.az_card
+      targetEntityType: node
+      bundle: az_event
+      mode: az_card
+      content:
+        field_az_event_date:
+          type: daterange_ap_style
+          label: hidden
+          settings:
+            always_display_year: true
+            use_today: true
+            cap_today: true
+            display_day: false
+            display_time: true
+            hide_date: false
+            time_before_date: true
+            display_noon_and_midnight: true
+            capitalize_noon_and_midnight: true
+            use_all_day: true
+            separator: endash
+            timezone: ''
+            month_only: false
+          third_party_settings: {  }
+          weight: 1
+          region: content
+        field_az_summary:
+          type: az_text_summary
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 8
+          region: content
+        smart_title:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 1
+          region: content
+      hidden:
+        az_event_day: true
+        az_event_month: true
+        field_az_attachments: true
+        field_az_body: true
+        field_az_contacts: true
+        field_az_enterprise_attributes: true
+        field_az_event_category: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_location: true
+        field_az_media_thumbnail_image: true
+        field_az_photos: true
+        field_az_subheading: true
+        field_az_trellis_id: true
+        links: true
+      _core:
+        default_config_hash: Liyib1rO-6LbpgkwBOI-pxjGp6FEQvK0pDhNkkRMMHQ
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.az_card_alternate
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_card_alternate
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - az_core
+          - date_ap_style
+          - field_group
+          - smart_title
+          - user
+      third_party_settings:
+        field_group:
+          group_card_clickable:
+            children:
+              - group_link
+            label: 'Card Clickable'
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: html_element
+            format_settings:
+              classes: 'card border-0 text-bg-gray-100 mt-0 mb-4 p-0'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_link:
+            children:
+              - group_media
+              - group_date
+              - group_heading
+              - group_summary
+            label: Link
+            parent_name: group_card_clickable
+            region: content
+            weight: 1
+            format_type: link
+            format_settings:
+              classes: 'card-body p-4 stretched-link text-decoration-none'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              target: custom_uri
+              custom_uri: '[node:az-canonical-url]'
+              target_attribute: default
+          group_date:
+            children:
+              - field_az_event_date
+            label: Date
+            parent_name: group_link
+            region: content
+            weight: 4
+            format_type: html_element
+            format_settings:
+              classes: 'text-body-secondary fw-bold small'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_heading:
+            children:
+              - smart_title
+            label: Heading
+            parent_name: group_link
+            region: content
+            weight: 5
+            format_type: html_element
+            format_settings:
+              classes: 'card-title text-red h5 mt-0 mb-2'
+              id: ''
+              element: h2
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_summary:
+            children:
+              - field_az_summary
+            label: Summary
+            parent_name: group_link
+            region: content
+            weight: 6
+            format_type: html_element
+            format_settings:
+              classes: 'card-text fw-normal small mb-0'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_media:
+            children:
+              - field_az_media_thumbnail_image
+            label: Media
+            parent_name: group_link
+            region: content
+            weight: 2
+            format_type: html_element
+            format_settings:
+              classes: 'pb-card mb-nmin'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+        smart_title:
+          enabled: true
+          settings:
+            smart_title__link: false
+            smart_title__tag: ''
+            smart_title__classes:
+              - node__title
+      id: node.az_event.az_card_alternate
+      targetEntityType: node
+      bundle: az_event
+      mode: az_card_alternate
+      content:
+        field_az_event_date:
+          type: daterange_ap_style
+          label: hidden
+          settings:
+            always_display_year: true
+            use_today: true
+            cap_today: true
+            display_day: false
+            display_time: true
+            hide_date: false
+            time_before_date: true
+            display_noon_and_midnight: true
+            capitalize_noon_and_midnight: true
+            use_all_day: true
+            separator: endash
+            timezone: ''
+            month_only: false
+          third_party_settings: {  }
+          weight: 1
+          region: content
+        field_az_media_thumbnail_image:
+          type: entity_reference_entity_view
+          label: hidden
+          settings:
+            view_mode: az_card_image
+            link: false
+          third_party_settings: {  }
+          weight: 3
+          region: content
+        field_az_summary:
+          type: az_text_summary
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 8
+          region: content
+        smart_title:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 1
+          region: content
+      hidden:
+        az_event_day: true
+        az_event_month: true
+        field_az_attachments: true
+        field_az_body: true
+        field_az_contacts: true
+        field_az_enterprise_attributes: true
+        field_az_event_category: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_location: true
+        field_az_photos: true
+        field_az_subheading: true
+        field_az_trellis_id: true
+        links: true
+      _core:
+        default_config_hash: Pr80Mdx14RcnncgI3xJcDRzHGAVk1mMPQJmSV_ShYJ4
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.az_row
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_row
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - az_core
+          - date_ap_style
+          - field_group
+          - smart_title
+          - user
+      third_party_settings:
+        field_group:
+          group_link:
+            children:
+              - group_row
+            label: Link
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: link
+            format_settings:
+              classes: text-decoration-none
+              show_empty_fields: false
+              id: ''
+              target: custom_uri
+              custom_uri: '[node:az-canonical-url]'
+              target_attribute: default
+          group_row:
+            children:
+              - group_column_one
+              - group_column_two
+            label: Row
+            parent_name: group_link
+            region: content
+            weight: 2
+            format_type: html_element
+            format_settings:
+              classes: 'row fw-normal'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_column_one:
+            children:
+              - group_short_date
+            label: 'Column one'
+            parent_name: group_row
+            region: content
+            weight: 15
+            format_type: html_element
+            format_settings:
+              classes: 'col-4 col-lg-2'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_column_two:
+            children:
+              - group_summary_row
+            label: 'Column two'
+            parent_name: group_row
+            region: content
+            weight: 16
+            format_type: html_element
+            format_settings:
+              classes: 'col-8 col-lg-10'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_month:
+            children:
+              - az_event_month
+            label: Month
+            parent_name: group_short_date
+            region: content
+            weight: 6
+            format_type: html_element
+            format_settings:
+              classes: ' h5 text-center mt-0 mb-0 text-uppercase'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_day:
+            children:
+              - az_event_day
+            label: Day
+            parent_name: group_short_date
+            region: content
+            weight: 7
+            format_type: html_element
+            format_settings:
+              classes: 'h4 text-center mt-0 mb-0'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_short_date:
+            children:
+              - group_month
+              - group_day
+            label: 'Short Date'
+            parent_name: group_column_one
+            region: content
+            weight: 19
+            format_type: html_element
+            format_settings:
+              classes: 'text-bg-gray-100 p-3 text-body-secondary rounded'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_summary:
+            children:
+              - group_heading
+              - group_strong
+              - field_az_summary
+            label: 'Summary Text'
+            parent_name: group_summary_row
+            region: content
+            weight: 8
+            format_type: html_element
+            format_settings:
+              classes: 'col-lg-9 pt-lg-3 px-3 ps-lg-4 pb-3 text-break'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_heading:
+            children:
+              - smart_title
+            label: Heading
+            parent_name: group_summary
+            region: content
+            weight: 5
+            format_type: html_element
+            format_settings:
+              classes: 'h5 text-chili mt-3 mt-lg-0'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_strong:
+            children:
+              - field_az_event_date
+            label: Strong
+            parent_name: group_summary
+            region: content
+            weight: 6
+            format_type: html_element
+            format_settings:
+              classes: fw-bold
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_summary_row:
+            children:
+              - group_summary_thumbnail
+              - group_summary
+            label: 'Summary Row'
+            parent_name: group_column_two
+            region: content
+            weight: 4
+            format_type: html_element
+            format_settings:
+              classes: 'row g-0 text-bg-gray-100 ms-n3 ms-md-0 rounded'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_summary_thumbnail:
+            children:
+              - field_az_media_thumbnail_image
+            label: 'Summary Thumbnail'
+            parent_name: group_summary_row
+            region: content
+            weight: 6
+            format_type: html_element
+            format_settings:
+              classes: 'col-lg-3 pt-3 px-3 pe-lg-0 mb-lg-0'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: 'style="margin-bottom: -1.2em"'
+              effect: none
+              speed: fast
+        smart_title:
+          enabled: true
+          settings:
+            smart_title__link: false
+            smart_title__tag: div
+            smart_title__classes: {  }
+      id: node.az_event.az_row
+      targetEntityType: node
+      bundle: az_event
+      mode: az_row
+      content:
+        az_event_day:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 5
+          region: content
+        az_event_month:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        field_az_event_date:
+          type: daterange_ap_style
+          label: hidden
+          settings:
+            always_display_year: true
+            use_today: true
+            cap_today: true
+            display_day: false
+            display_time: true
+            hide_date: false
+            time_before_date: true
+            display_noon_and_midnight: true
+            capitalize_noon_and_midnight: true
+            use_all_day: true
+            separator: endash
+            timezone: ''
+            month_only: false
+          third_party_settings: {  }
+          weight: 4
+          region: content
+        field_az_media_thumbnail_image:
+          type: entity_reference_entity_view
+          label: hidden
+          settings:
+            view_mode: az_square
+            link: false
+          third_party_settings: {  }
+          weight: 7
+          region: content
+        field_az_summary:
+          type: az_text_summary
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 7
+          region: content
+        smart_title:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 4
+          region: content
+      hidden:
+        field_az_attachments: true
+        field_az_body: true
+        field_az_contacts: true
+        field_az_enterprise_attributes: true
+        field_az_event_category: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_location: true
+        field_az_photos: true
+        field_az_subheading: true
+        field_az_trellis_id: true
+        links: true
+      _core:
+        default_config_hash: l2qBg56uXswEJ2OHJ_XhWYx4dAfmL8hDlXK7CR5ROgE
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.az_row_with_background
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_row_with_background
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - field_group
+          - smart_date
+          - smart_title
+          - user
+      third_party_settings:
+        field_group:
+          group_link:
+            children:
+              - group_row
+            label: Link
+            parent_name: group_card
+            region: content
+            weight: 2
+            format_type: link
+            format_settings:
+              classes: 'text-decoration-none stretched-link'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              target: custom_uri
+              custom_uri: '[node:az-canonical-url]'
+              target_attribute: default
+          group_card:
+            children:
+              - group_link
+            label: Card
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: html_element
+            format_settings:
+              classes: 'text-bg-gray-100 card border-0 hover mb-4'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_row:
+            children:
+              - group_column_date
+              - group_column_text
+            label: Row
+            parent_name: group_link
+            region: content
+            weight: 3
+            format_type: html_element
+            format_settings:
+              classes: 'card-body pt-4 pb-2 px-4 row'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_column_date:
+            children:
+              - group_background_date
+            label: 'Column - Date'
+            parent_name: group_row
+            region: content
+            weight: 8
+            format_type: html_element
+            format_settings:
+              classes: col-3
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_column_text:
+            children:
+              - smart_title
+              - group_when
+              - group_view_event
+            label: 'Column - Text'
+            parent_name: group_row
+            region: content
+            weight: 10
+            format_type: html_element
+            format_settings:
+              classes: col-9
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_month:
+            children:
+              - az_event_month
+            label: Month
+            parent_name: group_background_date
+            region: content
+            weight: 3
+            format_type: html_element
+            format_settings:
+              classes: 'h5 text-center my-0 text-uppercase hover-text-underline'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_day:
+            children:
+              - az_event_day
+            label: Day
+            parent_name: group_background_date
+            region: content
+            weight: 4
+            format_type: html_element
+            format_settings:
+              classes: 'h4 text-center my-0 hover-text-underline'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_when:
+            children:
+              - field_az_event_date
+            label: When
+            parent_name: group_column_text
+            region: content
+            weight: 2
+            format_type: html_element
+            format_settings:
+              classes: 'text-body-secondary fw-normal'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_background_date:
+            children:
+              - group_month
+              - group_day
+            label: 'Background - Date'
+            parent_name: group_column_date
+            region: content
+            weight: 14
+            format_type: html_element
+            format_settings:
+              classes: 'text-bg-azurite py-3 rounded'
+              show_empty_fields: false
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_view_event:
+            children: {  }
+            label: 'View event'
+            parent_name: group_column_text
+            region: content
+            weight: 3
+            format_type: html_element
+            format_settings:
+              classes: 'mt-2 pb-3'
+              show_empty_fields: true
+              id: ''
+              label_as_html: false
+              element: div
+              show_label: true
+              label_element: span
+              label_element_classes: hover-text-underline
+              attributes: ''
+              effect: none
+              speed: fast
+        smart_title:
+          enabled: true
+          settings:
+            smart_title__link: false
+            smart_title__tag: h3
+            smart_title__classes:
+              - text-midnight
+              - card-title
+              - h4
+              - m-0
+              - hover-text-underline
+      id: node.az_event.az_row_with_background
+      targetEntityType: node
+      bundle: az_event
+      mode: az_row_with_background
+      content:
+        az_event_day:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 3
+          region: content
+        az_event_month:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 2
+          region: content
+        field_az_event_date:
+          type: smartdate_default
+          label: hidden
+          settings:
+            timezone_override: ''
+            format_type: medium
+            format: time_only
+            force_chronological: false
+            add_classes: false
+            time_wrapper: true
+            localize: false
+            parts:
+              start: start
+              end: end
+              duration: '0'
+            duration:
+              separator: ' | '
+              unit: ''
+              decimals: 2
+              suffix: h
+          third_party_settings: {  }
+          weight: 3
+          region: content
+        smart_title:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 1
+          region: content
+      hidden:
+        field_az_attachments: true
+        field_az_body: true
+        field_az_contacts: true
+        field_az_enterprise_attributes: true
+        field_az_event_category: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_location: true
+        field_az_media_thumbnail_image: true
+        field_az_photos: true
+        field_az_subheading: true
+        field_az_summary: true
+        field_az_trellis_id: true
+        links: true
+      _core:
+        default_config_hash: JyZFAA1GonObtkCFPLI7x8WCpUbHSDmCvh2AIG2dBhk
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - date_ap_style
+          - entity_reference_revisions
+          - field_group
+          - file
+          - link
+          - smart_title
+          - text
+          - user
+      third_party_settings:
+        field_group:
+          group_subtitle_div:
+            children:
+              - field_az_subheading
+            label: 'Subtitle Div'
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: html_element
+            format_settings:
+              classes: 'lead mb-4'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_category_div:
+            children:
+              - field_az_event_category
+            label: 'Category Div'
+            parent_name: group_wrapper
+            region: content
+            weight: 11
+            format_type: html_element
+            format_settings:
+              classes: 'clearfix pt-2'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_when_where_row:
+            children:
+              - group_when_column
+              - group_where_column
+            label: 'When/Where Row'
+            parent_name: group_wrapper
+            region: content
+            weight: 8
+            format_type: html_element
+            format_settings:
+              classes: 'row mb-5'
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_contacts_attach_row:
+            children:
+              - group_contacts_column
+              - group_attachments_column
+            label: 'Contacts/Attachments Row'
+            parent_name: group_wrapper
+            region: content
+            weight: 12
+            format_type: html_element
+            format_settings:
+              classes: row
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_when_column:
+            children:
+              - field_az_event_date
+            label: When
+            parent_name: group_when_where_row
+            region: content
+            weight: 13
+            format_type: html_element
+            format_settings:
+              classes: col-md-6
+              id: ''
+              element: div
+              show_label: true
+              label_element: h2
+              label_element_classes: h3
+              attributes: ''
+              effect: none
+              speed: fast
+          group_where_column:
+            children:
+              - field_az_location
+            label: Where
+            parent_name: group_when_where_row
+            region: content
+            weight: 14
+            format_type: html_element
+            format_settings:
+              classes: col-md-6
+              id: ''
+              element: div
+              show_label: true
+              label_element: h2
+              label_element_classes: h3
+              attributes: ''
+              effect: none
+              speed: fast
+          group_contacts_column:
+            children:
+              - field_az_contacts
+            label: Contacts
+            parent_name: group_contacts_attach_row
+            region: content
+            weight: 8
+            format_type: html_element
+            format_settings:
+              classes: col-md-6
+              id: ''
+              element: div
+              show_label: true
+              label_element: h2
+              label_element_classes: h3
+              attributes: ''
+              effect: none
+              speed: fast
+          group_attachments_column:
+            children:
+              - field_az_attachments
+            label: Attachments
+            parent_name: group_contacts_attach_row
+            region: content
+            weight: 9
+            format_type: html_element
+            format_settings:
+              classes: col-md-6
+              id: ''
+              element: div
+              show_label: true
+              label_element: h2
+              label_element_classes: h3
+              attributes: ''
+              effect: none
+              speed: fast
+          group_wrapper:
+            children:
+              - field_az_photos
+              - group_when_where_row
+              - field_az_body
+              - group_category_div
+              - group_contacts_attach_row
+            label: Wrapper
+            parent_name: ''
+            region: content
+            weight: 1
+            format_type: html_element
+            format_settings:
+              classes: mb-5
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+        smart_title:
+          enabled: false
+      id: node.az_event.default
+      targetEntityType: node
+      bundle: az_event
+      mode: default
+      content:
+        field_az_attachments:
+          type: file_default
+          label: hidden
+          settings:
+            use_description_as_link_text: true
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        field_az_body:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 10
+          region: content
+        field_az_contacts:
+          type: entity_reference_revisions_entity_view
+          label: hidden
+          settings:
+            view_mode: default
+            link: ''
+          third_party_settings: {  }
+          weight: 23
+          region: content
+        field_az_event_category:
+          type: entity_reference_label
+          label: hidden
+          settings:
+            link: true
+          third_party_settings: {  }
+          weight: 22
+          region: content
+        field_az_event_date:
+          type: daterange_ap_style
+          label: hidden
+          settings:
+            always_display_year: true
+            use_today: true
+            cap_today: true
+            display_day: false
+            display_time: true
+            hide_date: false
+            time_before_date: false
+            display_noon_and_midnight: true
+            capitalize_noon_and_midnight: true
+            use_all_day: true
+            separator: endash
+            timezone: ''
+            month_only: false
+          third_party_settings: {  }
+          weight: 14
+          region: content
+        field_az_location:
+          type: link
+          label: hidden
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: ''
+            target: ''
+          third_party_settings: {  }
+          weight: 23
+          region: content
+        field_az_photos:
+          type: entity_reference_entity_view
+          label: hidden
+          settings:
+            view_mode: az_large
+            link: false
+          third_party_settings: {  }
+          weight: 7
+          region: content
+        field_az_subheading:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 15
+          region: content
+      hidden:
+        az_event_day: true
+        az_event_month: true
+        field_az_enterprise_attributes: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_media_thumbnail_image: true
+        field_az_summary: true
+        field_az_trellis_id: true
+        links: true
+        smart_title: true
+      _core:
+        default_config_hash: JpKPk_U_PvpAJfiiT3LWuG7VN8umUnAMLGXuBGTQ-mc
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_event.teaser
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.teaser
+          - field.field.node.az_event.field_az_attachments
+          - field.field.node.az_event.field_az_body
+          - field.field.node.az_event.field_az_contacts
+          - field.field.node.az_event.field_az_enterprise_attributes
+          - field.field.node.az_event.field_az_event_category
+          - field.field.node.az_event.field_az_event_date
+          - field.field.node.az_event.field_az_featured_image_as_thumb
+          - field.field.node.az_event.field_az_link
+          - field.field.node.az_event.field_az_location
+          - field.field.node.az_event.field_az_media_thumbnail_image
+          - field.field.node.az_event.field_az_photos
+          - field.field.node.az_event.field_az_subheading
+          - field.field.node.az_event.field_az_summary
+          - field.field.node.az_event.field_az_trellis_id
+          - node.type.az_event
+        module:
+          - smart_title
+          - user
+      third_party_settings:
+        smart_title:
+          enabled: false
+      id: node.az_event.teaser
+      targetEntityType: node
+      bundle: az_event
+      mode: teaser
+      content:
+        links:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 100
+          region: content
+      hidden:
+        az_event_day: true
+        az_event_month: true
+        field_az_attachments: true
+        field_az_body: true
+        field_az_contacts: true
+        field_az_enterprise_attributes: true
+        field_az_event_category: true
+        field_az_event_date: true
+        field_az_featured_image_as_thumb: true
+        field_az_link: true
+        field_az_location: true
+        field_az_media_thumbnail_image: true
+        field_az_photos: true
+        field_az_subheading: true
+        field_az_summary: true
+        field_az_trellis_id: true
+        smart_title: true
+      _core:
+        default_config_hash: YVmq2L7O3IA3musc7k_ITUME34bSAo25iztFR0Q-jmw
+  -
+    collection: ''
+    name: core.entity_view_display.taxonomy_term.az_event_categories.az_badge
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.taxonomy_term.az_badge
+          - taxonomy.vocabulary.az_event_categories
+        module:
+          - field_group
+          - smart_title
+      third_party_settings:
+        smart_title:
+          enabled: true
+          settings:
+            smart_title__link: false
+            smart_title__tag: div
+            smart_title__classes: {  }
+        field_group:
+          group_link:
+            children:
+              - smart_title
+            label: Link
+            parent_name: ''
+            region: content
+            weight: 0
+            format_type: link
+            format_settings:
+              classes: 'badge text-bg-light badge-link'
+              show_empty_fields: false
+              id: ''
+              target: entity
+              custom_uri: ''
+              target_attribute: default
+      id: taxonomy_term.az_event_categories.az_badge
+      targetEntityType: taxonomy_term
+      bundle: az_event_categories
+      mode: az_badge
+      content:
+        smart_title:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 1
+          region: content
+      hidden:
+        description: true
+      _core:
+        default_config_hash: Pz3-7XweAHinQUuNL39N0ycHHNnpHM6Hg6J5L6dlQWQ
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_attachments
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_attachments
+          - node.type.az_event
+        module:
+          - file
+      id: node.az_event.field_az_attachments
+      field_name: field_az_attachments
+      entity_type: node
+      bundle: az_event
+      label: Attachments
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        file_directory: documents
+        file_extensions: pdf
+        max_filesize: '10 MB'
+        description_field: true
+        handler: 'default:file'
+        handler_settings: {  }
+      field_type: file
+      _core:
+        default_config_hash: WjzBJuXxTxNBnvOtZo8qC1BFqu1Hs7_DMHTzZpUIZO0
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_body
+          - node.type.az_event
+        module:
+          - text
+      id: node.az_event.field_az_body
+      field_name: field_az_body
+      entity_type: node
+      bundle: az_event
+      label: 'Event Description'
+      description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats: {  }
+      field_type: text_long
+      _core:
+        default_config_hash: m4i9-uhz7RLjjRTqWXQ3AcK3EBXCyj6rARK1Kbz9gOs
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_contacts
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_contacts
+          - node.type.az_event
+          - paragraphs.paragraphs_type.az_contact
+        module:
+          - entity_reference_revisions
+      id: node.az_event.field_az_contacts
+      field_name: field_az_contacts
+      entity_type: node
+      bundle: az_event
+      label: Contacts
+      description: 'Persons who can be contacted about the event.'
+      required: false
+      translatable: false
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:paragraph'
+        handler_settings:
+          negate: 0
+          target_bundles:
+            az_contact: az_contact
+          target_bundles_drag_drop:
+            az_accordion:
+              weight: 8
+              enabled: false
+            az_cards:
+              weight: 9
+              enabled: false
+            az_contact:
+              enabled: true
+              weight: 10
+            az_text:
+              weight: 11
+              enabled: false
+            az_text_background:
+              weight: 12
+              enabled: false
+            az_text_media:
+              weight: 13
+              enabled: false
+            az_view_reference:
+              weight: 14
+              enabled: false
+      field_type: entity_reference_revisions
+      _core:
+        default_config_hash: 1IQJ3NwHQizl58tA_WxQ0ib53bZek47_JARWWBGhbmU
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_enterprise_attributes
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_enterprise_attributes
+          - node.type.az_event
+          - taxonomy.vocabulary.az_enterprise_attributes
+      id: node.az_event.field_az_enterprise_attributes
+      field_name: field_az_enterprise_attributes
+      entity_type: node
+      bundle: az_event
+      label: 'Enterprise Attributes'
+      description: ''
+      required: false
+      translatable: false
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:taxonomy_term'
+        handler_settings:
+          target_bundles:
+            az_enterprise_attributes: az_enterprise_attributes
+          sort:
+            field: name
+            direction: asc
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: OYch6dYPKdVgQjtca1pkDKOAUBC6AuTMleFxVU1mr1k
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_event_category
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_event_category
+          - node.type.az_event
+          - taxonomy.vocabulary.az_event_categories
+      id: node.az_event.field_az_event_category
+      field_name: field_az_event_category
+      entity_type: node
+      bundle: az_event
+      label: Category
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:taxonomy_term'
+        handler_settings:
+          target_bundles:
+            az_event_categories: az_event_categories
+          sort:
+            field: name
+            direction: asc
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: nMdCe2VtK7_jRc6czW83oBVXhfrBypMOWEC-k4VecM8
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_event_date
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_event_date
+          - node.type.az_event
+        module:
+          - smart_date
+          - smart_date_recur
+      third_party_settings:
+        smart_date_recur:
+          allow_recurring: true
+          month_limit: 12
+      id: node.az_event.field_az_event_date
+      field_name: field_az_event_date
+      entity_type: node
+      bundle: az_event
+      label: When
+      description: 'Use duration to specify an end time. Setting duration to custom allows more options.'
+      required: true
+      translatable: true
+      default_value:
+        -
+          default_date_type: ''
+          default_date: ''
+          default_duration_increments: "0|Zero - no end time\r\n15\r\n30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+          default_duration: 60
+      default_value_callback: ''
+      settings: {  }
+      field_type: smartdate
+      _core:
+        default_config_hash: ScYYeur3zhyVe6bJkKwp5FsdWuGtQ-Fe0YUua2FX304
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_featured_image_as_thumb
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_featured_image_as_thumb
+          - node.type.az_event
+      id: node.az_event.field_az_featured_image_as_thumb
+      field_name: field_az_featured_image_as_thumb
+      entity_type: node
+      bundle: az_event
+      label: 'Use Featured Image as Thumbnail'
+      description: 'Sets the <em>summary</em> thumbnail image to be the same as the <strong>first</strong> featured image. This is the default behavior.'
+      required: false
+      translatable: true
+      default_value:
+        -
+          value: 1
+      default_value_callback: ''
+      settings:
+        on_label: 'On'
+        off_label: 'Off'
+      field_type: boolean
+      _core:
+        default_config_hash: Yy1z-JdXyhM2o-DN0Bhc3-xcW-ykYw73X0aXI_pumxM
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_link
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_link
+          - node.type.az_event
+        module:
+          - link
+      id: node.az_event.field_az_link
+      field_name: field_az_link
+      entity_type: node
+      bundle: az_event
+      label: 'Link to external event'
+      description: 'In most cases, leave this field blank. Enter an external URL if the calendar listings for this event should link directly to event information on another website (e.g. the University calendar).'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        link_type: 16
+        title: 0
+      field_type: link
+      _core:
+        default_config_hash: ms8MzJdPrEwM14V6XJBTMpa9nj34POoQBjaJ-wWfCnA
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_location
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_location
+          - node.type.az_event
+        module:
+          - link
+      id: node.az_event.field_az_location
+      field_name: field_az_location
+      entity_type: node
+      bundle: az_event
+      label: Where
+      description: "To link to an online map for the location, enter a URL above.<br />\r\nOtherwise, enter <em>&lt;nolink&gt;</em> in the URL field and enter the location name or address in the Link text field.<br />\r\n<strong>Campus Map: </strong> <a href=\"https://map.arizona.edu\" target=\"_blank\">https://map.arizona.edu</a><br />\r\n<strong>Google Maps: </strong> <a href=\"https://maps.google.com\" target=\"_blank\">https://maps.google.com</a>"
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        link_type: 17
+        title: 1
+      field_type: link
+      _core:
+        default_config_hash: 6pKXx95tAoqHJ9g6_6PNMQXLVBIf7lCtXVbaaaET1EQ
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_media_thumbnail_image
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_media_thumbnail_image
+          - media.type.az_image
+          - node.type.az_event
+      id: node.az_event.field_az_media_thumbnail_image
+      field_name: field_az_media_thumbnail_image
+      entity_type: node
+      bundle: az_event
+      label: 'Thumbnail Image'
+      description: '<strong>Note:</strong> Using an image for the thumbnail that does not appear on the full page display of the content is not recommended. To simply set a different cropping, click the Edit Image pencil icon, expand the <em>Crop image</em> dropdown, and apply a new <em>Card Image</em> cropping.<br>This field overrides the featured image for listing displays and metatags.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:media'
+        handler_settings:
+          target_bundles:
+            az_image: az_image
+          sort:
+            field: _none
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: EKHTF2u8B-sjZnZd-qK5LSzdUu19ifkpFD9Mel-9sn4
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_metatag
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_metatag
+          - node.type.az_event
+        module:
+          - metatag
+      id: node.az_event.field_az_metatag
+      field_name: field_az_metatag
+      entity_type: node
+      bundle: az_event
+      label: 'Meta tags'
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: metatag
+      _core:
+        default_config_hash: SbgrNnodzXmT6u2R0uu4wQgdXXRI7wYKfLfFmKwqNzA
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_photos
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_photos
+          - media.type.az_image
+          - node.type.az_event
+      id: node.az_event.field_az_photos
+      field_name: field_az_photos
+      entity_type: node
+      bundle: az_event
+      label: 'Featured Images'
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:media'
+        handler_settings:
+          target_bundles:
+            az_image: az_image
+          sort:
+            field: _none
+            direction: ASC
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: qjq1P8w4HRGYKJvnxo4sKcd1ABT1RpMEH7MrSUltLxM
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_subheading
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_subheading
+          - filter.format.plain_text
+          - node.type.az_event
+        module:
+          - text
+      id: node.az_event.field_az_subheading
+      field_name: field_az_subheading
+      entity_type: node
+      bundle: az_event
+      label: Subtitle
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats:
+          - plain_text
+      field_type: text
+      _core:
+        default_config_hash: 3AeN5MQDgaflBSmjH2K4RgIuTQK2wmAlrOESV2d1a-0
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_summary
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_summary
+          - filter.format.plain_text
+          - node.type.az_event
+        module:
+          - text
+      id: node.az_event.field_az_summary
+      field_name: field_az_summary
+      entity_type: node
+      bundle: az_event
+      label: Summary
+      description: 'Used in Event lists, Event Teasers, and Event metadata.<br /><strong>Suggested character limit:</strong> 160.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats:
+          - plain_text
+      field_type: text_long
+      _core:
+        default_config_hash: PfYHkw3q1YP4SMVhVbN_uvcJxmUd1LMUlGllxzWMLBE
+  -
+    collection: ''
+    name: field.field.node.az_event.field_az_trellis_id
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_trellis_id
+          - node.type.az_event
+      id: node.az_event.field_az_trellis_id
+      field_name: field_az_trellis_id
+      entity_type: node
+      bundle: az_event
+      label: 'Trellis Event ID'
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: string
+      _core:
+        default_config_hash: mBuyN3UEdpegPcRFgOjGlm8-pm6YOTZy5r2d0b0cpAE
+  -
+    collection: ''
+    name: field.storage.node.field_az_event_category
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - taxonomy
+      id: node.field_az_event_category
+      field_name: field_az_event_category
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: taxonomy_term
+      module: core
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: OVKAGuGfFeb9AB_mx-16dBbggZorBbLRhUrEWwCEb7g
+  -
+    collection: ''
+    name: field.storage.node.field_az_event_date
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - smart_date
+      id: node.field_az_event_date
+      field_name: field_az_event_date
+      entity_type: node
+      type: smartdate
+      settings: {  }
+      module: smart_date
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: hWEvs3L1UySVTr1JXDbu1SmUqhaa9CB-tKroNYM--vg
+  -
+    collection: ''
+    name: field.storage.node.field_az_trellis_id
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: node.field_az_trellis_id
+      field_name: field_az_trellis_id
+      entity_type: node
+      type: string
+      settings:
+        max_length: 255
+        case_sensitive: false
+        is_ascii: false
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: VXGhdQ5WtxHj7MO_fYySuEgRNLyYk7xy9CNgQklprVw
+  -
+    collection: ''
+    name: node.type.az_event
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - menu_ui
+      third_party_settings:
+        menu_ui:
+          available_menus:
+            - main
+          parent: 'main:'
+      name: Event
+      type: az_event
+      description: 'Use this content type to add calendar entries and other events.'
+      help: null
+      new_revision: true
+      preview_mode: 1
+      display_submitted: false
+      _core:
+        default_config_hash: u0QOKn87jWvnEAOkZxBQihXVX24hKNLOxxysb6lgDB0
+  -
+    collection: ''
+    name: pathauto.pattern.az_event_url_pattern
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+      id: az_event_url_pattern
+      label: 'Event Content Type'
+      type: 'canonical_entities:node'
+      pattern: 'events/[node:title]'
+      selection_criteria:
+        62829e66-f973-46f9-aa96-aa6372276a42:
+          id: 'entity_bundle:node'
+          negate: false
+          uuid: 62829e66-f973-46f9-aa96-aa6372276a42
+          context_mapping:
+            node: node
+          bundles:
+            az_event: az_event
+      selection_logic: and
+      weight: -5
+      relationships: {  }
+      _core:
+        default_config_hash: N2n8ADbhu_oj2muUHhQiWFuKhw1Nys9aGhJMoPyFNsU
+  -
+    collection: ''
+    name: taxonomy.vocabulary.az_event_categories
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: 'Event Categories'
+      vid: az_event_categories
+      description: 'Taxonomy for categorizing events'
+      weight: 0
+      new_revision: false
+      _core:
+        default_config_hash: Vn74rdZ7cLWouR6vIkB52q5MI-XRnZTQRbAW1IZBjkI
+  -
+    collection: ''
+    name: views.view.az_events
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.az_card
+          - core.entity_view_mode.node.az_card_alternate
+          - core.entity_view_mode.node.az_row
+          - node.type.az_event
+          - taxonomy.vocabulary.az_event_categories
+        module:
+          - az_event
+          - node
+          - smart_date
+          - taxonomy
+          - user
+          - views_bootstrap
+      id: az_events
+      label: 'AZ Events'
+      module: views
+      description: 'Use this view to manage Event content'
+      tag: ''
+      base_table: node_field_data
+      base_field: nid
+      display:
+        default:
+          id: default
+          display_title: Master
+          display_plugin: default
+          position: 0
+          display_options:
+            title: Calendar
+            fields:
+              delta:
+                id: delta
+                table: node__field_az_event_date
+                field: delta
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: numeric
+                label: ''
+                exclude: false
+                alter:
+                  alter_text: false
+                  text: ''
+                  make_link: false
+                  path: ''
+                  absolute: false
+                  external: false
+                  replace_spaces: false
+                  path_case: none
+                  trim_whitespace: false
+                  alt: ''
+                  rel: ''
+                  link_class: ''
+                  prefix: ''
+                  suffix: ''
+                  target: ''
+                  nl2br: false
+                  max_length: 0
+                  word_boundary: true
+                  ellipsis: true
+                  more_link: false
+                  more_link_text: ''
+                  more_link_path: ''
+                  strip_tags: false
+                  trim: false
+                  preserve_tags: ''
+                  html: false
+                element_type: ''
+                element_class: ''
+                element_label_type: ''
+                element_label_class: ''
+                element_label_colon: false
+                element_wrapper_type: ''
+                element_wrapper_class: ''
+                element_default_classes: true
+                empty: ''
+                hide_empty: false
+                empty_zero: false
+                hide_alter_empty: true
+                set_precision: false
+                precision: 0
+                decimal: .
+                separator: ','
+                format_plural: false
+                format_plural_string: !!binary MQNAY291bnQ=
+                prefix: ''
+                suffix: ''
+            pager:
+              type: full
+              options:
+                offset: 0
+                pagination_heading_level: h4
+                items_per_page: 10
+                total_pages: null
+                id: 0
+                tags:
+                  next: 'Next ›'
+                  previous: '‹ Previous'
+                  first: '« First'
+                  last: 'Last »'
+                expose:
+                  items_per_page: false
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options: '5, 10, 25, 50'
+                  items_per_page_options_all: false
+                  items_per_page_options_all_label: '- All -'
+                  offset: false
+                  offset_label: Offset
+                quantity: 3
+            exposed_form:
+              type: basic
+              options:
+                submit_button: Apply
+                reset_button: false
+                reset_button_label: Reset
+                exposed_sorts_label: 'Sort by'
+                expose_sort_order: true
+                sort_asc_label: Asc
+                sort_desc_label: Desc
+            access:
+              type: perm
+              options:
+                perm: 'access content'
+            cache:
+              type: tag
+              options: {  }
+            empty:
+              area:
+                id: area
+                table: views
+                field: area
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text
+                empty: true
+                content:
+                  value: '<p><em>There are no upcoming events listed.</em></p>'
+                  format: az_standard
+                tokenize: false
+            sorts:
+              sticky:
+                id: sticky
+                table: node_field_data
+                field: sticky
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                entity_field: sticky
+                plugin_id: standard
+                order: DESC
+                expose:
+                  label: ''
+                  field_identifier: ''
+                exposed: false
+              field_az_event_date_value:
+                id: field_az_event_date_value
+                table: node__field_az_event_date
+                field: field_az_event_date_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: ASC
+                expose:
+                  label: ''
+                  field_identifier: field_az_event_date_value
+                exposed: false
+                granularity: second
+            arguments:
+              term_node_tid_depth:
+                id: term_node_tid_depth
+                table: node_field_data
+                field: term_node_tid_depth
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                plugin_id: taxonomy_index_tid_depth
+                default_action: ignore
+                exception:
+                  value: all
+                  title_enable: false
+                  title: All
+                title_enable: false
+                title: ''
+                default_argument_type: fixed
+                default_argument_options:
+                  argument: ''
+                summary_options:
+                  base_path: ''
+                  count: true
+                  override: false
+                  items_per_page: 25
+                summary:
+                  sort_order: asc
+                  number_of_records: 0
+                  format: default_summary
+                specify_validation: true
+                validate:
+                  type: 'entity:taxonomy_term'
+                  fail: 'not found'
+                validate_options:
+                  bundles:
+                    az_event_categories: az_event_categories
+                  access: false
+                  operation: view
+                  multiple: 1
+                break_phrase: true
+                depth: 0
+                use_taxonomy_term_path: false
+            filters:
+              status:
+                id: status
+                table: node_field_data
+                field: status
+                entity_type: node
+                entity_field: status
+                plugin_id: boolean
+                value: '1'
+                group: 1
+                expose:
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+              type:
+                id: type
+                table: node_field_data
+                field: type
+                entity_type: node
+                entity_field: type
+                plugin_id: bundle
+                value:
+                  az_event: az_event
+                expose:
+                  operator_limit_selection: false
+                  operator_list: {  }
+              field_az_event_date_end_value:
+                id: field_az_event_date_end_value
+                table: node__field_az_event_date
+                field: field_az_event_date_end_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                operator: '>='
+                value:
+                  min: ''
+                  max: ''
+                  value: now
+                  type: offset
+                  granularity: second
+                group: 1
+                exposed: false
+                expose:
+                  operator_id: ''
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: ''
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                  min_placeholder: ''
+                  max_placeholder: ''
+                  placeholder: ''
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+            style:
+              type: default
+              options:
+                row_class: ''
+                default_row_class: false
+                uses_fields: true
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_card
+            query:
+              type: views_query
+              options:
+                query_comment: ''
+                disable_sql_rewrite: false
+                distinct: false
+                replica: false
+                query_tags: {  }
+            relationships: {  }
+            css_class: ''
+            header: {  }
+            footer:
+              result:
+                id: result
+                table: views
+                field: result
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: result
+                empty: false
+                content: '<p><em>Page @current_page of @page_count</em></p>'
+            display_extenders: {  }
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        az_grid:
+          id: az_grid
+          display_title: 'Grid View'
+          display_plugin: block
+          position: 2
+          display_options:
+            title: Events
+            pager:
+              type: some
+              options:
+                offset: 0
+                items_per_page: 3
+            style:
+              type: views_bootstrap_grid
+              options:
+                row_class: ''
+                default_row_class: false
+                uses_fields: true
+                col_xs: col-12
+                col_sm: col-sm-12
+                col_md: col-md-4
+                col_lg: col-lg-4
+                col_xl: col-xl-4
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_card
+            defaults:
+              title: false
+              pager: false
+              pager_options: false
+              style: false
+              style_options: false
+              row: false
+              footer: false
+            display_description: 'Use in a region that spans at least 12 columns.'
+            pager_options: null
+            style_options: null
+            footer:
+              area_text_custom:
+                id: area_text_custom
+                table: views
+                field: area_text_custom
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text_custom
+                empty: true
+                content: "<div class=\"text-align-center\">\r\n<a title=\"View all events on the calendar\" class=\"btn btn-outline-blue\" href=\"/calendar\">View all events on the calendar</a>\r\n</div>"
+                tokenize: false
+            display_extenders: {  }
+            allow:
+              items_per_page: false
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        az_grid_images:
+          id: az_grid_images
+          display_title: 'Grid View with Images'
+          display_plugin: block
+          position: 2
+          display_options:
+            title: Events
+            pager:
+              type: some
+              options:
+                offset: 0
+                items_per_page: 3
+            style:
+              type: views_bootstrap_grid
+              options:
+                row_class: ''
+                default_row_class: false
+                uses_fields: true
+                col_xs: col-12
+                col_sm: col-sm-12
+                col_md: col-md-4
+                col_lg: col-lg-4
+                col_xl: col-xl-4
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_card_alternate
+            defaults:
+              title: false
+              pager: false
+              pager_options: false
+              style: false
+              style_options: false
+              row: false
+              footer: false
+            display_description: 'Use in a region that spans at least 12 columns.'
+            pager_options: null
+            style_options: null
+            footer:
+              area_text_custom:
+                id: area_text_custom
+                table: views
+                field: area_text_custom
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text_custom
+                empty: true
+                content: "<div class=\"text-align-center\">\r\n<a title=\"View all events on the calendar\" class=\"btn btn-outline-blue\" href=\"/calendar\">View all events on the calendar</a>\r\n</div>"
+                tokenize: false
+            display_extenders: {  }
+            allow:
+              items_per_page: false
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        az_past_grid_images:
+          id: az_past_grid_images
+          display_title: 'Past Grid View with Images'
+          display_plugin: block
+          position: 2
+          display_options:
+            title: Events
+            pager:
+              type: full
+              options:
+                offset: 0
+                pagination_heading_level: h4
+                items_per_page: 12
+                total_pages: null
+                id: 0
+                tags:
+                  next: 'Next ›'
+                  previous: '‹ Previous'
+                  first: '« First'
+                  last: 'Last »'
+                expose:
+                  items_per_page: false
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options: '5, 10, 25, 50'
+                  items_per_page_options_all: false
+                  items_per_page_options_all_label: '- All -'
+                  offset: false
+                  offset_label: Offset
+                quantity: 9
+            empty:
+              area:
+                id: area
+                table: views
+                field: area
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text
+                empty: true
+                content:
+                  value: '<p><em>There are no past events listed.</em></p>'
+                  format: az_standard
+                tokenize: false
+            sorts:
+              field_az_event_date_value:
+                id: field_az_event_date_value
+                table: node__field_az_event_date
+                field: field_az_event_date_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: DESC
+                expose:
+                  label: ''
+                  field_identifier: field_az_event_date_value
+                exposed: false
+                granularity: second
+            filters:
+              status:
+                id: status
+                table: node_field_data
+                field: status
+                entity_type: node
+                entity_field: status
+                plugin_id: boolean
+                value: '1'
+                group: 1
+                expose:
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+              type:
+                id: type
+                table: node_field_data
+                field: type
+                entity_type: node
+                entity_field: type
+                plugin_id: bundle
+                value:
+                  az_event: az_event
+                expose:
+                  operator_limit_selection: false
+                  operator_list: {  }
+              field_az_event_date_end_value:
+                id: field_az_event_date_end_value
+                table: node__field_az_event_date
+                field: field_az_event_date_end_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                operator: '<='
+                value:
+                  min: ''
+                  max: ''
+                  value: now
+                  type: offset
+                  granularity: second
+                group: 1
+                exposed: false
+                expose:
+                  operator_id: ''
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: ''
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                  min_placeholder: ''
+                  max_placeholder: ''
+                  placeholder: ''
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+            filter_groups:
+              operator: AND
+              groups:
+                1: AND
+            style:
+              type: views_bootstrap_grid
+              options:
+                row_class: ''
+                default_row_class: false
+                uses_fields: true
+                col_xs: col-12
+                col_sm: col-sm-12
+                col_md: col-md-4
+                col_lg: col-lg-4
+                col_xl: col-xl-4
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_card_alternate
+            defaults:
+              empty: false
+              title: false
+              pager: false
+              pager_options: false
+              style: false
+              style_options: false
+              row: false
+              sorts: false
+              filters: false
+              filter_groups: false
+              footer: false
+            display_description: 'Use in a region that spans at least 12 columns.'
+            pager_options: null
+            style_options: null
+            footer:
+              result:
+                id: result
+                table: views
+                field: result
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: result
+                empty: false
+                content: '<p><em>Page @current_page of @page_count</em></p>'
+            display_extenders: {  }
+            allow:
+              items_per_page: false
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        az_past_row:
+          id: az_past_row
+          display_title: 'Past Row View'
+          display_plugin: block
+          position: 2
+          display_options:
+            title: Events
+            pager:
+              type: full
+              options:
+                offset: 0
+                pagination_heading_level: h4
+                items_per_page: 12
+                total_pages: null
+                id: 0
+                tags:
+                  next: 'Next ›'
+                  previous: '‹ Previous'
+                  first: '« First'
+                  last: 'Last »'
+                expose:
+                  items_per_page: false
+                  items_per_page_label: 'Items per page'
+                  items_per_page_options: '5, 10, 25, 50'
+                  items_per_page_options_all: false
+                  items_per_page_options_all_label: '- All -'
+                  offset: false
+                  offset_label: Offset
+                quantity: 9
+            empty:
+              area:
+                id: area
+                table: views
+                field: area
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text
+                empty: true
+                content:
+                  value: '<p><em>There are no past events listed.</em></p>'
+                  format: az_standard
+                tokenize: false
+            sorts:
+              field_az_event_date_value:
+                id: field_az_event_date_value
+                table: node__field_az_event_date
+                field: field_az_event_date_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: DESC
+                expose:
+                  label: ''
+                  field_identifier: field_az_event_date_value
+                exposed: false
+                granularity: second
+            filters:
+              status:
+                id: status
+                table: node_field_data
+                field: status
+                entity_type: node
+                entity_field: status
+                plugin_id: boolean
+                value: '1'
+                group: 1
+                expose:
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+              type:
+                id: type
+                table: node_field_data
+                field: type
+                entity_type: node
+                entity_field: type
+                plugin_id: bundle
+                value:
+                  az_event: az_event
+                expose:
+                  operator_limit_selection: false
+                  operator_list: {  }
+              field_az_event_date_end_value:
+                id: field_az_event_date_end_value
+                table: node__field_az_event_date
+                field: field_az_event_date_end_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                operator: '<='
+                value:
+                  min: ''
+                  max: ''
+                  value: now
+                  type: offset
+                  granularity: second
+                group: 1
+                exposed: false
+                expose:
+                  operator_id: ''
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: ''
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                  min_placeholder: ''
+                  max_placeholder: ''
+                  placeholder: ''
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+            filter_groups:
+              operator: AND
+              groups:
+                1: AND
+            style:
+              type: default
+              options:
+                grouping: {  }
+                row_class: ''
+                default_row_class: false
+                uses_fields: true
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_card
+            defaults:
+              empty: false
+              title: false
+              pager: false
+              pager_options: false
+              style: false
+              style_options: false
+              row: false
+              sorts: false
+              filters: false
+              filter_groups: false
+              footer: false
+            display_description: 'Use in a region that spans at least 12 columns.'
+            pager_options: null
+            style_options: null
+            footer:
+              result:
+                id: result
+                table: views
+                field: result
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: result
+                empty: false
+                content: '<p><em>Page @current_page of @page_count</em></p>'
+            display_extenders: {  }
+            allow:
+              items_per_page: false
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        az_sidebar:
+          id: az_sidebar
+          display_title: 'Grid Sidebar'
+          display_plugin: block
+          position: 3
+          display_options:
+            title: ''
+            pager:
+              type: some
+              options:
+                offset: 0
+                items_per_page: 3
+            empty: {  }
+            sorts:
+              field_az_event_date_value:
+                id: field_az_event_date_value
+                table: node__field_az_event_date
+                field: field_az_event_date_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: ASC
+                expose:
+                  label: ''
+                  field_identifier: field_az_event_date_value
+                exposed: false
+                granularity: second
+            arguments:
+              term_node_tid_depth:
+                id: term_node_tid_depth
+                table: node_field_data
+                field: term_node_tid_depth
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                plugin_id: taxonomy_index_tid_depth
+                default_action: ignore
+                exception:
+                  value: all
+                  title_enable: false
+                  title: All
+                title_enable: false
+                title: ''
+                default_argument_type: fixed
+                default_argument_options:
+                  argument: ''
+                summary_options:
+                  base_path: ''
+                  count: true
+                  override: false
+                  items_per_page: 25
+                summary:
+                  sort_order: asc
+                  number_of_records: 0
+                  format: default_summary
+                specify_validation: true
+                validate:
+                  type: 'entity:taxonomy_term'
+                  fail: 'not found'
+                validate_options:
+                  bundles:
+                    az_event_categories: az_event_categories
+                  access: false
+                  operation: view
+                  multiple: 1
+                break_phrase: false
+                depth: 0
+                use_taxonomy_term_path: false
+              nid:
+                id: nid
+                table: node_field_data
+                field: nid
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                entity_field: nid
+                plugin_id: node_nid
+                default_action: default
+                exception:
+                  value: all
+                  title_enable: false
+                  title: All
+                title_enable: false
+                title: ''
+                default_argument_type: node
+                default_argument_options: {  }
+                summary_options:
+                  base_path: ''
+                  count: true
+                  override: false
+                  items_per_page: 25
+                summary:
+                  sort_order: asc
+                  number_of_records: 0
+                  format: default_summary
+                specify_validation: true
+                validate:
+                  type: 'entity:node'
+                  fail: 'not found'
+                validate_options:
+                  bundles:
+                    az_event: az_event
+                  access: false
+                  operation: view
+                  multiple: 0
+                break_phrase: false
+                not: true
+            defaults:
+              empty: false
+              title: false
+              pager: false
+              pager_options: false
+              sorts: false
+              arguments: false
+              header: false
+              footer: false
+            display_description: 'Use in first or second sidebar regions'
+            pager_options: null
+            header:
+              area_text_custom:
+                id: area_text_custom
+                table: views
+                field: area_text_custom
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text_custom
+                empty: false
+                content: '<h2 class="h5 margin-align-middle text-uppercase">Upcoming Events</h2>'
+                tokenize: false
+            footer:
+              area_text_custom:
+                id: area_text_custom
+                table: views
+                field: area_text_custom
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: text_custom
+                empty: false
+                content: "<div class=\"text-align-center\">\r\n<a title=\"View all events\" class=\"btn btn-outline-blue\" href=\"/calendar\">View all events</a>\r\n</div>"
+                tokenize: false
+            display_extenders: {  }
+            block_description: 'Sidebar Events Block'
+            allow:
+              items_per_page: false
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+        page_1:
+          id: page_1
+          display_title: 'Full Calendar'
+          display_plugin: page
+          position: 1
+          display_options:
+            sorts:
+              field_az_event_date_value:
+                id: field_az_event_date_value
+                table: node__field_az_event_date
+                field: field_az_event_date_value
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: date
+                order: ASC
+                expose:
+                  label: ''
+                  field_identifier: field_az_event_date_value
+                exposed: false
+                granularity: second
+            filters:
+              status:
+                id: status
+                table: node_field_data
+                field: status
+                entity_type: node
+                entity_field: status
+                plugin_id: boolean
+                value: '1'
+                group: 1
+                expose:
+                  operator: ''
+                  operator_limit_selection: false
+                  operator_list: {  }
+              type:
+                id: type
+                table: node_field_data
+                field: type
+                entity_type: node
+                entity_field: type
+                plugin_id: bundle
+                value:
+                  az_event: az_event
+                expose:
+                  operator_limit_selection: false
+                  operator_list: {  }
+              field_az_event_date_value_az_calendar:
+                id: field_az_event_date_value_az_calendar
+                table: node__field_az_event_date
+                field: field_az_event_date_value_az_calendar
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: az_calendar_filter
+                operator: overlaps
+                value:
+                  min: today
+                  max: '+3 years'
+                  value: ''
+                  type: date
+                group: 1
+                exposed: true
+                expose:
+                  operator_id: field_az_event_date_value_az_calendar_op
+                  label: ''
+                  description: ''
+                  use_operator: false
+                  operator: field_az_event_date_value_az_calendar_op
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: field_az_event_date_value_az_calendar
+                  required: false
+                  remember: false
+                  multiple: false
+                  remember_roles:
+                    authenticated: authenticated
+                  min_placeholder: ''
+                  max_placeholder: ''
+                  placeholder: ''
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: false
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+              term_node_tid_depth:
+                id: term_node_tid_depth
+                table: node_field_data
+                field: term_node_tid_depth
+                relationship: none
+                group_type: group
+                admin_label: ''
+                entity_type: node
+                plugin_id: taxonomy_index_tid_depth
+                operator: or
+                value: {  }
+                group: 1
+                exposed: true
+                expose:
+                  operator_id: term_node_tid_depth_op
+                  label: Category
+                  description: ''
+                  use_operator: false
+                  operator: term_node_tid_depth_op
+                  operator_limit_selection: false
+                  operator_list: {  }
+                  identifier: term_node_tid_depth
+                  required: false
+                  remember: false
+                  multiple: true
+                  remember_roles:
+                    authenticated: authenticated
+                  reduce: false
+                is_grouped: false
+                group_info:
+                  label: ''
+                  description: ''
+                  identifier: ''
+                  optional: true
+                  widget: select
+                  multiple: true
+                  remember: false
+                  default_group: All
+                  default_group_multiple: {  }
+                  group_items: {  }
+                reduce_duplicates: false
+                vid: az_event_categories
+                type: select
+                hierarchy: true
+                limit: true
+                error_message: true
+                depth: 0
+            filter_groups:
+              operator: AND
+              groups:
+                1: AND
+            style:
+              type: default
+              options:
+                grouping: {  }
+                row_class: ''
+                default_row_class: true
+                uses_fields: true
+            row:
+              type: 'entity:node'
+              options:
+                relationship: none
+                view_mode: az_row
+            defaults:
+              css_class: false
+              use_ajax: false
+              style: false
+              style_options: false
+              row: false
+              sorts: false
+              filters: false
+              filter_groups: false
+              footer: false
+            css_class: add-pager-top-margin
+            use_ajax: true
+            display_description: ''
+            style_options: null
+            footer:
+              result:
+                id: result
+                table: views
+                field: result
+                relationship: none
+                group_type: group
+                admin_label: ''
+                plugin_id: result
+                empty: false
+                content: '<p><em>Page @current_page of @page_count</em></p>'
+            exposed_block: true
+            display_extenders: {  }
+            path: calendar
+          cache_metadata:
+            max-age: -1
+            contexts:
+              - 'languages:language_interface'
+              - url
+              - url.query_args
+              - 'user.node_grants:view'
+              - user.permissions
+            tags: {  }
+      _core:
+        default_config_hash: W6jsjktOCyQhKWP_bn2Jkv85H-HDjRiqBP9YkAG-870

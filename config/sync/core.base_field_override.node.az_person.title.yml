@@ -1,0 +1,20 @@
+uuid: 3d65fa49-73c8-491c-b9d2-834b286fb313
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.az_person
+_core:
+  default_config_hash: T7ARVFe-tDJj7SIGCik7HJ9wWT2ZeJV6CkcrkntjTGQ
+id: node.az_person.title
+field_name: title
+entity_type: node
+bundle: az_person
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

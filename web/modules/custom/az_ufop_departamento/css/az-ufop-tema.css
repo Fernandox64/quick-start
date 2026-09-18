@@ -1,0 +1,259 @@
+/**
+ * Retinta o tema az_barrio (vermelho/azul do Arizona) para o vinho
+ * institucional da UFOP, inspirado em guiadesites.ufop.br.
+ *
+ * Especificidade extra ("html body ...") de proposito: o
+ * arizona-bootstrap.min.css (CDN) usa !important nas mesmas classes e
+ * carrega depois deste arquivo na pagina, entao um !important de
+ * especificidade igual nao seria suficiente para vencer.
+ */
+:root,
+html:root {
+  --bs-primary: #8b0015;
+  --bs-primary-rgb: 139, 0, 21;
+  --bs-primary-text-emphasis: #4a000b;
+  --bs-primary-bg-subtle: #f3dbdf;
+  --bs-primary-border-subtle: #d99aa4;
+
+  --bs-blue: #8b0015;
+  --bs-blue-rgb: 139, 0, 21;
+
+  --bs-red: #8b0015;
+  --bs-red-rgb: 139, 0, 21;
+
+  --bs-link-color: #8b0015;
+  --bs-link-color-rgb: 139, 0, 21;
+  --bs-link-hover-color: #630010;
+  --bs-link-hover-color-rgb: 99, 0, 16;
+}
+
+html body .bg-blue,
+html body .bg-red,
+html body .bg-primary,
+html body .text-bg-blue,
+html body .text-bg-red,
+html body .text-bg-primary {
+  background-color: #8b0015 !important;
+}
+
+html body .text-blue,
+html body .text-red,
+html body .text-primary {
+  color: #8b0015 !important;
+}
+
+html body .btn-primary,
+html body .btn-blue,
+html body .btn-red {
+  --bs-btn-bg: #8b0015;
+  --bs-btn-border-color: #8b0015;
+  --bs-btn-hover-bg: #630010;
+  --bs-btn-hover-border-color: #630010;
+  --bs-btn-active-bg: #4a000b;
+  --bs-btn-active-border-color: #4a000b;
+  background-color: #8b0015 !important;
+  border-color: #8b0015 !important;
+}
+html body .btn-primary:hover,
+html body .btn-blue:hover,
+html body .btn-red:hover {
+  background-color: #630010 !important;
+  border-color: #630010 !important;
+}
+
+html body a {
+  color: #8b0015;
+}
+html body a:hover {
+  color: #630010;
+}
+html body .nav-link {
+  color: #4a000b;
+}
+html body .nav-link:hover,
+html body .nav-link.is-active {
+  color: #8b0015;
+}
+
+/* arizona-bootstrap.min.css fixa #0c234b direto (nao via variavel) nos
+   titulos - so um seletor de maior especificidade resolve. */
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body .h1,
+html body .h2,
+html body .h3,
+html body .h4,
+html body .h5,
+html body .h6 {
+  color: #1c1c1c;
+}
+
+/* Hero de boas-vindas, no estilo do banner do guiadesites.ufop.br */
+html body .az-ufop-hero {
+  background: #8b0015 !important;
+  color: #fff;
+  padding: 3.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.25rem;
+}
+html body .az-ufop-hero h2,
+html body .az-ufop-hero .paragraph--type--az-text h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+html body .az-ufop-hero p {
+  color: #f3dbdf;
+  font-size: 1.1rem;
+  max-width: 46rem;
+}
+
+/* Variante centralizada, com botoes (banner "Bem-vindo") */
+html body .az-ufop-hero-center {
+  text-align: center;
+}
+html body .az-ufop-hero-center p {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+html body .az-ufop-hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+html body .az-ufop-hero-actions .btn-light {
+  color: #8b0015;
+  font-weight: 600;
+}
+html body .az-ufop-hero-actions .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+  font-weight: 600;
+}
+html body .az-ufop-hero-actions .btn-outline-light:hover {
+  background: #fff;
+  color: #8b0015;
+}
+
+/* Secao "Quem somos" (az_splitscreen) */
+html body .paragraph--type--az-splitscreen {
+  margin: 3rem 0;
+}
+html body .paragraph--type--az-splitscreen .btn-primary {
+  margin-top: 0.5rem;
+}
+
+/* Menu "Acesso Rapido" na barra lateral */
+html body #block-az-ufop-acesso-rapido {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 0.75rem;
+  margin-bottom: 2rem;
+}
+html body #block-az-ufop-acesso-rapido h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8b0015;
+  margin-bottom: 0.75rem;
+}
+html body #block-az-ufop-acesso-rapido ul,
+html body #block-az-ufop-acesso-rapido ul.nav {
+  display: block !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html body #block-az-ufop-acesso-rapido li,
+html body #block-az-ufop-acesso-rapido li.nav-item {
+  display: block !important;
+  border-bottom: 1px solid #eee;
+}
+html body #block-az-ufop-acesso-rapido li:last-child {
+  border-bottom: none;
+}
+html body #block-az-ufop-acesso-rapido a {
+  display: block;
+  padding: 0.6rem 0.1rem;
+  color: #1c1c1c;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+html body #block-az-ufop-acesso-rapido a:hover {
+  color: #8b0015;
+}
+
+/* ------------------------------------------------------------------
+ * Profundidade nos cards (noticias, pessoal, servicos) - a plataforma
+ * ja usa .card do Bootstrap em todo lugar, so faltava sombra/hover.
+ * ------------------------------------------------------------------ */
+html body .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+html body a:has(> .card):hover .card,
+html body .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -8px rgba(139, 0, 21, 0.28);
+}
+
+/* ------------------------------------------------------------------
+ * Cards de "Servicos" (paragrafo az_cards): icone + fundo em faixa,
+ * no estilo do bloco "O que voce pode fazer" do guiadesites.ufop.br.
+ * Usa o Material Symbols que o proprio tema ja carrega - sem lib nova.
+ * ------------------------------------------------------------------ */
+html body .paragraph--type--az-cards {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem 1.5rem 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+html body .paragraph--type--az-cards .card-body {
+  padding: 2rem 1.5rem 1.75rem;
+}
+html body .paragraph--type--az-cards .card-body::before {
+  font-family: "Material Symbols Rounded";
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 40;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: #8b0015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f3dbdf;
+  margin-bottom: 1.1rem;
+  content: "task_alt";
+}
+html body .paragraph--type--az-cards .field__item:nth-of-type(2) .card-body::before {
+  content: "support_agent";
+}
+html body .paragraph--type--az-cards .field__item:nth-of-type(3) .card-body::before {
+  content: "verified";
+}
+html body .paragraph--type--az-cards .field__item:nth-of-type(4) .card-body::before {
+  content: "groups";
+}
+html body .paragraph--type--az-cards .field__item:nth-of-type(5) .card-body::before {
+  content: "school";
+}
+html body .paragraph--type--az-cards .field__item:nth-of-type(6) .card-body::before {
+  content: "menu_book";
+}
+html body .paragraph--type--az-cards h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}

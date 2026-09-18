@@ -1,0 +1,13 @@
+uuid: 2c047c4b-5197-459a-bd04-9a35b7116d36
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 50EC-9z2UG_NuzK-QaxRRzQGY5fX2Ky3lq8if0f13us
+id: media.az_card_image
+label: 'Card Image'
+description: ''
+targetEntityType: media
+cache: true

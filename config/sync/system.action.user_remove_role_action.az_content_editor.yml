@@ -1,0 +1,16 @@
+uuid: 4742aead-afd9-4906-883c-8c96a0e96325
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.az_content_editor
+  module:
+    - user
+_core:
+  default_config_hash: xR1aJInRKznn9pO0n00z0baH4zM5LPbg1VL9wrNDbEI
+id: user_remove_role_action.az_content_editor
+label: 'Remove the Content editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: az_content_editor

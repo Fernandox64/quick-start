@@ -1,0 +1,31 @@
+uuid: 75980d2c-faa2-48e1-9bab-9614cf606eae
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.az_flexible_block
+    - field.storage.block_content.field_az_main_content
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: R8-fObhxKMqsYhYqgKBDpBiKWSTFojx2rjjBxJCNWKw
+id: block_content.az_flexible_block.field_az_main_content
+field_name: field_az_main_content
+entity_type: block_content
+bundle: az_flexible_block
+label: 'Block Elements'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      az_text:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,21 @@
+uuid: eaf5f2f8-88f1-4568-b451-15c17c56e6bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: KOFrGslscmOJpypl8CmYjFNrezbhM4DxhDHGUj-ac4I
+id: node.field_az_summary
+field_name: field_az_summary
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

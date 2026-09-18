@@ -1,0 +1,9 @@
+uuid: 88d5327a-daae-47e0-bc31-f678c30d040a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Categoria de Curso'
+vid: az_curso_categoria
+description: 'Graduação ou Pós-Graduação'
+weight: 0
+new_revision: false

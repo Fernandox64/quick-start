@@ -1,0 +1,249 @@
+uuid: 0c38d1e5-7136-4fed-a3d6-33c5a1dcec6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_splitscreen
+id: config_sync.module.az_paragraphs_splitscreen
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_splitscreen
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_splitscreen.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_splitscreen.field_az_media
+          - field.field.paragraph.az_splitscreen.field_az_text_area
+          - paragraphs.paragraphs_type.az_splitscreen
+        module:
+          - media_library
+          - media_library_edit
+          - text
+        enforced:
+          module:
+            - az_paragraphs_splitscreen
+      id: paragraph.az_splitscreen.default
+      targetEntityType: paragraph
+      bundle: az_splitscreen
+      mode: default
+      content:
+        field_az_media:
+          type: media_library_widget
+          weight: 1
+          region: content
+          settings:
+            media_types: {  }
+          third_party_settings:
+            media_library_edit:
+              show_edit: true
+        field_az_text_area:
+          type: text_textarea
+          weight: 2
+          region: content
+          settings:
+            rows: 5
+            placeholder: ''
+          third_party_settings: {  }
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: CpYCP6OfTrgJcDN1E7zdaUPcA1CVj8qfiR7wFpgnv00
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_splitscreen.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_splitscreen.field_az_media
+          - field.field.paragraph.az_splitscreen.field_az_text_area
+          - image.style.az_large
+          - paragraphs.paragraphs_type.az_splitscreen
+        module:
+          - field_group
+          - media
+          - text
+        enforced:
+          module:
+            - az_paragraphs_splitscreen
+      third_party_settings:
+        field_group:
+          group_split_screen:
+            children:
+              - field_az_media
+            label: 'Split Screen Image'
+            parent_name: ''
+            region: content
+            weight: 2
+            format_type: html_element
+            format_settings:
+              classes: 'az-splitscreen-image d-flex'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_split_screen_content:
+            children:
+              - group_splitscreen_text
+            label: 'Split Screen Content'
+            parent_name: ''
+            region: content
+            weight: 3
+            format_type: html_element
+            format_settings:
+              classes: 'az-splitscreen-content d-flex align-items-center p-4 p-lg-6'
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+          group_splitscreen_text:
+            children:
+              - field_az_text_area
+            label: 'Splitscreen Text'
+            parent_name: group_split_screen_content
+            region: content
+            weight: 4
+            format_type: html_element
+            format_settings:
+              classes: az-splitscreen-text
+              show_empty_fields: false
+              id: ''
+              element: div
+              show_label: false
+              label_element: h3
+              label_element_classes: ''
+              attributes: ''
+              effect: none
+              speed: fast
+      id: paragraph.az_splitscreen.default
+      targetEntityType: paragraph
+      bundle: az_splitscreen
+      mode: default
+      content:
+        field_az_media:
+          type: media_thumbnail
+          label: hidden
+          settings:
+            image_link: ''
+            image_style: az_large
+          third_party_settings: {  }
+          weight: 1
+          region: content
+        field_az_text_area:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: BJlOmc5I1gzcNPrdgape93mZTxQYds_gv6lYa1Cmw0w
+  -
+    collection: ''
+    name: field.field.paragraph.az_splitscreen.field_az_media
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_media
+          - media.type.az_image
+          - paragraphs.paragraphs_type.az_splitscreen
+        enforced:
+          module:
+            - az_paragraphs_splitscreen
+      id: paragraph.az_splitscreen.field_az_media
+      field_name: field_az_media
+      entity_type: paragraph
+      bundle: az_splitscreen
+      label: Image
+      description: ''
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:media'
+        handler_settings:
+          target_bundles:
+            az_image: az_image
+          sort:
+            field: _none
+            direction: ASC
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: lKMnOptEXKGixQQxcgR0hTQ_6UN7YjgSVl7BC_JZqjU
+  -
+    collection: ''
+    name: field.field.paragraph.az_splitscreen.field_az_text_area
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_text_area
+          - filter.format.az_standard
+          - paragraphs.paragraphs_type.az_splitscreen
+        module:
+          - text
+        enforced:
+          module:
+            - az_paragraphs_splitscreen
+      id: paragraph.az_splitscreen.field_az_text_area
+      field_name: field_az_text_area
+      entity_type: paragraph
+      bundle: az_splitscreen
+      label: Text
+      description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats:
+          - az_standard
+      field_type: text_long
+      _core:
+        default_config_hash: DS_brlh9g8CO6e8SX_QPrd4K6i-n3Ri3B1Vn-km_b24
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_splitscreen
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+        enforced:
+          module:
+            - az_paragraphs_splitscreen
+      id: az_splitscreen
+      label: 'Split Screen'
+      icon_uuid: null
+      icon_default: null
+      description: 'Use this paragraph type to add a "split screen" component to your page. One half contains an image, and the other contains a background color and text.'
+      behavior_plugins:
+        az_split_screen:
+          enabled: true
+      _core:
+        default_config_hash: B_zztmcgTZfOUTfpmdWP-Zt4-x2QBpYAg6PnACZL-x0

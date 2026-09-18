@@ -1,0 +1,23 @@
+uuid: 587afd7f-1663-4371-824f-a711a5b1da55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_short_title
+    - node.type.az_news
+_core:
+  default_config_hash: ruvyQTAHQRqlWTvyZbM9-1gwZVSiY95QmAKcgWLAQe8
+id: node.az_news.field_az_short_title
+field_name: field_az_short_title
+entity_type: node
+bundle: az_news
+label: 'Short Title'
+description: '<strong>Suggested character limit:</strong> 30. This field supports tokens.'
+required: false
+translatable: true
+default_value:
+  -
+    value: '[node:title]'
+default_value_callback: ''
+settings: {  }
+field_type: string

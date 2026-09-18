@@ -1,0 +1,21 @@
+uuid: 52ee7abf-a8c8-413c-823d-10e0f9796b68
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+_core:
+  default_config_hash: SvtN4grojfZf5wFER08eR-43uIOEPir0RHJaCdlFes4
+id: block_content.field_az_links
+field_name: field_az_links
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: 7978d9ff-4a5a-4b47-8335-8d27f3fe0cd5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bRRRJlf9AgriZbSIhVWbLJrNnx3aD58Fi_Y-fkufhPA
+id: az-footer-main
+label: 'Footer - Main'
+description: 'Contains institution-level links that appear in the main footer area'
+locked: false

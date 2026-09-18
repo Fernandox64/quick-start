@@ -1,0 +1,282 @@
+uuid: 59fc6f35-a9d4-4bd9-975d-d2986cc2150a
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_ufop_departamento
+id: config_sync.module.az_ufop_departamento
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_ufop_departamento
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.node.az_curso.default
+    data:
+      uuid: 96ac833e-cb24-4ace-b0c3-a8b3eda8874d
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.az_curso.field_az_curso_categoria
+          - field.field.node.az_curso.field_az_curso_link
+          - node.type.az_curso
+        module:
+          - link
+          - path
+      id: node.az_curso.default
+      targetEntityType: node
+      bundle: az_curso
+      mode: default
+      content:
+        created:
+          type: datetime_timestamp
+          weight: 10
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_az_curso_categoria:
+          type: options_select
+          weight: 1
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_az_curso_link:
+          type: link_default
+          weight: 2
+          region: content
+          settings:
+            placeholder_url: ''
+            placeholder_title: ''
+          third_party_settings: {  }
+        path:
+          type: path
+          weight: 30
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        status:
+          type: boolean_checkbox
+          weight: 120
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        title:
+          type: string_textfield
+          weight: 0
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        uid:
+          type: entity_reference_autocomplete
+          weight: 5
+          region: content
+          settings:
+            match_operator: CONTAINS
+            match_limit: 10
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        url_redirects:
+          weight: 50
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+      hidden:
+        promote: true
+        sticky: true
+      _core:
+        default_config_hash: id-fwsi8zWm4ULt5ezAzNYscp_HgPCCulGsVYYcwsCw
+  -
+    collection: ''
+    name: core.entity_view_display.node.az_curso.default
+    data:
+      uuid: 606944c7-a957-4c6f-89b6-a1e4aa119076
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.az_curso.field_az_curso_categoria
+          - field.field.node.az_curso.field_az_curso_link
+          - node.type.az_curso
+        module:
+          - link
+          - user
+      id: node.az_curso.default
+      targetEntityType: node
+      bundle: az_curso
+      mode: default
+      content:
+        field_az_curso_categoria:
+          type: entity_reference_label
+          label: above
+          settings:
+            link: true
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        field_az_curso_link:
+          type: link
+          label: above
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: ''
+            target: ''
+          third_party_settings: {  }
+          weight: 1
+          region: content
+        links:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 100
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: mQC8OkklpE9WTjyeayUYik2fS_FXpkG89QxUAJ9cQmE
+  -
+    collection: ''
+    name: field.field.node.az_curso.field_az_curso_categoria
+    data:
+      uuid: e951461d-4567-41a2-bffb-2ef8e2debef5
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_curso_categoria
+          - node.type.az_curso
+          - taxonomy.vocabulary.az_curso_categoria
+      id: node.az_curso.field_az_curso_categoria
+      field_name: field_az_curso_categoria
+      entity_type: node
+      bundle: az_curso
+      label: Categoria
+      description: ''
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:taxonomy_term'
+        handler_settings:
+          target_bundles:
+            az_curso_categoria: az_curso_categoria
+      field_type: entity_reference
+      _core:
+        default_config_hash: wIx0vfkSycBmvUTrFD8ch4_6KLzvsJKhzhBp2TfPAm4
+  -
+    collection: ''
+    name: field.field.node.az_curso.field_az_curso_link
+    data:
+      uuid: 928811ce-f382-4925-939a-e1d33ad6ed73
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_az_curso_link
+          - node.type.az_curso
+        module:
+          - link
+      id: node.az_curso.field_az_curso_link
+      field_name: field_az_curso_link
+      entity_type: node
+      bundle: az_curso
+      label: 'Link do curso'
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        title: 1
+        link_type: 17
+      field_type: link
+      _core:
+        default_config_hash: b_gLtOSRNerOcHljUgiGPdfpw0NGe_k4xZcmPECPQy0
+  -
+    collection: ''
+    name: field.storage.node.field_az_curso_categoria
+    data:
+      uuid: f6981ee6-3794-44c3-a877-6a5d80788182
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - taxonomy
+      id: node.field_az_curso_categoria
+      field_name: field_az_curso_categoria
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: taxonomy_term
+      module: core
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 712UR9LhDsbToH0mlocDVyI3hFT5djGxWoNqiHX0xqA
+  -
+    collection: ''
+    name: field.storage.node.field_az_curso_link
+    data:
+      uuid: 47e1599b-4b2e-4262-aa5c-d32041ea1578
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - link
+          - node
+      id: node.field_az_curso_link
+      field_name: field_az_curso_link
+      entity_type: node
+      type: link
+      settings: {  }
+      module: link
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: '-0LSfwHfWVNhRRALHDFCEztPmUib8yWj0F7gmy8gLek'
+  -
+    collection: ''
+    name: node.type.az_curso
+    data:
+      uuid: b1eb4a71-46cb-4c17-bd09-a878689b0edb
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: Curso
+      type: az_curso
+      description: 'Curso de graduação ou pós-graduação listado nas páginas do departamento.'
+      help: null
+      new_revision: true
+      preview_mode: 1
+      display_submitted: true
+      _core:
+        default_config_hash: s0tbvMncevx88xDJ9QDZ-Ow38dQll5QXtoLa16JcGsw
+  -
+    collection: ''
+    name: taxonomy.vocabulary.az_curso_categoria
+    data:
+      uuid: 88d5327a-daae-47e0-bc31-f678c30d040a
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: 'Categoria de Curso'
+      vid: az_curso_categoria
+      description: 'Graduação ou Pós-Graduação'
+      weight: 0
+      new_revision: false
+      _core:
+        default_config_hash: a9ozGXtf1voJZeO1ZWECnvi6cL-GYMooZ4-dQupTn28

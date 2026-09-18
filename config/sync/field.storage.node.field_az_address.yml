@@ -1,0 +1,21 @@
+uuid: 78bc582e-982a-4366-8618-96b426769b93
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: yIdXecJMstLlJ2i-FcvG2ehHO6_-oLnRaqLijfA-U4g
+id: node.field_az_address
+field_name: field_az_address
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,136 @@
+uuid: 16f8890e-49d8-4e08-b237-d106c625a49f
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_accordion
+id: config_sync.module.az_paragraphs_accordion
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_accordion
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_accordion.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_accordion.field_az_accordion
+          - paragraphs.paragraphs_type.az_accordion
+        module:
+          - az_accordion
+      id: paragraph.az_accordion.default
+      targetEntityType: paragraph
+      bundle: az_accordion
+      mode: default
+      content:
+        field_az_accordion:
+          weight: 0
+          settings: {  }
+          third_party_settings: {  }
+          type: az_accordion
+          region: content
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: MPiRc9IIgHQBdSvZ2rVop0i5k6JKtF1UlYgc-86rWYI
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_accordion.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_accordion.field_az_accordion
+          - paragraphs.paragraphs_type.az_accordion
+        module:
+          - az_accordion
+      id: paragraph.az_accordion.default
+      targetEntityType: paragraph
+      bundle: az_accordion
+      mode: default
+      content:
+        field_az_accordion:
+          weight: 0
+          label: hidden
+          settings:
+            foo: bar
+          third_party_settings: {  }
+          type: az_accordion_default
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: V7_d4cOjgDS1L9zYetdEHHG7n8k4dwW1eUZGZeq8IB4
+  -
+    collection: ''
+    name: field.field.paragraph.az_accordion.field_az_accordion
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_accordion
+          - paragraphs.paragraphs_type.az_accordion
+        module:
+          - az_accordion
+      id: paragraph.az_accordion.field_az_accordion
+      field_name: field_az_accordion
+      entity_type: paragraph
+      bundle: az_accordion
+      label: Accordion
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: az_accordion
+      _core:
+        default_config_hash: LG8Zdie30V2q8zry-8_IFgqNISppDAdok-2dh4FJewY
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_accordion
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_accordion
+          - paragraphs
+      id: paragraph.field_az_accordion
+      field_name: field_az_accordion
+      entity_type: paragraph
+      type: az_accordion
+      settings: {  }
+      module: az_accordion
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: cAMfOZumfejjfHm1kilzCVtaN2FRPCrIlnbLbB4kIVo
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_accordion
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_accordion
+      label: Accordion
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_accordion_paragraph_behavior:
+          enabled: true
+      _core:
+        default_config_hash: ZpJPx1zKX9T0Z-tqiAxp3-yJE4GJJt_7p4eHyQQRaj0

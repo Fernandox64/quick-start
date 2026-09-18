@@ -1,0 +1,23 @@
+uuid: 37ab69ae-79b5-43ad-9ea3-4f8e83781ea5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_accordion
+    - paragraphs.paragraphs_type.az_accordion
+  module:
+    - az_accordion
+_core:
+  default_config_hash: fFfe3WKFzT7-i6IxFJRx-vReQQYECqgxokcv0UPEYug
+id: paragraph.az_accordion.field_az_accordion
+field_name: field_az_accordion
+entity_type: paragraph
+bundle: az_accordion
+label: Accordion
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: az_accordion

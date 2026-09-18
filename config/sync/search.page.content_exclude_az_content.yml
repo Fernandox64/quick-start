@@ -1,0 +1,17 @@
+uuid: de4b66a8-d27c-4ff8-8f49-e0376930bb04
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_exclude
+_core:
+  default_config_hash: J7lekWriSg7nGl4C-L_hzK_eSmwl-eHG__opKeoFFNY
+id: content_exclude_az_content
+label: Content
+path: node
+weight: 0
+plugin: search_exclude_node_search
+configuration:
+  rankings: {  }
+  excluded_bundles:
+    az_carousel_item: az_carousel_item

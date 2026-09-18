@@ -1,0 +1,30 @@
+uuid: 28bb8522-4703-4aa2-8184-47dcd0386aa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.az_video.field_media_az_video_file
+    - media.type.az_video
+_core:
+  default_config_hash: TtsAtHfMfly_2bgEiAM80Q3gAaE9QNrB9QuzzToL6Gk
+id: media.az_video.media_library
+targetEntityType: media
+bundle: az_video
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_az_video_file: true
+  name: true
+  path: true
+  replace_file: true
+  status: true
+  uid: true

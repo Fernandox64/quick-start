@@ -1,0 +1,80 @@
+uuid: e4aa2caa-9fdf-494c-b69e-04d65ce31606
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.az_quick_links
+    - field.field.block_content.az_quick_links.field_az_links
+    - field.field.block_content.az_quick_links.field_az_short_title
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_az_heading:
+      children:
+        - field_az_short_title
+      label: Heading
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'h4 mt-md-5'
+        show_empty_fields: false
+        id: ''
+        element: h2
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_az_list_group:
+      children:
+        - field_az_links
+      label: 'List Group'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'list-group align-middle'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: hvXYaraHGkPQ9gwfYXuJZ5SF2L36-0YPzXtnKA2QDcI
+id: block_content.az_quick_links.default
+targetEntityType: block_content
+bundle: az_quick_links
+mode: default
+content:
+  field_az_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_az_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

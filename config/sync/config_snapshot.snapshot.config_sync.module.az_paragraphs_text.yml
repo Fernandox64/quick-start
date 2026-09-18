@@ -1,0 +1,114 @@
+uuid: 3eac3969-68c8-42cc-93c5-a701bd1070c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_text
+id: config_sync.module.az_paragraphs_text
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_text
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_text.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_text.field_az_text_area
+          - paragraphs.paragraphs_type.az_text
+        module:
+          - text
+      id: paragraph.az_text.default
+      targetEntityType: paragraph
+      bundle: az_text
+      mode: default
+      content:
+        field_az_text_area:
+          weight: 0
+          settings:
+            rows: 20
+            placeholder: ''
+          third_party_settings: {  }
+          type: text_textarea
+          region: content
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: I2xgQnuwtZFptSM-ufxxKQMnaYCLQFYjAJvr22ArAp8
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_text.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_text.field_az_text_area
+          - paragraphs.paragraphs_type.az_text
+        module:
+          - text
+      id: paragraph.az_text.default
+      targetEntityType: paragraph
+      bundle: az_text
+      mode: default
+      content:
+        field_az_text_area:
+          weight: 0
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          type: text_default
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: KqdL7aBuuJ8xa5REYGDRsvlvPLp3YQGUBAiO4ghDXao
+  -
+    collection: ''
+    name: field.field.paragraph.az_text.field_az_text_area
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_text_area
+          - paragraphs.paragraphs_type.az_text
+        module:
+          - text
+      id: paragraph.az_text.field_az_text_area
+      field_name: field_az_text_area
+      entity_type: paragraph
+      bundle: az_text
+      label: Text
+      description: 'White text will be highlighted in gray (only while editing) to keep the text visible.'
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        allowed_formats: {  }
+      field_type: text_long
+      _core:
+        default_config_hash: Yc2AuVrlhdhg0U4Q-clLLGn0B3Rp7PSQqVzog8wwqCw
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_text
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_text
+      label: Text
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_default_paragraph_behavior:
+          enabled: true
+      _core:
+        default_config_hash: DfB93tp4zIDlrDxRknBZMYlnR9EiHNqVc9gBStUtE3A

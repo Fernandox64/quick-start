@@ -1,0 +1,36 @@
+services:
+  web:
+    build: .
+    container_name: arizona-ufop
+    env_file:
+      - .env
+    ports:
+      - "${HOST_PORT:-8198}:80"
+    volumes:
+      # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
+      # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
+      - ./web/sites/default/files:/app/web/sites/default/files
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.11
+    container_name: arizona-ufop-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${DB_NAME:-db}
+      MYSQL_USER: ${DB_USER:-db}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-db}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db_data:

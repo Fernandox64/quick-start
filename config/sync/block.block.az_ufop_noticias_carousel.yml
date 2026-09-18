@@ -1,0 +1,25 @@
+uuid: c219dfc8-26fd-43a6-ba50-e9c11a473ed7
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_ufop_departamento
+    - system
+  theme:
+    - az_barrio
+id: az_ufop_noticias_carousel
+theme: az_barrio
+region: content_featured
+weight: -20
+provider: null
+plugin: az_ufop_noticias_carousel
+settings:
+  id: az_ufop_noticias_carousel
+  label: 'Carrossel de Notícias'
+  label_display: '0'
+  provider: az_ufop_departamento
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

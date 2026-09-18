@@ -1,0 +1,34 @@
+uuid: dd782ef4-e95a-4188-83f1-b0eb36d561d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.az_full_width_bg_medium
+  module:
+    - crop
+_core:
+  default_config_hash: Ye3lSQMN2WidpSr5lC4Eo1eLebP_MW_gCOucmKXr5n8
+name: az_full_width_bg_medium
+label: 'Medium full-width background (Scales width down to 991px)'
+effects:
+  d3f6ebea-23e3-4262-86d0-dc8f50a2cb7d:
+    uuid: d3f6ebea-23e3-4262-86d0-dc8f50a2cb7d
+    id: image_scale
+    weight: -9
+    data:
+      width: 991
+      height: null
+      upscale: false
+  aa88534f-24f8-4f96-8b8f-9e1b28d70da7:
+    uuid: aa88534f-24f8-4f96-8b8f-9e1b28d70da7
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: az_full_width_bg_medium
+      automatic_crop_provider: null
+  7f25b717-08c2-4be8-b0e8-6c7b2b4a333b:
+    uuid: 7f25b717-08c2-4be8-b0e8-6c7b2b4a333b
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

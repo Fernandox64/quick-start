@@ -1,0 +1,21 @@
+uuid: 6f6ab172-f921-4242-ae2b-3590cc16487c
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_accordion
+    - paragraphs
+_core:
+  default_config_hash: megMmjdWoCkF5NDig07jN9dd0tQHla0LzGE0W_vG-Ks
+id: paragraph.field_az_accordion
+field_name: field_az_accordion
+entity_type: paragraph
+type: az_accordion
+settings: {  }
+module: az_accordion
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

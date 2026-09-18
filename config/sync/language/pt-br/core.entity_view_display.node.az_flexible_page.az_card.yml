@@ -1,0 +1,12 @@
+third_party_settings:
+  field_group:
+    group_link:
+      label: Link
+    group_media:
+      label: Mídia
+    group_heading:
+      label: Cabeçalho
+    group_summary:
+      label: Resumo
+    group_content:
+      label: Conteúdo

@@ -1,0 +1,28 @@
+uuid: 04f492b8-2065-4a9e-984b-558488a258c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: 3udC5YeSMW6vYte1NkzzRhT6sYHlYoCwOtChKC8c0WY
+id: az_barrio_help
+theme: az_barrio
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '/node/*/layout'

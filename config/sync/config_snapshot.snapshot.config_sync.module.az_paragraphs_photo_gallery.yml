@@ -1,0 +1,148 @@
+uuid: 8faa0f11-fdd0-4132-b98b-935779d7e442
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs_photo_gallery
+id: config_sync.module.az_paragraphs_photo_gallery
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_paragraphs_photo_gallery
+items:
+  -
+    collection: ''
+    name: core.entity_form_display.paragraph.az_photo_gallery.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_photo_gallery.field_az_photos
+          - paragraphs.paragraphs_type.az_photo_gallery
+        module:
+          - media_library
+          - media_library_edit
+      id: paragraph.az_photo_gallery.default
+      targetEntityType: paragraph
+      bundle: az_photo_gallery
+      mode: default
+      content:
+        field_az_photos:
+          type: media_library_widget
+          weight: 0
+          region: content
+          settings:
+            media_types: {  }
+          third_party_settings:
+            media_library_edit:
+              show_edit: true
+      hidden:
+        created: true
+        status: true
+      _core:
+        default_config_hash: gB558sJKkEQXzoWBZU-tedOj0RuyCzyhjT5TMibKm4U
+  -
+    collection: ''
+    name: core.entity_view_display.paragraph.az_photo_gallery.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.paragraph.az_photo_gallery.field_az_photos
+          - paragraphs.paragraphs_type.az_photo_gallery
+      id: paragraph.az_photo_gallery.default
+      targetEntityType: paragraph
+      bundle: az_photo_gallery
+      mode: default
+      content:
+        field_az_photos:
+          type: entity_reference_entity_view
+          weight: 0
+          label: hidden
+          settings:
+            view_mode: az_carousel_item
+            link: false
+          third_party_settings: {  }
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: PmLOWR33HoeNcFyr4NO6SIuDnW6mR3MuW25LSPsZ4Ig
+  -
+    collection: ''
+    name: field.field.paragraph.az_photo_gallery.field_az_photos
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.paragraph.field_az_photos
+          - media.type.az_image
+          - paragraphs.paragraphs_type.az_photo_gallery
+      id: paragraph.az_photo_gallery.field_az_photos
+      field_name: field_az_photos
+      entity_type: paragraph
+      bundle: az_photo_gallery
+      label: Photos
+      description: ''
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:media'
+        handler_settings:
+          target_bundles:
+            az_image: az_image
+          sort:
+            field: _none
+            direction: ASC
+          auto_create: false
+          auto_create_bundle: ''
+      field_type: entity_reference
+      _core:
+        default_config_hash: 8z0bJZQhaoIJztReP1QyqZsdBjUotLrzH12-P_hHnVA
+  -
+    collection: ''
+    name: field.storage.paragraph.field_az_photos
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - media
+          - paragraphs
+      id: paragraph.field_az_photos
+      field_name: field_az_photos
+      entity_type: paragraph
+      type: entity_reference
+      settings:
+        target_type: media
+      module: core
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: xI6DEP1uiKASEeKTCDtcMAzOGYjKqCu0xD29KxZI31o
+  -
+    collection: ''
+    name: paragraphs.paragraphs_type.az_photo_gallery
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - az_paragraphs
+      id: az_photo_gallery
+      label: 'Photo Gallery'
+      icon_uuid: null
+      icon_default: null
+      description: ''
+      behavior_plugins:
+        az_photo_gallery_paragraph_behavior:
+          enabled: true
+      _core:
+        default_config_hash: kvi9dVBd9ySCTxXxwVVUeqQwhR3QRoe44CYh5J2WE4I

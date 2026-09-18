@@ -1,0 +1,34 @@
+uuid: 63c8433c-b420-4e21-b2f9-d81d1e95fb38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.az_cards.field_az_cards
+    - field.field.paragraph.az_cards.field_az_title
+    - paragraphs.paragraphs_type.az_cards
+  module:
+    - az_card
+_core:
+  default_config_hash: jixFEPskuzSGcUiBGsgW0kj1gIzePeGoOor6gANFZ5U
+id: paragraph.az_cards.default
+targetEntityType: paragraph
+bundle: az_cards
+mode: default
+content:
+  field_az_cards:
+    type: az_card
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_az_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

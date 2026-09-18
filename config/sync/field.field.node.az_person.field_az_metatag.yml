@@ -1,0 +1,23 @@
+uuid: 061a1406-5321-4206-a98b-cdc8e586a22c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_metatag
+    - node.type.az_person
+  module:
+    - metatag
+_core:
+  default_config_hash: DIE2V_F2pdZV8A03kXUq3dXa57UccT84hHO03zVjb0U
+id: node.az_person.field_az_metatag
+field_name: field_az_metatag
+entity_type: node
+bundle: az_person
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

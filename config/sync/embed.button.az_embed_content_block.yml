@@ -1,0 +1,23 @@
+uuid: 23812468-f1d9-4ae3-9e0b-f7832890a13d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.block_content.full
+  module:
+    - block_content
+    - entity_embed
+_core:
+  default_config_hash: hgOgEGMJ4XzfkbGftAY0EwOIlUK7coSV8PwB7gKl6vc
+label: 'Embed Content Block'
+id: az_embed_content_block
+type_id: entity
+type_settings:
+  entity_type: block_content
+  bundles: {  }
+  display_plugins:
+    - 'view_mode:block_content.full'
+icon:
+  uri: 'public://embed_buttons/dashboard_customize_FILL0_wght400_GRAD0_opsz24.svg'
+  data: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iMjQiPjxwYXRoIGQ9Ik0xMjAtODQwaDMyMHYzMjBIMTIwdi0zMjBabTgwIDgwdjE2MC0xNjBabTMyMC04MGgzMjB2MzIwSDUyMHYtMzIwWm04MCA4MHYxNjAtMTYwWk0xMjAtNDQwaDMyMHYzMjBIMTIwdi0zMjBabTgwIDgwdjE2MC0xNjBabTQ0MC04MGg4MHYxMjBoMTIwdjgwSDcyMHYxMjBoLTgwdi0xMjBINTIwdi04MGgxMjB2LTEyMFptLTQwLTMyMHYxNjBoMTYwdi0xNjBINjAwWm0tNDAwIDB2MTYwaDE2MHYtMTYwSDIwMFptMCA0MDB2MTYwaDE2MHYtMTYwSDIwMFoiLz48L3N2Zz4=
+icon_uuid: null

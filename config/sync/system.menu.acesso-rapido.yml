@@ -1,0 +1,8 @@
+uuid: 74d9edfb-5ad8-464d-8123-c85edb4ec1c3
+langcode: en
+status: true
+dependencies: {  }
+id: acesso-rapido
+label: 'Acesso Rápido'
+description: 'Links de acesso rapido exibidos na barra lateral.'
+locked: false

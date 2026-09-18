@@ -1,0 +1,10 @@
+uuid: 54ee2d23-f11b-4a65-8b7c-7a65332b4669
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4AaYaxuB_RpQIC1ouGgMySKZvPWeI6tsYMsXA6xAVKg
+id: az-utility-links
+label: 'Utility Links'
+description: 'The utility links menu contains secondary navigation links that are not part of the main menu.'
+locked: false

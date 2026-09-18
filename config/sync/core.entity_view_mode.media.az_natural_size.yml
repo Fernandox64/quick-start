@@ -1,0 +1,13 @@
+uuid: 4a89a3cf-7e53-400e-90e6-49ad1624936e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: edV8k6PpCUaDM2MNS1t_8JXQCg0DCFEantuUC1gErhc
+id: media.az_natural_size
+label: 'Natural Size'
+description: ''
+targetEntityType: media
+cache: true

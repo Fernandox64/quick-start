@@ -1,0 +1,13 @@
+uuid: 92380e94-7b9f-4de7-a2b0-d228fde45292
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: nFM7-sYSJ8ryr8XrGfu5wUVDy5ht7zjBHOexPj8z9ow
+id: media.az_modal_image
+label: 'Modal Image'
+description: ''
+targetEntityType: media
+cache: true

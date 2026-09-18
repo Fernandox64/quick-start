@@ -1,0 +1,91 @@
+display:
+  default:
+    display_title: Principal
+    display_options:
+      fields:
+        title:
+          separator: ', '
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Redefinir
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Ascendente
+          sort_desc_label: Decrescente
+      arguments:
+        term_node_tid_depth:
+          exception:
+            title: Tudo
+  az_grid:
+    display_options:
+      block_category: 'Listas (Views)'
+  az_grid_filter:
+    display_options:
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Redefinir
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Ascendente
+          sort_desc_label: Decrescente
+          text_input_required: 'Selecione um filtro e clique em Aplicar para ver os resultados'
+          bef:
+            general:
+              secondary_label: 'Configurações avançadas'
+      filters:
+        tid:
+          admin_label: Categoria
+      block_category: 'Listas (Views)'
+  az_sidebar:
+    display_options:
+      arguments:
+        term_node_tid_depth:
+          exception:
+            title: Tudo
+        nid:
+          exception:
+            title: Tudo
+  az_small_row:
+    display_options:
+      arguments:
+        term_node_tid_depth:
+          exception:
+            title: Tudo
+        nid:
+          exception:
+            title: Tudo
+  az_teaser_grid:
+    display_options:
+      pager:
+        options:
+          tags:
+            next: 'Avançar ›'
+            previous: '‹ Voltar'
+            first: '« Primeiro'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Itens por página'
+            items_per_page_options_all_label: '- Todos -'
+            offset_label: Deslocamento

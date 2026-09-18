@@ -1,0 +1,51 @@
+uuid: 85eb7808-8165-48cf-a8ad-bb2a83823f30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_contacts
+    - node.type.az_news
+    - paragraphs.paragraphs_type.az_contact
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: tLtaOvAfdnsFxUVyBRRzS1WGnSgBpINl_6C_AbI7JkI
+id: node.az_news.field_az_contacts
+field_name: field_az_contacts
+entity_type: node
+bundle: az_news
+label: Contacts
+description: 'Persons who can be contacted about the news article.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      az_contact: az_contact
+    negate: 0
+    target_bundles_drag_drop:
+      az_accordion:
+        weight: 8
+        enabled: false
+      az_cards:
+        weight: 9
+        enabled: false
+      az_contact:
+        weight: 10
+        enabled: true
+      az_text:
+        weight: 11
+        enabled: false
+      az_text_background:
+        weight: 12
+        enabled: false
+      az_text_media:
+        weight: 13
+        enabled: false
+      az_view_reference:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

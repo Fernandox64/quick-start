@@ -1,0 +1,32 @@
+uuid: 88a12f10-f535-4e2d-9217-357d4e51eb57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_media
+    - media.type.az_image
+    - media.type.az_remote_video
+    - paragraphs.paragraphs_type.az_text_media
+_core:
+  default_config_hash: qYACwzlV3LTkEn9DcVZZeWaUj3kR0-gk67TQrsM79ZI
+id: paragraph.az_text_media.field_az_media
+field_name: field_az_media
+entity_type: paragraph
+bundle: az_text_media
+label: Media
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      az_image: az_image
+      az_remote_video: az_remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

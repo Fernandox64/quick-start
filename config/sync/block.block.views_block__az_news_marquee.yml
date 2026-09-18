@@ -1,0 +1,32 @@
+uuid: 4c2ceecc-6189-486f-b887-90277c0ea958
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.az_news
+  module:
+    - system
+    - views
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: mgdcuqoefFh7nNQ_pZT0nUSYuZVZSRufVOsLUyd49Yo
+id: views_block__az_news_marquee
+theme: az_barrio
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:az_news-marquee'
+settings:
+  id: 'views_block:az_news-marquee'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /news-teasers

@@ -1,0 +1,23 @@
+uuid: a45ad165-c1c3-4d4f-8bfa-84ad8aa2f6db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_metatag
+    - node.type.az_event
+  module:
+    - metatag
+_core:
+  default_config_hash: SbgrNnodzXmT6u2R0uu4wQgdXXRI7wYKfLfFmKwqNzA
+id: node.az_event.field_az_metatag
+field_name: field_az_metatag
+entity_type: node
+bundle: az_event
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

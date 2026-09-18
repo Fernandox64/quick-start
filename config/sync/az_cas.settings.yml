@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: b4NgwMG0Mt0IJb3rvYHKxK4B8v15Gzc7W3UjhUNSfng
+disable_login_form: false
+disable_admin_add_user_button: true
+disable_password_recovery_link: true

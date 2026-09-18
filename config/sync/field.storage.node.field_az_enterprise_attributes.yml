@@ -1,0 +1,22 @@
+uuid: 3e26ddf8-0d52-4ed0-b81f-f59d116b3759
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: y8soS6h_-W_1UgErWCae9lr2Vd8kgGkk7lTDFa-Q15w
+id: node.field_az_enterprise_attributes
+field_name: field_az_enterprise_attributes
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

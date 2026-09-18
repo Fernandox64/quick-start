@@ -1,0 +1,21 @@
+uuid: 37872656-060e-45d3-8c74-4b5442f2e678
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_az_title
+    - paragraphs.paragraphs_type.az_text_media
+_core:
+  default_config_hash: Riizl0zWnLkUAJPByV9J_ZKdkORfCCPV72fIXTrYL-8
+id: paragraph.az_text_media.field_az_title
+field_name: field_az_title
+entity_type: paragraph
+bundle: az_text_media
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

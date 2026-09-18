@@ -1,0 +1,321 @@
+uuid: 58f6b4a3-48be-4b0b-a5d6-03f91f1e982c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.az_media_list
+    - field.field.node.az_news.field_az_attachments
+    - field.field.node.az_news.field_az_body
+    - field.field.node.az_news.field_az_byline
+    - field.field.node.az_news.field_az_contacts
+    - field.field.node.az_news.field_az_enterprise_attributes
+    - field.field.node.az_news.field_az_expiration_date
+    - field.field.node.az_news.field_az_featured_image_as_thumb
+    - field.field.node.az_news.field_az_link
+    - field.field.node.az_news.field_az_main_content
+    - field.field.node.az_news.field_az_media_image
+    - field.field.node.az_news.field_az_media_thumbnail_image
+    - field.field.node.az_news.field_az_metatag
+    - field.field.node.az_news.field_az_news_tags
+    - field.field.node.az_news.field_az_published
+    - field.field.node.az_news.field_az_short_title
+    - field.field.node.az_news.field_az_subheading
+    - field.field.node.az_news.field_az_summary
+    - node.type.az_news
+  module:
+    - az_core
+    - date_ap_style
+    - field_group
+    - smart_title
+    - user
+third_party_settings:
+  field_group:
+    group_row:
+      children:
+        - group_media
+        - group_text_column
+      label: Row
+      parent_name: group_bottom_border
+      region: content
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: row
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_text_muted:
+      children:
+        - field_az_published
+      label: 'Text Body Secondary'
+      parent_name: group_text_column
+      region: content
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: 'text-body-secondary fw-normal mb-4'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_text_column:
+      children:
+        - group_heading
+        - group_text_muted
+        - group_summary
+        - group_read_more
+      label: 'Text Column'
+      parent_name: group_row
+      region: content
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: col
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_media:
+      children:
+        - field_az_media_thumbnail_image
+      label: Media
+      parent_name: group_row
+      region: content
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: 'col-4 pt-2 pb-card mb-nmin'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_heading:
+      children:
+        - smart_title
+      label: Heading
+      parent_name: group_text_column
+      region: content
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: 'card-title text-midnight h4 mt-2'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: h2
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_read_more:
+      children:
+        - group_read_more_text
+      label: 'Read more'
+      parent_name: group_text_column
+      region: content
+      weight: 9
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: ''
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_link:
+      children:
+        - group_bottom_border
+      label: Link
+      parent_name: group_card_clickable
+      region: content
+      weight: 1
+      format_type: link
+      format_settings:
+        classes: 'card-body p-0 stretched-link link-primary text-decoration-none'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        target: custom_uri
+        custom_uri: '[node:az-canonical-url]'
+        target_attribute: default
+    group_bottom_border:
+      children:
+        - group_row
+      label: 'Bottom Border'
+      parent_name: group_link
+      region: content
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: border-bottom
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_summary:
+      children:
+        - field_az_summary
+      label: Summary
+      parent_name: group_text_column
+      region: content
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: 'card-text fw-normal text-body'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_card_clickable:
+      children:
+        - group_link
+      label: 'Card Clickable'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'card border-0 hover'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_read_more_text:
+      children:
+        - az_news_read_more
+      label: 'Read more text'
+      parent_name: group_read_more
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'my-4 hover-text-underline'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+  smart_title:
+    enabled: true
+    settings:
+      smart_title__link: false
+      smart_title__tag: ''
+      smart_title__classes: {  }
+_core:
+  default_config_hash: PWGHJDQzNMAPlhl4TE49XuZqvJC_ea9XsL1Zdq3KwAc
+id: node.az_news.az_media_list
+targetEntityType: node
+bundle: az_news
+mode: az_media_list
+content:
+  az_news_read_more:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_az_media_thumbnail_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: az_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_az_published:
+    type: timestamp_ap_style
+    label: hidden
+    settings:
+      always_display_year: true
+      use_today: true
+      cap_today: true
+      display_day: true
+      display_time: false
+      hide_date: false
+      time_before_date: false
+      display_noon_and_midnight: true
+      capitalize_noon_and_midnight: false
+      use_all_day: false
+      timezone: ''
+      month_only: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_az_summary:
+    type: az_text_summary
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  smart_title:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  field_az_attachments: true
+  field_az_body: true
+  field_az_byline: true
+  field_az_contacts: true
+  field_az_enterprise_attributes: true
+  field_az_expiration_date: true
+  field_az_featured_image_as_thumb: true
+  field_az_link: true
+  field_az_main_content: true
+  field_az_media_image: true
+  field_az_metatag: true
+  field_az_news_tags: true
+  field_az_short_title: true
+  field_az_subheading: true
+  langcode: true
+  links: true

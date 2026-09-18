@@ -1,0 +1,21 @@
+uuid: f2c04f3b-dd2c-465b-9cea-5a108c078761
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: iZ8MiTw2ALvK_tobUl2Yv0FVB6XO-mfBHXR_oKAmCZw
+id: node.field_az_teaching_interests
+field_name: field_az_teaching_interests
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

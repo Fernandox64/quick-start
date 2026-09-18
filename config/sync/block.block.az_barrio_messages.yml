@@ -1,0 +1,22 @@
+uuid: 36be0818-7408-4822-b4c0-98c4e0b4dbd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: pW7xjIYq64f4uH3718cwkn3bf1gQJ1gz7uOKh1fi7no
+id: az_barrio_messages
+theme: az_barrio
+region: help
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

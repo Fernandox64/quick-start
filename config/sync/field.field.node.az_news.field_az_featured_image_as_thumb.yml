@@ -1,0 +1,25 @@
+uuid: 7edda6b8-a277-45ff-9628-77882cde4af2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_featured_image_as_thumb
+    - node.type.az_news
+_core:
+  default_config_hash: U-4SvD-UkHvQP34coBj956eYZUFd0eEPXQft1cEJ-Xo
+id: node.az_news.field_az_featured_image_as_thumb
+field_name: field_az_featured_image_as_thumb
+entity_type: node
+bundle: az_news
+label: 'Use Featured Image as Thumbnail'
+description: 'Sets the <em>summary</em> thumbnail image to be the same as the featured image. This is the default behavior.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

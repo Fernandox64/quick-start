@@ -1,0 +1,13 @@
+uuid: 43d4b64a-8a3c-4344-88f2-7a51a453d722
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 8xMDh6GQ6jQZhWOHx9xpFS0XypFvQomtFks5Cfh1jiI
+id: node.az_card_alternate
+label: 'Card Alternate'
+description: ''
+targetEntityType: node
+cache: true

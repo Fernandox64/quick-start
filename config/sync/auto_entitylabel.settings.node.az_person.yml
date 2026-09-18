@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: hu8Y5MvF6T0iD7z29njbDSIAJbB-PeGNwo6oqfrNLcM
+status: 1
+pattern: '[node:field_az_fname] [node:field_az_lname]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.az_person
+new_content_behavior: 0

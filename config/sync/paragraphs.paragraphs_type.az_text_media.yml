@@ -1,0 +1,16 @@
+uuid: e804507d-7a39-41f5-8160-d9cbc7291671
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+_core:
+  default_config_hash: JXHCMZAO8InMxx-Du-nP1kc3X9vmnVWftU3M02uTPPY
+id: az_text_media
+label: 'Text on Media'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  az_text_media_paragraph_behavior:
+    enabled: true

@@ -1,0 +1,12 @@
+third_party_settings:
+  field_group:
+    group_card:
+      label: Cartão
+    group_link:
+      label: Link
+    group_row:
+      label: Linha
+    group_view_person:
+      label: 'Exibir perfil'
+    group_name:
+      label: Nome

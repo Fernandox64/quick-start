@@ -1,0 +1,36 @@
+uuid: e6538d4c-02c1-4954-8198-cffa18e98c8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - chosen
+id: config_sync.module.chosen
+snapshotSet: config_sync
+extensionType: module
+extensionName: chosen
+items:
+  -
+    collection: ''
+    name: chosen.settings
+    data:
+      minimum_single: 0
+      minimum_multiple: 0
+      disable_search_threshold: 0
+      minimum_width: null
+      max_shown_results: null
+      use_relative_width: false
+      jquery_selector: 'select:visible:not(.delta-order select, .field--name-field-az-contributors select, #edit-config-type, #edit-config-name),select#edit-field-az-page-category,select#edit-menu-menu-parent'
+      search_contains: true
+      disable_search: false
+      allow_single_deselect: false
+      add_helper_buttons: false
+      disabled_themes:
+        claro: '0'
+        bootstrap_barrio: '0'
+        az_barrio: '0'
+      chosen_include: 0
+      placeholder_text_multiple: 'Choose some options'
+      placeholder_text_single: 'Choose an option'
+      no_results_text: 'No results match'
+      _core:
+        default_config_hash: 2ljA94dpRoxpR_ZhnMHodeY2TveXxJ-1ImOXPtyEqHU

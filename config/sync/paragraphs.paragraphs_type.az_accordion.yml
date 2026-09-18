@@ -1,0 +1,16 @@
+uuid: c0fb0143-18cf-49f1-8d52-553febeb054c
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+_core:
+  default_config_hash: PbEIK1OXf6m5Ii66vTpuJNhbzxzdWVX-oHs-nG31kXU
+id: az_accordion
+label: Accordion
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  az_accordion_paragraph_behavior:
+    enabled: true

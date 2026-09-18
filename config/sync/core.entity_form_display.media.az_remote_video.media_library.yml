@@ -1,0 +1,31 @@
+uuid: ebdee64c-f8d7-4b43-9c03-c346523f548f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.az_remote_video.field_media_az_image
+    - field.field.media.az_remote_video.field_media_az_oembed_video
+    - media.type.az_remote_video
+_core:
+  default_config_hash: 2Ndl4R-KCe7oq-SyT4T4ah8mJGczerF2leHlmuTHpH0
+id: media.az_remote_video.media_library
+targetEntityType: media
+bundle: az_remote_video
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_az_image: true
+  field_media_az_oembed_video: true
+  name: true
+  path: true
+  status: true
+  uid: true

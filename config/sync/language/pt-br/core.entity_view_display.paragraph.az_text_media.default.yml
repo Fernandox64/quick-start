@@ -1,0 +1,12 @@
+third_party_settings:
+  field_group:
+    group_az_container:
+      label: Container
+    group_az_full_width_row:
+      label: Linha
+    group_az_title:
+      label: Título
+    group_az_content:
+      label: Conteúdo
+    group_az_column:
+      label: Coluna

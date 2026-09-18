@@ -1,0 +1,30 @@
+uuid: c14ea4a0-ee5a-4d9f-b07d-d6f606e4df8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - date_ap_style
+id: config_sync.module.date_ap_style
+snapshotSet: config_sync
+extensionType: module
+extensionName: date_ap_style
+items:
+  -
+    collection: ''
+    name: date_ap_style.settings
+    data:
+      always_display_year: false
+      use_today: false
+      cap_today: false
+      display_day: false
+      display_time: false
+      hide_date: false
+      time_before_date: false
+      display_noon_and_midnight: false
+      capitalize_noon_and_midnight: false
+      use_all_day: false
+      separator: to
+      timezone: ''
+      month_only: false
+      _core:
+        default_config_hash: PR3faUUVLkiRs4xLcAIy7dT_ntGQSjD2ZXlre06xnbo

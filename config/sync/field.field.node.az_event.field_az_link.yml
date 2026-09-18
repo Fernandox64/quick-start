@@ -1,0 +1,25 @@
+uuid: dbbb8c63-f6c9-4fa1-890d-3bee6353000c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_link
+    - node.type.az_event
+  module:
+    - link
+_core:
+  default_config_hash: Vn1lc8NTii03OKDHjGFNUfhOYr1Bv8h5an0QMoc6ous
+id: node.az_event.field_az_link
+field_name: field_az_link
+entity_type: node
+bundle: az_event
+label: 'Link to external event'
+description: 'In most cases, leave this field blank. Enter an external URL if the calendar listings for this event should link directly to event information on another website (e.g. the University calendar).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

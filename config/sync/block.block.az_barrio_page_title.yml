@@ -1,0 +1,26 @@
+uuid: ea05e7ce-d12c-4165-a93a-605808f40602
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: s5Zb9L3wQGEDw2PtD5KMm_dKDr-mU51mq--kErqaxds
+id: az_barrio_page_title
+theme: az_barrio
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/person/*\r\n/news/*"

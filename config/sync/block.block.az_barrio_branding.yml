@@ -1,0 +1,25 @@
+uuid: 440d29fd-298f-485b-9e25-4261f64e6061
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: js6sSSrn43_sel4BZMQAKFoYcJ1yjHxJtDeszZp_grA
+id: az_barrio_branding
+theme: az_barrio
+region: branding
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: 7f2a646c-9d06-48f8-82c8-a473e9b35dde
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.az_person
+  module:
+    - node
+_core:
+  default_config_hash: uGbmp2DUibAOfCx5xcKWZUeEAv9undUYsLK8uvQYd9M
+id: az_person_url_pattern
+label: 'Person Content Type'
+type: 'canonical_entities:node'
+pattern: '/person/[node:title]'
+selection_criteria:
+  b204ad38-c993-453e-b9ba-4200941238f4:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      az_person: az_person
+    uuid: b204ad38-c993-453e-b9ba-4200941238f4
+selection_logic: and
+weight: -5
+relationships: {  }

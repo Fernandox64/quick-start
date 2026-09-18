@@ -1,0 +1,21 @@
+uuid: bacea45c-79fe-4a8c-afbf-23af7dd08c82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_email
+    - node.type.az_person
+_core:
+  default_config_hash: C3eioCv7Rjy5qoWMCnvzRRKWi1Vh_io_he3h-1VRdmM
+id: node.az_person.field_az_email
+field_name: field_az_email
+entity_type: node
+bundle: az_person
+label: Email
+description: 'If possible, <a href="https://uaatwork.arizona.edu/uannounce/send-arizonaedu-email-effective-march-10">please use addresses ending with <i>@arizona.edu</i> rather than <i>@email.arizona.edu</i></a>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

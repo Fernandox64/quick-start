@@ -1,0 +1,26 @@
+uuid: 1a6a02b3-a841-4788-a340-aa81934f6663
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_az_caption
+    - filter.format.plain_text
+    - media.type.az_image
+  module:
+    - text
+_core:
+  default_config_hash: VrhaY06uil1s7aFgaTxTUaeQNMoIrhUTv1jegQPkFhc
+id: media.az_image.field_az_caption
+field_name: field_az_caption
+entity_type: media
+bundle: az_image
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

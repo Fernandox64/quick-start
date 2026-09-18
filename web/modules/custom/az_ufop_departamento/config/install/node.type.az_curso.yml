@@ -1,0 +1,11 @@
+uuid: b1eb4a71-46cb-4c17-bd09-a878689b0edb
+langcode: en
+status: true
+dependencies: {  }
+name: Curso
+type: az_curso
+description: 'Curso de graduação ou pós-graduação listado nas páginas do departamento.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

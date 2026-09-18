@@ -1,0 +1,16 @@
+uuid: 5f49a3a1-17dc-444c-a382-d170a19f5dc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: VH52u-ZUEspGpt5KUspI0os2BKMhAkbM_Cvyj02n_5c
+id: taxonomy
+label: Taxonomy
+type: 'canonical_entities:taxonomy_term'
+pattern: '/[term:vocabulary]/[term:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

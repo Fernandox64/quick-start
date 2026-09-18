@@ -1,0 +1,16 @@
+uuid: 32f2c016-e266-4f48-a239-24efbc3412b4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JAV9281vjqzDFHB9Ez8QCyNFBLYZ8omwYd-4LX-50AM
+id: az_video
+label: Video
+description: 'A locally hosted video file.'
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_az_video_file
+field_map:
+  name: name

@@ -1,0 +1,33 @@
+uuid: 50120cee-b06e-40d6-afea-fd2b591e6040
+langcode: en
+status: true
+dependencies:
+  module:
+    - honeypot
+id: config_sync.module.honeypot
+snapshotSet: config_sync
+extensionType: module
+extensionName: honeypot
+items:
+  -
+    collection: ''
+    name: honeypot.settings
+    data:
+      protect_all_forms: true
+      unprotected_forms:
+        - user_login_form
+        - search_form
+        - search_block_form
+        - views_exposed_form
+        - honeypot_settings_form
+      log: false
+      element_name: url
+      time_limit: 5
+      expire: 600
+      form_settings:
+        user_register_form: false
+        user_pass: false
+        feedback_contact_message_form: false
+        _contact_message_form: false
+      _core:
+        default_config_hash: UyOm9tFW2IDlFv5RaewBCnnQl37LK2zvrw4igFrt0Js

@@ -1,0 +1,21 @@
+uuid: 9e0f28c8-3e7f-42bf-bfbb-a7c306b1a9c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_suffix
+    - node.type.az_person
+_core:
+  default_config_hash: OoBKMn88hy1JaQ_7xi5CYnQMSU6t7CXmTS2kJKd_yFo
+id: node.az_person.field_az_suffix
+field_name: field_az_suffix
+entity_type: node
+bundle: az_person
+label: Suffix(es)
+description: "<p>This field automatically prepends a comma upon display. See the <a href=\"https://marcom.arizona.edu/communications/written-style-guide#d\" target=\"_blank\">UA Written Style Guide</a> for formatting guidelines.</p>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

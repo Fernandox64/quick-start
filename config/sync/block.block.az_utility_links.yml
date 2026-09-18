@@ -1,0 +1,27 @@
+uuid: 7730884c-e3e7-4e57-889c-6488c506f212
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.az-utility-links
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: NJ1YNUtg2nt3WvK1xiqBW-cF3QcvW0PFVT7j6F_rK1A
+id: az_utility_links
+theme: az_barrio
+region: header
+weight: -6
+provider: null
+plugin: 'system_menu_block:az-utility-links'
+settings:
+  id: 'system_menu_block:az-utility-links'
+  label: 'Utility Links'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

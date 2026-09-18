@@ -1,0 +1,23 @@
+uuid: d1620fcd-ddf4-4259-a8aa-65f0ce8383c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: NtrRljIpG1Oijxa0rhKK8fSFyWo51Tm7gSDn5_RQZb0
+id: node.field_az_pronouns
+field_name: field_az_pronouns
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

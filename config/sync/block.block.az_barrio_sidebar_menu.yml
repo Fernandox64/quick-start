@@ -1,0 +1,37 @@
+uuid: 104dc01c-a902-4bdb-80a5-df4ac642a7e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: 1tciBRPcEzWUoBDlglwfjr7o6WNKjxz4wufKqhBqU7Y
+id: az_barrio_sidebar_menu
+theme: az_barrio
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Sidebar menu'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: active
+  display_empty: false
+  label_link: false
+  label_type: root
+  level: 2
+  depth: 0
+  expand_all_items: false
+  parent: 'main:'
+  render_parent: false
+  suggestion: sidebar
+  hide_on_nonactive: false
+  expand: false
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: a111722a-f952-4f84-a825-7e1dfa6cc07d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: xqF8VkoDw3LjDM9lwQhluuTd9lVvQX9upVturV1aED8
+id: az_barrio_breadcrumbs
+theme: az_barrio
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

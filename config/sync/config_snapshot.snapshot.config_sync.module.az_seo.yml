@@ -1,0 +1,78 @@
+uuid: 1f082a51-aaae-4894-8e0f-b1d6590d6f77
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_seo
+id: config_sync.module.az_seo
+snapshotSet: config_sync
+extensionType: module
+extensionName: az_seo
+items:
+  -
+    collection: ''
+    name: field.storage.node.field_az_metatag
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - metatag
+          - node
+      id: node.field_az_metatag
+      field_name: field_az_metatag
+      entity_type: node
+      type: metatag
+      settings: {  }
+      module: metatag
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: e-EP2Mt4oKPI4dcobPHHMbUgQzOd52yp92HQl7qBvDQ
+  -
+    collection: ''
+    name: metatag.metatag_defaults.node__az_event
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: node__az_event
+      label: 'Content: Event'
+      tags:
+        og_image: '[node:field_az_media_thumbnail_image:entity:field_media_az_image]'
+      _core:
+        default_config_hash: kAVsLkpICpD8o0w6s9Jq14KGVPYrKWLkgpG1Av3dsfs
+  -
+    collection: ''
+    name: metatag.metatag_defaults.node__az_news
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: node__az_news
+      label: 'Content: News'
+      tags:
+        article_published_time: '[node:field_az_published:date:html_datetime]'
+        og_image: '[node:field_az_media_thumbnail_image:entity:field_media_az_image]'
+        og_type: article
+      _core:
+        default_config_hash: AkU5iKp6p9acyg7yv4HwDCujxZC8sb5jfG9QTHfMvFM
+  -
+    collection: ''
+    name: metatag.metatag_defaults.node__az_person
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: node__az_person
+      label: 'Content: Person'
+      tags:
+        og_type: profile
+        profile_first_name: '[node:field_az_fname]'
+        profile_last_name: '[node:field_az_lname]'
+      _core:
+        default_config_hash: fJAVyruB_CgRb7hmJsr7NWlg34N-fSPl8yYLO3SyHBI

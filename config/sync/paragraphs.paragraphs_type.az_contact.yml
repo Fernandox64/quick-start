@@ -1,0 +1,16 @@
+uuid: bae09f6f-9d4c-434f-9a86-808b8dcee1d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - az_paragraphs
+_core:
+  default_config_hash: r3SZW-MnA35mi_oKZUtpAxgPuAHVMFGVBPNqJluV7VQ
+id: az_contact
+label: Contact
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  az_default_paragraph_behavior:
+    enabled: true

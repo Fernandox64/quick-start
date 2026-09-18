@@ -1,0 +1,11 @@
+uuid: dc4327d4-7fe9-441d-bf40-2f907ea1eee1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yIpQkJ6hmSIQHXbnyBUr2lmwQhf__LaxKWG-4JWq8k8
+name: 'Enterprise Attributes'
+vid: az_enterprise_attributes
+description: 'Tags for interfacing with integrations at the University of Arizona'
+weight: 0
+new_revision: false

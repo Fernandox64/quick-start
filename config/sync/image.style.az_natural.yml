@@ -1,0 +1,15 @@
+uuid: 592515f1-4b26-4700-b3d4-8eeda67c0566
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SR2rha5ZtQSomynjLGILKnzeIlhKCw3dbownH4BhWBU
+name: az_natural
+label: 'Natural Size'
+effects:
+  1311fe5a-92b2-4191-888c-edb9f2f5e920:
+    uuid: 1311fe5a-92b2-4191-888c-edb9f2f5e920
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp

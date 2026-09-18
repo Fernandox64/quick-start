@@ -1,0 +1,22 @@
+uuid: f6981ee6-3794-44c3-a877-6a5d80788182
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: rFRvlc8TRPIlt8rtLK0IWzmu9HD8R4hQxFZYH1cgI-M
+id: node.field_az_curso_categoria
+field_name: field_az_curso_categoria
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

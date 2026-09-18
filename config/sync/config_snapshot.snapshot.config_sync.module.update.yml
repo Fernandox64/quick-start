@@ -1,0 +1,27 @@
+uuid: fe36336a-864b-414f-93d5-1074e83a688b
+langcode: en
+status: true
+dependencies:
+  module:
+    - update
+id: config_sync.module.update
+snapshotSet: config_sync
+extensionType: module
+extensionName: update
+items:
+  -
+    collection: ''
+    name: update.settings
+    data:
+      check:
+        disabled_extensions: true
+        interval_days: 1
+      fetch:
+        url: null
+        max_attempts: 2
+        timeout: 30
+      notification:
+        emails: {  }
+        threshold: all
+      _core:
+        default_config_hash: cceqUa945af6yMPEeM1pWJQoA-tumoAqhThW2xGoZ04

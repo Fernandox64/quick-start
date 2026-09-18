@@ -1,0 +1,26 @@
+uuid: e951461d-4567-41a2-bffb-2ef8e2debef5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_az_curso_categoria
+    - node.type.az_curso
+    - taxonomy.vocabulary.az_curso_categoria
+_core:
+  default_config_hash: wCFm_JJIZE4gA8FYzZTk0rQMreFkteBXNpVGFTWOWds
+id: node.az_curso.field_az_curso_categoria
+field_name: field_az_curso_categoria
+entity_type: node
+bundle: az_curso
+label: Categoria
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      az_curso_categoria: az_curso_categoria
+field_type: entity_reference

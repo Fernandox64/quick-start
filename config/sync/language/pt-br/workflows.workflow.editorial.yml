@@ -1,0 +1,12 @@
+label: Editorial
+type_settings:
+  states:
+    draft:
+      label: Rascunho
+    published:
+      label: Publicado
+  transitions:
+    az_publish:
+      label: Publicar
+    create_new_draft:
+      label: 'Criar novo rascunho'

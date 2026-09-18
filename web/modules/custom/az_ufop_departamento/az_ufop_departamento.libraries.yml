@@ -1,0 +1,13 @@
+tema:
+  css:
+    theme:
+      css/az-ufop-tema.css: {}
+  dependencies:
+    - az_barrio/arizona-bootstrap-css
+    - az_barrio/global-styling
+noticias-carousel:
+  css:
+    theme:
+      css/az-ufop-noticias-carousel.css: {}
+  dependencies:
+    - az_barrio/arizona-bootstrap-js

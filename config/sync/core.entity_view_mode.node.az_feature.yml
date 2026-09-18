@@ -1,0 +1,16 @@
+uuid: 163ed221-d680-4595-8512-1d043afc50b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - az_core
+_core:
+  default_config_hash: f7t0lbEyCxQjd0JSIxica67nDAhDzTnchx-sO-Xs6N0
+id: node.az_feature
+label: Feature
+description: ''
+targetEntityType: node
+cache: true

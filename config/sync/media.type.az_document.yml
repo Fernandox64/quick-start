@@ -1,0 +1,16 @@
+uuid: 7ef931f4-57f4-446f-b12d-6acae1d5a22c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: K0RV6B5JbK0OfsvCJeSWzQDy--mrKfBuKMwjSK1oFjQ
+id: az_document
+label: Document
+description: 'An uploaded file or document, such as a PDF.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_az_document
+field_map:
+  name: name

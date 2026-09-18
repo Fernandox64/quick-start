@@ -1,0 +1,35 @@
+uuid: fbc90ed6-697b-4b69-9017-d3a4c6b8bc5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.az_audio.field_media_az_audio_file
+    - image.style.thumbnail
+    - media.type.az_audio
+  module:
+    - image
+_core:
+  default_config_hash: XKjwjDRKuKfwVSXeU5w5hN34AFInDbgKuBpU0iv5BXI
+id: media.az_audio.media_library
+targetEntityType: media
+bundle: az_audio
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_az_audio_file: true
+  langcode: true
+  name: true
+  uid: true

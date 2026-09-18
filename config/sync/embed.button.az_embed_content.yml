@@ -1,0 +1,31 @@
+uuid: e3377fa5-3c02-4095-b4f5-2ffcf04b2511
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.az_card
+    - core.entity_view_mode.node.az_media_list
+    - core.entity_view_mode.node.az_row
+    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.teaser
+  module:
+    - entity_embed
+    - node
+_core:
+  default_config_hash: siCYTaMIrgZVU2hDjkB-SJBZYh0PQagOT_b2xbF9Xh0
+label: 'Embed Content'
+id: az_embed_content
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles: {  }
+  display_plugins:
+    - 'view_mode:node.az_card'
+    - 'view_mode:node.az_media_list'
+    - 'view_mode:node.az_row'
+    - 'view_mode:node.full'
+    - 'view_mode:node.teaser'
+icon:
+  uri: 'public://embed_buttons/post_add_FILL0_wght400_GRAD0_opsz24.svg'
+  data: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iMjQiPjxwYXRoIGQ9Ik0zMjAtNTIwdi04MGgzMjB2ODBIMzIwWm0wIDEyMHYtODBoMzIwdjgwSDMyMFptMCAxMjB2LTgwaDMyMHY4MEgzMjBabTM2MC0zMjB2LTgwaC04MHYtODBoODB2LTgwaDgwdjgwaDgwdjgwaC04MHY4MGgtODBaTTEyMC0xMjB2LTcyMGg0NDB2ODBIMjAwdjU2MGg1NjB2LTM2MGg4MHY0NDBIMTIwWiIvPjwvc3ZnPg==
+icon_uuid: null

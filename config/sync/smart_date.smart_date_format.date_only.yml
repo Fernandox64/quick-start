@@ -1,0 +1,17 @@
+uuid: 9fafcc94-f27c-4272-9a5b-93bc3e33ae71
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lZRpDxKgq1CrHPrijhslsCPVHcELy5JrTF_wwcyexlw
+id: date_only
+label: 'Date Only'
+date_format: 'D, M j Y'
+time_format: ''
+time_hour_format: ''
+allday_label: ''
+separator: ' - '
+join: ', '
+ampm_reduce: '1'
+date_first: '1'
+site_time_toggle: '1'

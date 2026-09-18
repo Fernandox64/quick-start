@@ -1,0 +1,42 @@
+uuid: 2ad0b8cd-e640-411d-a2e7-31232328a331
+langcode: en
+status: true
+dependencies:
+  module:
+    - extlink
+id: config_sync.module.extlink
+snapshotSet: config_sync
+extensionType: module
+extensionName: extlink
+items:
+  -
+    collection: ''
+    name: extlink.settings
+    data:
+      extlink_use_external_js_file: false
+      extlink_exclude_admin_routes: false
+      extlink_target: true
+      extlink_target_no_override: true
+      extlink_nofollow: false
+      extlink_noreferrer: false
+      extlink_follow_no_override: false
+      extlink_subdomains: false
+      extlink_alert: false
+      extlink_alert_text: 'This link will take you to an external web site. We are not responsible for their content.'
+      extlink_exclude: '^(?!(https?:\/\/)(arizona.box.com|docs.google.com|dropbox.com|www.dropbox.com|emailarizona-my.sharepoint.com|events.trellis.arizona.edu)).*'
+      extlink_include: /sites/.+/files/.+\.pdf
+      extlink_class: '0'
+      extlink_label: '(link is external)'
+      extlink_img_class: false
+      extlink_css_exclude: ''
+      extlink_css_explicit: ''
+      extlink_mailto_class: '0'
+      extlink_mailto_label: '(link sends email)'
+      extlink_use_font_awesome: false
+      extlink_font_awesome_classes:
+        links: ''
+        mailto: ''
+      extlink_icon_placement: append
+      whitelisted_domains: {  }
+      _core:
+        default_config_hash: gdvB3kOMhL1I53N8-LmtzIOUV3SMcO74BP9Zd6aoWoQ

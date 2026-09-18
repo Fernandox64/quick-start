@@ -1,0 +1,22 @@
+uuid: 3de8c03d-6b3f-4ca8-95f1-e4a925acd391
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+_core:
+  default_config_hash: '-HdTaVSJIZIS2wjBCqpFUPAt6GfsdoQ4Lg0hFYQCp0k'
+id: media.field_az_credit
+field_name: field_az_credit
+entity_type: media
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

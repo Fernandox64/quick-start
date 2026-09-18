@@ -1,0 +1,84 @@
+uuid: 00ff298f-245e-41b8-b8da-ccf387d4efbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.az_image.field_az_caption
+    - field.field.media.az_image.field_az_credit
+    - field.field.media.az_image.field_focal_point_x
+    - field.field.media.az_image.field_focal_point_y
+    - field.field.media.az_image.field_media_az_image
+    - image.style.thumbnail
+    - media.type.az_image
+  module:
+    - decorative_image_widget
+    - image_widget_crop
+    - text
+_core:
+  default_config_hash: QwE2cCFtX1jX29NCh0_2D---4qSJN9wMO_lgw1oGTUw
+id: media.az_image.media_library
+targetEntityType: media
+bundle: az_image
+mode: media_library
+content:
+  field_az_caption:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_az_credit:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_az_image:
+    type: image_widget_crop
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - az_card_image
+        - az_carousel_image
+        - az_full_width_bg_extra_small
+        - az_full_width_bg_large
+        - az_full_width_bg_medium
+        - az_full_width_bg_small
+        - az_large
+        - az_marketing_cloud_30_70_layout
+        - az_marketing_cloud_50_50_layout
+        - az_marketing_cloud_hero_layout
+        - az_modal_image
+        - az_square_aspect_ratio
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
+    third_party_settings:
+      decorative_image_widget:
+        use_decorative_checkbox: true
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_focal_point_x: true
+  field_focal_point_y: true
+  name: true
+  path: true
+  replace_file: true
+  status: true
+  uid: true

@@ -1,0 +1,23 @@
+uuid: 21fa2851-aa20-47c4-9c93-6148b4c66978
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6txPxOcwgo6G5LOvsqwtLxkTLagud2wiaS9T4wAssak
+name: az_medium
+label: 'Medium (760px wide)'
+effects:
+  a8a842a4-6670-4288-8f98-3b161f597ec9:
+    uuid: a8a842a4-6670-4288-8f98-3b161f597ec9
+    id: image_scale
+    weight: 1
+    data:
+      width: 760
+      height: null
+      upscale: true
+  a4b996c3-5885-47be-95e8-1a42dd96181f:
+    uuid: a4b996c3-5885-47be-95e8-1a42dd96181f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

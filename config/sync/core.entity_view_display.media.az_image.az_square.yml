@@ -1,0 +1,115 @@
+uuid: 1b870f9f-a44c-4487-9bf2-d2dcfe2c6b85
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.az_square
+    - field.field.media.az_image.field_az_caption
+    - field.field.media.az_image.field_az_credit
+    - field.field.media.az_image.field_focal_point_x
+    - field.field.media.az_image.field_focal_point_y
+    - field.field.media.az_image.field_media_az_image
+    - image.style.az_square
+    - media.type.az_image
+  module:
+    - field_group
+    - image
+    - text
+third_party_settings:
+  field_group:
+    group_figure:
+      children:
+        - field_media_az_image
+        - group_fig
+      label: Figure
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ''
+        id: ''
+        element: figure
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: 'style="max-width: 220px;"'
+        effect: none
+        speed: fast
+    group_fig:
+      children:
+        - field_az_caption
+        - group_cite
+      label: 'Fig Caption'
+      parent_name: group_figure
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: figure-caption
+        id: ''
+        element: figcaption
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_cite:
+      children:
+        - field_az_credit
+      label: Cite
+      parent_name: group_fig
+      region: content
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: small
+        id: ''
+        element: cite
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+_core:
+  default_config_hash: ZLbMcJN3sWI3GB-2uuSXlf7gt33cCK0MWCzibPyFcLA
+id: media.az_image.az_square
+targetEntityType: media
+bundle: az_image
+mode: az_square
+content:
+  field_az_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_az_credit:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media_az_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: az_square
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_focal_point_x: true
+  field_focal_point_y: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

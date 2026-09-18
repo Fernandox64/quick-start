@@ -1,0 +1,23 @@
+uuid: 5c80aa12-92ad-4a21-ba02-a4e9e785256e
+langcode: en
+status: true
+dependencies:
+  module:
+    - quick_node_clone
+id: config_sync.module.quick_node_clone
+snapshotSet: config_sync
+extensionType: module
+extensionName: quick_node_clone
+items:
+  -
+    collection: ''
+    name: quick_node_clone.settings
+    data:
+      text_to_prepend_to_title: 'Clone of'
+      exclude:
+        node: {  }
+        paragraph: {  }
+      clone_status: default
+      create_group_relationships: true
+      _core:
+        default_config_hash: HnNkjzfFj_fgjLEIDkxUVqLrCgeJ-0hPKY3uc61liIs

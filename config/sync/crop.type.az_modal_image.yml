@@ -1,0 +1,14 @@
+uuid: 57eb0ed9-bd47-4ea0-aee4-8fa5ea02022b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZBlo1Vaa_Qzyc0GKK0nUqE1TGvCorRBj0k-FVKFezCk
+label: 'Modal Image'
+id: az_modal_image
+description: 'Image style used within the Person modal view display.'
+aspect_ratio: '5:4'
+soft_limit_width: 568
+soft_limit_height: 630
+hard_limit_width: null
+hard_limit_height: null

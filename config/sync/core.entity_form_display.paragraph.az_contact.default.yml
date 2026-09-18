@@ -1,0 +1,44 @@
+uuid: 47641307-b4a4-4dee-83b9-c28cc71ab84b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.az_contact.field_az_email
+    - field.field.paragraph.az_contact.field_az_phone
+    - field.field.paragraph.az_contact.field_az_title
+    - paragraphs.paragraphs_type.az_contact
+  module:
+    - telephone
+_core:
+  default_config_hash: tnmkUxwOXl3cKZNqsd7ahMjDGRIE2OoFZM0IEQKEnF0
+id: paragraph.az_contact.default
+targetEntityType: paragraph
+bundle: az_contact
+mode: default
+content:
+  field_az_email:
+    type: email_default
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_az_phone:
+    type: telephone_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_az_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

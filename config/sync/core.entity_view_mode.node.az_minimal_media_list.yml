@@ -1,0 +1,13 @@
+uuid: b060d439-b2bb-4010-a25e-a2530876abfc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: dEQ27dvPUZeUNEy0gTcbJQYLjr-vwvtwBUQGNWIcPnI
+id: node.az_minimal_media_list
+label: 'Minimal Media List'
+description: ''
+targetEntityType: node
+cache: true

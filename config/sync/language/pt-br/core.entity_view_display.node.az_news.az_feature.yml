@@ -1,0 +1,10 @@
+third_party_settings:
+  field_group:
+    group_card:
+      label: Cartão
+    group_row:
+      label: Linha
+    group_date:
+      label: Data
+    group_summary:
+      label: Resumo

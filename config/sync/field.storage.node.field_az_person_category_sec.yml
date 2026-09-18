@@ -1,0 +1,22 @@
+uuid: f26b59ee-29ac-4553-b66d-78524d393628
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: CdW3jjcyc8GE72cBgFJ42HcwFnBEDH-dwgT-RoHSqsE
+id: node.field_az_person_category_sec
+field_name: field_az_person_category_sec
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

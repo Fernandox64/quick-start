@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Instalação/desinstalação do módulo az_ufop_departamento.
+ *
+ * O config/install cuida do vocabulário novo (az_curso_categoria) e do tipo
+ * de conteúdo Curso. Termos de taxonomia são entidades de conteúdo, não de
+ * configuração, então os termos em si (Notícia/Edital, Docente/Funcionário,
+ * Graduação/Pós-Graduação) são criados aqui, em hook_install().
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Garante que um termo com este nome exista no vocabulário informado.
+ */
+function az_ufop_departamento_ensure_term(string $vid, string $name): void {
+  $existing = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+    ->loadByProperties(['vid' => $vid, 'name' => $name]);
+
+  if (empty($existing)) {
+    Term::create(['vid' => $vid, 'name' => $name])->save();
+  }
+}
+
+/**
+ * Implements hook_install().
+ */
+function az_ufop_departamento_install(): void {
+  // Notícia/Edital reaproveitam o vocabulário nativo do az_news.
+  az_ufop_departamento_ensure_term('az_news_tags', 'Notícia');
+  az_ufop_departamento_ensure_term('az_news_tags', 'Edital');
+
+  // Docente/Funcionário reaproveitam o vocabulário nativo do az_person.
+  az_ufop_departamento_ensure_term('az_person_categories', 'Docente');
+  az_ufop_departamento_ensure_term('az_person_categories', 'Funcionário');
+
+  // Graduação/Pós-Graduação vivem no vocabulário novo deste módulo
+  // (az_curso_categoria, criado via config/install).
+  az_ufop_departamento_ensure_term('az_curso_categoria', 'Graduação');
+  az_ufop_departamento_ensure_term('az_curso_categoria', 'Pós-Graduação');
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * So remove os termos do vocabulario proprio deste modulo (az_curso_categoria).
+ * Os termos adicionados aos vocabularios nativos (az_news_tags,
+ * az_person_categories) ficam, de proposito: conteudo existente pode ja
+ * estar marcado com eles, e removê-los quebraria essas referências.
+ */
+function az_ufop_departamento_uninstall(): void {
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+    ->loadByProperties(['vid' => 'az_curso_categoria']);
+
+  foreach ($terms as $term) {
+    $term->delete();
+  }
+}

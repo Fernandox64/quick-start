@@ -1,0 +1,16 @@
+uuid: 339911e1-5476-4f90-926a-0d4e3dda36c4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: y0YoyBQh03wJCDu-uiCXxaWh6K2qpXGyfAcrIVmlyn0
+id: az_audio
+label: Audio
+description: 'A locally hosted audio file.'
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_az_audio_file
+field_map:
+  name: name

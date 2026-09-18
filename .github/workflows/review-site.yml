@@ -1,0 +1,113 @@
+name: Build & deploy review site
+on:
+  push:
+    branches:
+      - main
+concurrency: kitten-deploy
+jobs:
+  watch-workflow:
+    name: Watch workflow logs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
+        with:
+          php-version: '8.5'
+
+      - name: Install Terminus and authenticate Terminus
+        uses: pantheon-systems/terminus-github-actions@8fb365801c4abd633407f65ecb475a540ddb38f1 # v1.2.10
+        with:
+          pantheon-machine-token: ${{ secrets.TERMINUS_TOKEN }}
+
+      - name: Watch workflow logs
+        run: |
+          START_TIME="$(date '+%s')"
+          while [ -z "$(terminus workflow:list ${{ secrets.DEMO_SITE_NAME }} --format=json | jq --arg start_time "${START_TIME}" '.[] | select((.started_at|tostring > $start_time) and (.workflow == "Sync code on \"dev\"") and (.finished_at != null))')" ]; do
+            echo 'watching workflows...'
+            sleep 2
+          done
+
+  update-code:
+    name: Update review site code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
+        with:
+          php-version: '8.5'
+
+      - name: Set up SSH
+        run: |
+          mkdir ${HOME}/.ssh && chmod 700 ${HOME}/.ssh
+          echo -e "Host *.drush.in\n    StrictHostKeyChecking no" > ${HOME}/.ssh/config
+          echo -e "${{ secrets.PANTHEON_SSH_KEY }}" > ${HOME}/.ssh/id_rsa
+          chmod 600 ${HOME}/.ssh/*
+
+      - name: Install Terminus and authenticate Terminus
+        uses: pantheon-systems/terminus-github-actions@8fb365801c4abd633407f65ecb475a540ddb38f1 # v1.2.10
+        with:
+          pantheon-machine-token: ${{ secrets.TERMINUS_TOKEN }}
+
+      - name: Sync code to pantheon
+        run: |
+          terminus -y -n connection:set ${{ secrets.DEMO_SITE_NAME }}.dev git
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          $(terminus -y -n connection:info --field "Git Command" ${{ secrets.DEMO_SITE_NAME }}.dev)
+          cd ${{ secrets.DEMO_SITE_NAME }}
+          rm composer.lock
+          UPSTREAM_VERSION=$(jq -r '.require."az-digital/az_quickstart"' upstream/composer.json)
+          COMPOSER_MEMORY_LIMIT=-1 composer -n require "az-digital/az_quickstart:dev-main as ${UPSTREAM_VERSION}"
+          git add composer.json composer.lock
+          git commit --allow-empty -m '${{ github.event.head_commit.message }}'
+          git push
+
+  install-azqs:
+    name: Install AZQS
+    needs: watch-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
+        with:
+          php-version: '8.5'
+
+      - name: Set up SSH
+        run: |
+          mkdir ${HOME}/.ssh && chmod 700 ${HOME}/.ssh
+          echo -e "Host *.drush.in\n    StrictHostKeyChecking no" > ${HOME}/.ssh/config
+          echo -e "${{ secrets.PANTHEON_SSH_KEY }}" > ${HOME}/.ssh/id_rsa
+          chmod 600 ${HOME}/.ssh/*
+
+      - name: Install Terminus and authenticate Terminus
+        uses: pantheon-systems/terminus-github-actions@8fb365801c4abd633407f65ecb475a540ddb38f1 # v1.2.10
+        with:
+          pantheon-machine-token: ${{ secrets.TERMINUS_TOKEN }}
+
+      - name: Wake env
+        run: |
+          terminus env:wake ${{ secrets.DEMO_SITE_NAME }}.dev
+          sleep 5
+
+      - name: Wipe existing site
+        run: |
+          terminus -y -n env:wipe ${{ secrets.DEMO_SITE_NAME }}.dev
+
+      - name: Install site
+        run: |
+          terminus -y -n connection:set ${{ secrets.DEMO_SITE_NAME }}.dev sftp
+          terminus -y -n drush ${{ secrets.DEMO_SITE_NAME }}.dev -- \
+          site:install az_quickstart install_configure_form.enable_update_status_module=NULL \
+          --account-name="azadmin" \
+          --account-mail="noreply@email.arizona.edu" \
+          --site-mail="noreply@email.arizona.edu" \
+          --site-name="Kitten" \
+          --yes \
+          --verbose
+          terminus -y -n drush ${{ secrets.DEMO_SITE_NAME }}.dev -- pm:install -n -y az_demo
+          terminus -y -n connection:set ${{ secrets.DEMO_SITE_NAME }}.dev git
+
+      - name: Clear caches
+        run: |
+          terminus -y -n env:clear-cache ${{ secrets.DEMO_SITE_NAME }}.dev

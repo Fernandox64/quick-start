@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Hooks do modulo az_ufop_departamento.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Carrega o CSS que retinta o tema az_barrio para o vinho institucional da
+ * UFOP em todo o site (ver css/az-ufop-tema.css).
+ */
+function az_ufop_departamento_page_attachments(array &$attachments): void {
+  $attachments['#attached']['library'][] = 'az_ufop_departamento/tema';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function az_ufop_departamento_theme(): array {
+  return [
+    'az_ufop_noticias_carousel' => [
+      'variables' => ['slides' => []],
+      'template' => 'az-ufop-noticias-carousel',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * O az_barrio deixa "Search"/"Menu"/"Home"/"Close"/"Back to top" (menu
+ * mobile offcanvas) escritos direto no Twig, sem passar por t(), entao o
+ * pacote de traducao nunca os alcanca. Aponta o hook 'page' - e todas as
+ * suas variantes de sugestao que ainda usam o template base (page__front,
+ * page__node__az_flexible_page etc., uma por bundle de conteudo) - para
+ * uma copia do template dentro deste modulo (mesmo padrao de um subtema)
+ * com essas strings envolvidas em |t, para nao precisar editar o
+ * tema/profile diretamente.
+ */
+function az_ufop_departamento_theme_registry_alter(array &$theme_registry): void {
+  $path = \Drupal::service('extension.list.module')->getPath('az_ufop_departamento') . '/templates';
+  foreach ($theme_registry as $hook => $info) {
+    if ($hook === 'page' || (str_starts_with($hook, 'page__') && ($info['template'] ?? NULL) === 'page')) {
+      $theme_registry[$hook]['path'] = $path;
+      $theme_registry[$hook]['theme_path'] = 'az_ufop_departamento';
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter() for node.
+ *
+ * O texto "Read more" do az_news e montado em az_core_canonical_summary_link_title()
+ * como uma string PHP literal (nunca passa por t()), entao tambem fica fora
+ * do alcance do pacote de traducao. Troca o texto renderizado quando a
+ * noticia nao tem titulo de link customizado (caso em que o texto e sempre
+ * "Read more").
+ */
+function az_ufop_departamento_node_view_alter(array &$build, \Drupal\Core\Entity\EntityInterface $entity, $display): void {
+  if (isset($build['az_news_read_more'][0]['#markup']) && $build['az_news_read_more'][0]['#markup'] === 'Read more') {
+    $build['az_news_read_more'][0]['#markup'] = t('Read more')->render();
+  }
+}

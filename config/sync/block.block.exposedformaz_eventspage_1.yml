@@ -1,0 +1,30 @@
+uuid: c384ffb4-872f-4e75-80f9-8df8cda95134
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.az_events
+  module:
+    - system
+    - views
+  theme:
+    - az_barrio
+_core:
+  default_config_hash: IgrqAsaF7B4yZoa4vcphXOSCZRdPXhLsoQU-mbGTfYU
+id: exposedformaz_eventspage_1
+theme: az_barrio
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:az_events-page_1'
+settings:
+  id: 'views_exposed_filter_block:az_events-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /calendar

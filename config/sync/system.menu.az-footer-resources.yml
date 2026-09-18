@@ -1,0 +1,10 @@
+uuid: 30e43c86-ea45-41ea-96ea-99e6f9f840b7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2UXWqwRO-MK9ba9-mpYRS5DxVOLopxJxH81PYq4Fphk
+id: az-footer-resources
+label: 'Footer - Resources'
+description: 'Generally contains navigation links institution-level resources.'
+locked: false
