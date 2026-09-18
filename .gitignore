@@ -20,26 +20,20 @@
 
 # Gerado pelo entrypoint do container a cada boot - nunca vai pro git
 # (ver docker/entrypoint.sh e o include em settings.php de cada site).
-/web/sites/default/settings.local.php
-/web/sites/dfis/settings.local.php
-/web/sites/demat/settings.local.php
+# Padrao com wildcard: cobre "default", "dfis", "demat" e qualquer site novo
+# que for criado depois (ver scripts/az_provisionar_esqueleto.php), sem
+# precisar editar este arquivo a cada site novo.
+/web/sites/*/settings.local.php
 
-# Cache de derivativos de imagem (estilos) - o Drupal regenera sozinho.
-/web/sites/default/files/styles/
-/web/sites/default/files/php/
-/web/sites/default/files/css/
-/web/sites/default/files/js/
-/web/sites/dfis/files/styles/
-/web/sites/dfis/files/php/
-/web/sites/demat/files/styles/
-/web/sites/demat/files/php/
-
-# Sitemap XML - o Drupal regenera sozinho conforme o conteudo muda (cron).
-# Versionado antes por engano: um site rodando diverge do commit toda vez
-# que o cron roda, travando "git pull" com conflito. Fica so no volume.
-/web/sites/default/files/xmlsitemap/
-/web/sites/dfis/files/xmlsitemap/
-/web/sites/demat/files/xmlsitemap/
+# Cache (derivativos de imagem, CSS/JS agregado, sitemap) - o Drupal
+# regenera tudo isso sozinho. O sitemap em especial: um site rodando
+# diverge do commit toda vez que o cron roda, travando "git pull" com
+# conflito se ficar versionado.
+/web/sites/*/files/styles/
+/web/sites/*/files/php/
+/web/sites/*/files/css/
+/web/sites/*/files/js/
+/web/sites/*/files/xmlsitemap/
 
 # DDEV (ferramenta so de desenvolvimento local, nao entra na imagem de producao).
 /.ddev/
