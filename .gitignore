@@ -34,6 +34,13 @@
 /web/sites/demat/files/styles/
 /web/sites/demat/files/php/
 
+# Sitemap XML - o Drupal regenera sozinho conforme o conteudo muda (cron).
+# Versionado antes por engano: um site rodando diverge do commit toda vez
+# que o cron roda, travando "git pull" com conflito. Fica so no volume.
+/web/sites/default/files/xmlsitemap/
+/web/sites/dfis/files/xmlsitemap/
+/web/sites/demat/files/xmlsitemap/
+
 # DDEV (ferramenta so de desenvolvimento local, nao entra na imagem de producao).
 /.ddev/
 
