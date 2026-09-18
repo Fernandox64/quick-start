@@ -19,14 +19,20 @@
 /web/sites/default/default.settings.php
 
 # Gerado pelo entrypoint do container a cada boot - nunca vai pro git
-# (ver docker/entrypoint.sh e o include em web/sites/default/settings.php).
+# (ver docker/entrypoint.sh e o include em settings.php de cada site).
 /web/sites/default/settings.local.php
+/web/sites/dfis/settings.local.php
+/web/sites/demat/settings.local.php
 
 # Cache de derivativos de imagem (estilos) - o Drupal regenera sozinho.
 /web/sites/default/files/styles/
 /web/sites/default/files/php/
 /web/sites/default/files/css/
 /web/sites/default/files/js/
+/web/sites/dfis/files/styles/
+/web/sites/dfis/files/php/
+/web/sites/demat/files/styles/
+/web/sites/demat/files/php/
 
 # DDEV (ferramenta so de desenvolvimento local, nao entra na imagem de producao).
 /.ddev/

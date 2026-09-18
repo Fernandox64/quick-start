@@ -36,6 +36,28 @@ Para atualizar um deploy existente: `git pull`, depois `docker compose up -d --b
 O `docker/entrypoint.sh` só importa o `seed.sql.gz` se o banco estiver **vazio** - em um
 site já rodando, ele nunca sobrescreve dados existentes.
 
+## Multisite de demonstração (dois departamentos, um só codebase)
+
+Prova de conceito de como o Arizona Quickstart roda de verdade na Universidade do Arizona:
+um único código (`vendor/`, `web/core`, módulos/tema, incluindo o `az_ufop_departamento`)
+atendendo vários sites de departamento ao mesmo tempo, cada um com seu próprio banco de
+dados e conteúdo, sem duplicar a instalação.
+
+- `web/sites/dfis` - Departamento de Física (banco `dfis`, porta `DFIS_PORT` no `.env`,
+  padrão `8299`).
+- `web/sites/demat` - Departamento de Matemática (banco `demat`, porta `DEMAT_PORT`,
+  padrão `8399`).
+- `web/sites/sites.php` mapeia porta+domínio para o diretório do site certo - é assim que o
+  Drupal decide qual dos três (default/dfis/demat) responder, mesmo todos rodando no mesmo
+  container/`index.php`. Ajuste os domínios ali se o servidor final tiver um domínio
+  diferente de `srv1654694.hstgr.cloud`.
+- Cada site importa seu próprio dump (`docker/seed-dfis.sql.gz`, `docker/seed-demat.sql.gz`)
+  isoladamente no primeiro boot, do mesmo jeito que o site principal.
+- Criar mais um departamento = repetir o padrão: `drush site:install` num banco novo,
+  entrada nova em `sites.php`, porta nova no `docker-compose.yml`. Não tem formulário de
+  autoatendimento pra isso - provisionar um site novo continua sendo tarefa de quem
+  administra o servidor.
+
 ## Notes
 If you are planning on pushing this site to Pantheon, you should use the
 [Pantheon upstream repository](https://github.com/az-digital/az-quickstart-pantheon) as your scaffolding repo,

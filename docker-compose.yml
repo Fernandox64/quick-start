@@ -6,10 +6,15 @@ services:
       - .env
     ports:
       - "${HOST_PORT:-8198}:80"
+      # Multisite de demonstracao (departamentos extra, mesmo codebase/container):
+      - "${DFIS_PORT:-8299}:80"
+      - "${DEMAT_PORT:-8399}:80"
     volumes:
       # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
       # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
       - ./web/sites/default/files:/app/web/sites/default/files
+      - ./web/sites/dfis/files:/app/web/sites/dfis/files
+      - ./web/sites/demat/files:/app/web/sites/demat/files
     depends_on:
       db:
         condition: service_healthy
@@ -25,6 +30,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD:-db}
     volumes:
       - db_data:/var/lib/mysql
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 5s
