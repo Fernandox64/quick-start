@@ -44,6 +44,7 @@ PHP
 gerar_settings_local default "$DB_NAME"
 gerar_settings_local dfis dfis
 gerar_settings_local demat demat
+gerar_settings_local demed demed
 
 echo "Esperando o banco de dados em ${DB_HOST}:${DB_PORT}..."
 for i in $(seq 1 60); do
@@ -78,7 +79,8 @@ importar_se_vazio() {
 importar_se_vazio "$DB_NAME" /app/docker/seed.sql.gz "http://localhost"
 importar_se_vazio dfis /app/docker/seed-dfis.sql.gz "http://localhost:8299"
 importar_se_vazio demat /app/docker/seed-demat.sql.gz "http://localhost:8399"
+importar_se_vazio demed /app/docker/seed-demed.sql.gz "http://localhost:8499"
 
-chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files
+chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files
 
 exec "$@"

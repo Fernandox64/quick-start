@@ -60,6 +60,8 @@
 // e container, cada um na sua porta/banco de dados proprio (ver README).
 $sites['8299.srv1654694.hstgr.cloud'] = 'dfis';
 $sites['8399.srv1654694.hstgr.cloud'] = 'demat';
+$sites['8499.srv1654694.hstgr.cloud'] = 'demed';
 // Aliases extras para testar localmente via DDEV com --uri.
 $sites['8299.localhost'] = 'dfis';
 $sites['8399.localhost'] = 'demat';
+$sites['8499.localhost'] = 'demed';

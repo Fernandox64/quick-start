@@ -34,6 +34,7 @@ $site_dir = basename($site_path);
 $DEPARTAMENTOS = [
   'dfis' => ['nome' => 'Departamento de Física', 'sigla' => 'DFIS', 'area' => 'física'],
   'demat' => ['nome' => 'Departamento de Matemática', 'sigla' => 'DEMAT', 'area' => 'matemática'],
+  'demed' => ['nome' => 'Departamento de Medicina', 'sigla' => 'DEMED', 'area' => 'medicina'],
 ];
 $dep = $DEPARTAMENTOS[$site_dir] ?? [
   'nome' => 'Departamento Exemplo',
@@ -55,9 +56,10 @@ if (!$module_handler->moduleExists('language')) {
   \Drupal::service('module_installer')->install(['language', 'locale', 'config_translation']);
   echo "Módulos de idioma instalados.\n";
 }
+$precisa_baixar_pacote = FALSE;
 if (!\Drupal::languageManager()->getLanguage('pt-br')) {
   \Drupal\language\Entity\ConfigurableLanguage::createFromLangcode('pt-br')->save();
-  echo "Idioma pt-br adicionado (rode 'drush language:update pt-br' ou reimporte os .po se precisar do pacote completo).\n";
+  $precisa_baixar_pacote = TRUE;
 }
 \Drupal::configFactory()->getEditable('system.site')->set('default_langcode', 'pt-br')->save();
 \Drupal::configFactory()->getEditable('language.negotiation')->set('url.source', 'path_prefix')->save();
@@ -600,3 +602,8 @@ if ($module_handler->moduleExists('masquerade_log')) {
 }
 
 echo "\n=== Esqueleto de '$nome' pronto. Rode 'drush cache:rebuild' em seguida. ===\n";
+if ($precisa_baixar_pacote) {
+  echo "IMPORTANTE: rode também 'drush --uri=... locale:update' agora - baixa o pacote\n";
+  echo "completo de tradução pt-br (11 mil+ strings). Não dá pra chamar isso de dentro\n";
+  echo "deste script (drush não permite rodar outro comando drush por dentro de si mesmo).\n";
+}
