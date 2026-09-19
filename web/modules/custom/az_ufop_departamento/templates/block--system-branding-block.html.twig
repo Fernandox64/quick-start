@@ -1,0 +1,27 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Igual ao block--system-branding-block.html.twig do az_barrio, mas com a
+ * logo oficial da UFOP antes da logo/nome do departamento (mesmo padrao
+ * usado no rodape, em az-ufop-footer-rapido.html.twig).
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance and theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% block content %}
+  <div class="az-ufop-branding-flex">
+    <img class="az-ufop-branding-logo" src="/modules/custom/az_ufop_departamento/images/ufop-logo-oficial.png" alt="UFOP" width="48" height="112" fetchpriority="high" />
+    {% if site_logo %}
+      {{ site_logo }}
+    {% endif %}
+    {% if site_name %}
+      <a class="d-flex align-items-center justify-content-start text-decoration-none" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+        <span class="d-inline-block h3 text-blue text-uppercase fw-bold my-4">{{ site_name }}</span>
+      </a>
+    {% endif %}
+  </div>
+{% endblock %}

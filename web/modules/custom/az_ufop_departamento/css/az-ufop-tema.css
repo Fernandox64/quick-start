@@ -406,3 +406,29 @@ html body .az-ufop-topo-logo:hover {
     display: none;
   }
 }
+
+/* ------------------------------------------------------------------
+ * Cabecalho (bloco "Site branding"): logo oficial da UFOP antes da
+ * logo/nome do departamento, mesmo padrao usado no rodape.
+ * ------------------------------------------------------------------ */
+html body .az-ufop-branding-flex {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+html body .az-ufop-branding-logo {
+  flex-shrink: 0;
+  width: 44px;
+  height: auto;
+}
+html body .az-ufop-branding-flex .qs-site-logo {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+html body .az-ufop-branding-flex .qs-site-logo img {
+  max-width: 220px;
+  width: auto;
+  height: auto;
+}

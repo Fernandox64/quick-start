@@ -42,11 +42,19 @@ function az_ufop_departamento_theme(): array {
  * uma copia do template dentro deste modulo (mesmo padrao de um subtema)
  * com essas strings envolvidas em |t, para nao precisar editar o
  * tema/profile diretamente.
+ *
+ * Tambem aponta o hook 'block__system_branding_block' pra uma copia local
+ * que inclui a logo oficial da UFOP antes da logo/nome do departamento no
+ * cabecalho (mesmo padrao ja usado no rodape).
  */
 function az_ufop_departamento_theme_registry_alter(array &$theme_registry): void {
   $path = \Drupal::service('extension.list.module')->getPath('az_ufop_departamento') . '/templates';
   foreach ($theme_registry as $hook => $info) {
     if ($hook === 'page' || (str_starts_with($hook, 'page__') && ($info['template'] ?? NULL) === 'page')) {
+      $theme_registry[$hook]['path'] = $path;
+      $theme_registry[$hook]['theme_path'] = 'az_ufop_departamento';
+    }
+    if ($hook === 'block__system_branding_block') {
       $theme_registry[$hook]['path'] = $path;
       $theme_registry[$hook]['theme_path'] = 'az_ufop_departamento';
     }
