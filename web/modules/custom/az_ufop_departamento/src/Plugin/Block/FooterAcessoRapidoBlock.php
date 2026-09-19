@@ -62,12 +62,12 @@ class FooterAcessoRapidoBlock extends BlockBase implements ContainerFactoryPlugi
     }
 
     // Contas oficiais da UFOP (nao ha conta propria por departamento nesta
-    // demonstracao). Sem YouTube: nao ha um canal institucional central
-    // unico e confiavel da UFOP, so canais por departamento/orgao.
+    // demonstracao).
     $redes = [
       'facebook' => 'https://www.facebook.com/minhaUFOP/',
       'instagram' => 'https://www.instagram.com/minhaufop/',
       'twitter' => 'https://x.com/UFOP',
+      'youtube' => 'https://www.youtube.com/user/tvufop',
     ];
 
     return [
