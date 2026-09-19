@@ -34,6 +34,9 @@
 /web/sites/*/files/css/
 /web/sites/*/files/js/
 /web/sites/*/files/xmlsitemap/
+# Cache de tradução JS (nome com hash, muda toda vez que uma string de
+# interface e traduzida/atualizada) - mesmo problema do sitemap.
+/web/sites/*/files/languages/
 
 # DDEV (ferramenta so de desenvolvimento local, nao entra na imagem de producao).
 /.ddev/
