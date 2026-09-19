@@ -275,19 +275,18 @@
           <section{{ attributes.addClass(classes) }}>
             <div class="container">
               <div class="row">
-                {% if footer_logo %}
-                  <div class="col-12 col-sm-5 col-md-4 col-lg-4 text-center-xs text-sm-start">
-                    <div class="row bottom-buffer-30">
-                      <div class="col">
+                {% if footer_logo or page.footer %}
+                  <div class="col-12 az-ufop-footer-top">
+                    {% if footer_logo %}
+                      <div class="az-ufop-footer-brand">
+                        <img class="az-ufop-footer-brand-logo" src="/modules/custom/az_ufop_departamento/images/ufop-logo-oficial.png" alt="UFOP" width="48" height="112" loading="lazy" />
                         {{ footer_logo }}
                       </div>
-                    </div>
+                    {% endif %}
+                    {% if page.footer %}
+                      {{ page.footer }}
+                    {% endif %}
                   </div>
-                {% endif %}
-                {% if page.footer %}
-                  <!-- Force next columns to break to new line at md breakpoint and up -->
-                  <div class="w-100 d-block d-sm-none"></div>
-                  {{ page.footer }}
                 {% endif %}
                 <div class="col-12">
                   <hr>

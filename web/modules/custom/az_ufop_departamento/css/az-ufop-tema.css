@@ -259,6 +259,47 @@ html body .paragraph--type--az-cards h3 {
 }
 
 /* ------------------------------------------------------------------
+ * Rodape: logo da UFOP + logo do departamento, alinhados na mesma
+ * linha do bloco "Acesso rapido" / "Siga-nos" - flex proprio, ja que
+ * o wrapper do bloco do Drupal fica entre o .row do tema e nossas
+ * colunas, quebrando o grid nativo do Bootstrap nesse ponto.
+ * ------------------------------------------------------------------ */
+html body .az-ufop-footer-top {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin: 1.375rem 0;
+}
+html body .az-ufop-footer-top > .az-ufop-footer-brand {
+  flex: 0 0 auto;
+  max-width: 320px;
+}
+html body .az-ufop-footer-top > *:not(.az-ufop-footer-brand) {
+  flex: 1 1 320px;
+  min-width: 280px;
+}
+html body .az-ufop-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+html body .az-ufop-footer-brand-logo {
+  flex-shrink: 0;
+  width: 40px;
+  height: auto;
+}
+html body .az-ufop-footer-brand .qs-site-logo {
+  margin: 0;
+}
+@media (max-width: 575.98px) {
+  html body .az-ufop-footer-top {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* ------------------------------------------------------------------
  * Rodape: "Acesso rapido" (mesmos links do menu principal) + "Siga-nos"
  * (redes sociais), no estilo do site principal em Laravel.
  * ------------------------------------------------------------------ */
