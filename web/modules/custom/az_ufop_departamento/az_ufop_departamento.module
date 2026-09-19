@@ -24,6 +24,10 @@ function az_ufop_departamento_theme(): array {
       'variables' => ['slides' => []],
       'template' => 'az-ufop-noticias-carousel',
     ],
+    'az_ufop_footer_acesso_rapido' => [
+      'variables' => ['links' => [], 'redes' => []],
+      'template' => 'az-ufop-footer-rapido',
+    ],
   ];
 }
 

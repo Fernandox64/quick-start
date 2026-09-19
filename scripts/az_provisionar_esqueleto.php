@@ -577,6 +577,25 @@ Block::create([
 echo "Bloco do carrossel colocado na home.\n";
 
 // ---------------------------------------------------------------------
+// 10.5) Bloco de "Acesso Rápido" (mesmos links do menu) + redes sociais
+// no rodapé, no estilo do site principal em Laravel.
+// ---------------------------------------------------------------------
+$id_footer = 'az_ufop_footer_acesso_rapido';
+if (Block::load($id_footer)) {
+  Block::load($id_footer)->delete();
+}
+Block::create([
+  'id' => $id_footer,
+  'theme' => 'az_barrio',
+  'region' => 'footer',
+  'plugin' => $id_footer,
+  'weight' => 0,
+  'settings' => ['id' => $id_footer, 'label' => 'Acesso Rápido', 'label_display' => '0', 'provider' => 'az_ufop_departamento'],
+  'visibility' => [],
+])->save();
+echo "Bloco 'Acesso Rápido + Redes Sociais' colocado no rodapé.\n";
+
+// ---------------------------------------------------------------------
 // 11.5) Desativa o link "Home" estatico do perfil (duplica o "Início" que
 // criamos no menu - ver az_disable_home_link.php do site principal).
 // ---------------------------------------------------------------------

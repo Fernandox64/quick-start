@@ -257,3 +257,53 @@ html body .paragraph--type--az-cards h3 {
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
 }
+
+/* ------------------------------------------------------------------
+ * Rodape: "Acesso rapido" (mesmos links do menu principal) + "Siga-nos"
+ * (redes sociais), no estilo do site principal em Laravel.
+ * ------------------------------------------------------------------ */
+html body .site-footer .footer-title {
+  color: #1c1c1c;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+html body .az-ufop-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 1.5rem;
+}
+html body .az-ufop-footer-links a {
+  color: #4a000b;
+  font-size: 0.95rem;
+}
+html body .az-ufop-footer-links a:hover {
+  color: #8b0015;
+  text-decoration: underline;
+}
+html body .az-ufop-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.6rem;
+}
+html body .az-ufop-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: #8b0015;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+html body .az-ufop-social-links a:hover {
+  background: #8b0015;
+  color: #fff;
+}
