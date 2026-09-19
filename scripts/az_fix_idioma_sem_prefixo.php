@@ -1,10 +1,16 @@
 <?php
 
 /**
- * Corrige o bug de 404 em conteudo/alias com langcode "en" quando a URL usa
- * o prefixo "/pt-br/" (Drupal nao faz fallback de idioma nesse cenario).
- * pt-br passa a ser a lingua padrao SEM prefixo - e a unica lingua de
- * navegacao de verdade aqui, so queriamos a interface traduzida.
+ * Corrige o bug de 404 em qualquer conteudo/alias/termo com langcode "en"
+ * quando pt-br e a lingua padrao: o Drupal nao faz fallback de idioma pra
+ * entidade nem pra alias nesse cenario, entao qualquer coisa criada como
+ * "ingles" (a maioria do conteudo, incluindo o que o proprio esqueleto
+ * cria) vira 404 - inclusive a propria home, como aconteceu no DFIS.
+ *
+ * Primeiro tira a exigencia de prefixo "/pt-br/" (nao e um site
+ * multilingue de verdade, so queriamos a interface traduzida) e depois
+ * converte TODO o conteudo/alias/termo de "en" pra "pt-br" em bloco, pra
+ * nao ficar corrigindo pagina por pagina conforme aparece.
  *
  * Roda em qualquer site: drush --uri=... scr scripts/az_fix_idioma_sem_prefixo.php
  */
@@ -16,32 +22,24 @@ echo "pt-br configurado sem prefixo.\n";
 
 $db = \Drupal::database();
 
-$db->update('path_alias')
-  ->fields(['langcode' => 'pt-br'])
-  ->condition('alias', '/categoria-de-curso/%', 'LIKE')
-  ->execute();
-$db->update('path_alias_revision')
-  ->fields(['langcode' => 'pt-br'])
-  ->condition('alias', '/categoria-de-curso/%', 'LIKE')
-  ->execute();
-echo "Aliases de Graduação/Pós-Graduação corrigidos.\n";
+$tabelas = [
+  'node_field_data' => 'nid',
+  'node_field_revision' => 'nid',
+  'taxonomy_term_field_data' => 'tid',
+  'taxonomy_term_field_revision' => 'tid',
+  'path_alias' => 'id',
+  'path_alias_revision' => 'id',
+];
 
-$tids = $db->select('taxonomy_term_field_data', 't')
-  ->fields('t', ['tid'])
-  ->condition('vid', 'az_curso_categoria')
-  ->execute()
-  ->fetchCol();
-
-if ($tids) {
-  $db->update('taxonomy_term_field_data')
+foreach ($tabelas as $tabela => $coluna) {
+  if (!$db->schema()->tableExists($tabela)) {
+    continue;
+  }
+  $afetadas = $db->update($tabela)
     ->fields(['langcode' => 'pt-br'])
-    ->condition('vid', 'az_curso_categoria')
+    ->condition('langcode', 'en')
     ->execute();
-  $db->update('taxonomy_term_field_revision')
-    ->fields(['langcode' => 'pt-br'])
-    ->condition('tid', $tids, 'IN')
-    ->execute();
-  echo "Termos de Graduação/Pós-Graduação corrigidos.\n";
+  echo "$tabela: $afetadas registro(s) convertido(s) de en para pt-br.\n";
 }
 
 echo "Concluído - rode 'drush cache:rebuild' em seguida.\n";
