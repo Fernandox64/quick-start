@@ -307,3 +307,30 @@ html body .az-ufop-social-links a:hover {
   background: #8b0015;
   color: #fff;
 }
+
+/* ------------------------------------------------------------------
+ * Barra superior: "Universidade Federal de Ouro Preto" no lugar do
+ * wordmark padrao "The University of Arizona".
+ * ------------------------------------------------------------------ */
+html body .az-ufop-topo-logo {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+html body .az-ufop-topo-logo img {
+  flex-shrink: 0;
+}
+html body .az-ufop-topo-logo:hover {
+  color: #f3dbdf !important;
+}
+@media (max-width: 575.98px) {
+  html body .az-ufop-topo-logo span {
+    display: none;
+  }
+}

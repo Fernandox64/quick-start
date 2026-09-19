@@ -62,7 +62,16 @@ if (!\Drupal::languageManager()->getLanguage('pt-br')) {
   $precisa_baixar_pacote = TRUE;
 }
 \Drupal::configFactory()->getEditable('system.site')->set('default_langcode', 'pt-br')->save();
-\Drupal::configFactory()->getEditable('language.negotiation')->set('url.source', 'path_prefix')->save();
+// pt-br sem prefixo (""): e a unica lingua de navegacao de verdade aqui (so
+// queremos a interface traduzida, nao multilinguismo de conteudo de
+// verdade). Com prefixo obrigatorio ("/pt-br/..."), qualquer conteudo/alias
+// criado com langcode "en" (a maioria, incluindo o que este proprio script
+// cria) vira 404 nessa URL - Drupal nao faz fallback de idioma pra alias e
+// pra pagina de taxonomia nesse cenario.
+\Drupal::configFactory()->getEditable('language.negotiation')
+  ->set('url.source', 'path_prefix')
+  ->set('url.prefixes.pt-br', '')
+  ->save();
 
 // Strings de interface que nao vem no pacote da comunidade (hardcoded no
 // tema/modulos, ver az_traduzir_interface.php do site principal).
@@ -347,7 +356,7 @@ function az_esq_termo(string $vid, string $nome, string $alias_wanted): Term {
   if ($termos) {
     return reset($termos);
   }
-  $term = Term::create(['vid' => $vid, 'name' => $nome]);
+  $term = Term::create(['vid' => $vid, 'name' => $nome, 'langcode' => 'pt-br']);
   $term->save();
   \Drupal::service('path_alias.manager');
   \Drupal\path_alias\Entity\PathAlias::create([
