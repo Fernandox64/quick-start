@@ -432,3 +432,24 @@ html body .az-ufop-branding-flex .qs-site-logo img {
   width: auto;
   height: auto;
 }
+
+/* ------------------------------------------------------------------
+ * Menu principal: reduzido em ~30% (fonte e espacamento) e alinhado
+ * com a logo da UFOP no cabecalho - o .nav-link tem padding-left
+ * proprio, entao sem a margem negativa o texto "Inicio" comeca mais
+ * a direita que o icone. Tambem abre uma margem entre a barra
+ * superior (vinho) e o cabecalho do site, que antes ficavam colados.
+ * ------------------------------------------------------------------ */
+html body #header_site {
+  margin-top: 1.5rem;
+}
+html body #navbar-top .nav-link {
+  font-size: 12.6px;
+  padding-left: 8.4px;
+  padding-right: 8.4px;
+  padding-top: 12.6px;
+  padding-bottom: 12.6px;
+}
+html body #navbar-top .navbar-nav {
+  margin-left: -8.4px;
+}
