@@ -128,7 +128,7 @@ echo "Títulos de views traduzidos.\n";
 $barrio = \Drupal::configFactory()->getEditable('az_barrio.settings');
 $barrio->set('land_acknowledgment', FALSE);
 $barrio->set('info_security_privacy', FALSE);
-$barrio->set('copyright_notice', "$nome, Universidade Federal de Ouro Preto (UFOP). Site de demonstração.");
+$barrio->set('copyright_notice', "$nome, Universidade Federal de Ouro Preto (UFOP). NTI-UFOP");
 $barrio->save();
 
 // ---------------------------------------------------------------------

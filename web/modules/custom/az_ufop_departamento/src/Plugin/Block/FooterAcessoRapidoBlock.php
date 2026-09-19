@@ -61,14 +61,13 @@ class FooterAcessoRapidoBlock extends BlockBase implements ContainerFactoryPlugi
       ];
     }
 
-    // Sem conta de rede social de verdade nesta demonstracao - os icones
-    // ficam com link "#" ate o departamento configurar os de verdade
-    // (trocar aqui ou, futuramente, um campo de configuracao do bloco).
+    // Contas oficiais da UFOP (nao ha conta propria por departamento nesta
+    // demonstracao). Sem YouTube: nao ha um canal institucional central
+    // unico e confiavel da UFOP, so canais por departamento/orgao.
     $redes = [
-      'facebook' => '#',
-      'instagram' => '#',
-      'twitter' => '#',
-      'youtube' => '#',
+      'facebook' => 'https://www.facebook.com/minhaUFOP/',
+      'instagram' => 'https://www.instagram.com/minhaufop/',
+      'twitter' => 'https://x.com/UFOP',
     ];
 
     return [

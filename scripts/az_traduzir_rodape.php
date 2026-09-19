@@ -14,7 +14,7 @@
 $config = \Drupal::configFactory()->getEditable('az_barrio.settings');
 $config->set('land_acknowledgment', FALSE);
 $config->set('info_security_privacy', FALSE);
-$config->set('copyright_notice', 'Departamento Modelo, Universidade Federal de Ouro Preto (UFOP). Site de demonstração.');
+$config->set('copyright_notice', 'Departamento Modelo, Universidade Federal de Ouro Preto (UFOP). NTI-UFOP');
 $config->save();
 
 echo "Rodape do az_barrio atualizado.\n";
