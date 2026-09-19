@@ -1,16 +1,17 @@
 <?php
 
 /**
- * Corrige o bug de 404 em qualquer conteudo/alias/termo com langcode "en"
- * quando pt-br e a lingua padrao: o Drupal nao faz fallback de idioma pra
- * entidade nem pra alias nesse cenario, entao qualquer coisa criada como
- * "ingles" (a maioria do conteudo, incluindo o que o proprio esqueleto
- * cria) vira 404 - inclusive a propria home, como aconteceu no DFIS.
+ * Corrige o bug de 404/conteudo sumido em qualquer entidade (node, termo,
+ * paragrafo, item de menu, midia, alias...) com langcode "en" quando pt-br
+ * e a lingua padrao: o Drupal nao faz fallback de idioma nesse cenario, e
+ * cada tipo de entidade que ainda estava em "en" ia aparecendo quebrado aos
+ * poucos (primeiro Graduacao/Pos-Graduacao, depois a home inteira, depois
+ * os paragrafos dentro da home).
  *
- * Primeiro tira a exigencia de prefixo "/pt-br/" (nao e um site
- * multilingue de verdade, so queriamos a interface traduzida) e depois
- * converte TODO o conteudo/alias/termo de "en" pra "pt-br" em bloco, pra
- * nao ficar corrigindo pagina por pagina conforme aparece.
+ * Em vez de corrigir tabela por tabela conforme aparece, varre TODAS as
+ * tabelas do banco que tem uma coluna "langcode" e converte "en" -> "pt-br"
+ * de uma vez so - cobre nodes, termos, paragrafos, itens de menu, midia,
+ * blocos de conteudo, aliases, o que for.
  *
  * Roda em qualquer site: drush --uri=... scr scripts/az_fix_idioma_sem_prefixo.php
  */
@@ -22,24 +23,23 @@ echo "pt-br configurado sem prefixo.\n";
 
 $db = \Drupal::database();
 
-$tabelas = [
-  'node_field_data' => 'nid',
-  'node_field_revision' => 'nid',
-  'taxonomy_term_field_data' => 'tid',
-  'taxonomy_term_field_revision' => 'tid',
-  'path_alias' => 'id',
-  'path_alias_revision' => 'id',
-];
+$tabelas = $db->query("
+  SELECT DISTINCT TABLE_NAME
+  FROM information_schema.COLUMNS
+  WHERE TABLE_SCHEMA = DATABASE()
+    AND COLUMN_NAME = 'langcode'
+")->fetchCol();
 
-foreach ($tabelas as $tabela => $coluna) {
-  if (!$db->schema()->tableExists($tabela)) {
-    continue;
-  }
+$total_tabelas = 0;
+foreach ($tabelas as $tabela) {
   $afetadas = $db->update($tabela)
     ->fields(['langcode' => 'pt-br'])
     ->condition('langcode', 'en')
     ->execute();
-  echo "$tabela: $afetadas registro(s) convertido(s) de en para pt-br.\n";
+  if ($afetadas > 0) {
+    echo "$tabela: $afetadas registro(s) convertido(s) de en para pt-br.\n";
+    $total_tabelas++;
+  }
 }
 
-echo "Concluído - rode 'drush cache:rebuild' em seguida.\n";
+echo "Concluído ($total_tabelas tabelas afetadas) - rode 'drush cache:rebuild' em seguida.\n";
