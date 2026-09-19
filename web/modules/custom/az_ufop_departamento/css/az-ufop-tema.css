@@ -445,12 +445,12 @@ html body #header_site {
   margin-top: 1.5rem;
 }
 html body #navbar-top .nav-link {
-  font-size: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 22.5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 html body #navbar-top .navbar-nav {
-  margin-left: -20px;
+  margin-left: -15px;
 }
