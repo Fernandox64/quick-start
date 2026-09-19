@@ -434,23 +434,23 @@ html body .az-ufop-branding-flex .qs-site-logo img {
 }
 
 /* ------------------------------------------------------------------
- * Menu principal: um pouco menor que o padrao do tema (nao 18px, mas
- * tambem nao os 12.6px iniciais - ficou pequeno demais) e alinhado
- * com a logo da UFOP no cabecalho - o .nav-link tem padding-left
- * proprio, entao sem a margem negativa o texto "Inicio" comeca mais
- * a direita que o icone. Tambem abre uma margem entre a barra
- * superior (vinho) e o cabecalho do site, que antes ficavam colados.
+ * Menu principal: fonte maior que o padrao do tema (pedido explicito
+ * do dobro do tamanho anterior) e alinhado com a logo da UFOP no
+ * cabecalho - o .nav-link tem padding-left proprio, entao sem a
+ * margem negativa o texto "Inicio" comeca mais a direita que o
+ * icone. Tambem abre uma margem entre a barra superior (vinho) e o
+ * cabecalho do site, que antes ficavam colados.
  * ------------------------------------------------------------------ */
 html body #header_site {
   margin-top: 1.5rem;
 }
 html body #navbar-top .nav-link {
-  font-size: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 html body #navbar-top .navbar-nav {
-  margin-left: -10px;
+  margin-left: -20px;
 }
