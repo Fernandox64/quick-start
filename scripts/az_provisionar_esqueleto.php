@@ -35,6 +35,9 @@ $DEPARTAMENTOS = [
   'dfis' => ['nome' => 'Departamento de Física', 'sigla' => 'DFIS', 'area' => 'física'],
   'demat' => ['nome' => 'Departamento de Matemática', 'sigla' => 'DEMAT', 'area' => 'matemática'],
   'demed' => ['nome' => 'Departamento de Medicina', 'sigla' => 'DEMED', 'area' => 'medicina'],
+  'defil' => ['nome' => 'Departamento de Filosofia', 'sigla' => 'DEFIL', 'area' => 'filosofia'],
+  'delet' => ['nome' => 'Departamento de Letras', 'sigla' => 'DELET', 'area' => 'letras'],
+  'depro' => ['nome' => 'Departamento de Engenharia de Produção', 'sigla' => 'DEPRO', 'area' => 'engenharia de produção'],
 ];
 $dep = $DEPARTAMENTOS[$site_dir] ?? [
   'nome' => 'Departamento Exemplo',

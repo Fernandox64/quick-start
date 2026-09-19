@@ -10,6 +10,9 @@ services:
       - "${DFIS_PORT:-8299}:80"
       - "${DEMAT_PORT:-8399}:80"
       - "${DEMED_PORT:-8499}:80"
+      - "${DEFIL_PORT:-8599}:80"
+      - "${DELET_PORT:-8699}:80"
+      - "${DEPRO_PORT:-8799}:80"
     volumes:
       # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
       # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
@@ -17,6 +20,9 @@ services:
       - ./web/sites/dfis/files:/app/web/sites/dfis/files
       - ./web/sites/demat/files:/app/web/sites/demat/files
       - ./web/sites/demed/files:/app/web/sites/demed/files
+      - ./web/sites/defil/files:/app/web/sites/defil/files
+      - ./web/sites/delet/files:/app/web/sites/delet/files
+      - ./web/sites/depro/files:/app/web/sites/depro/files
     depends_on:
       db:
         condition: service_healthy

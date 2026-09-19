@@ -45,6 +45,9 @@ gerar_settings_local default "$DB_NAME"
 gerar_settings_local dfis dfis
 gerar_settings_local demat demat
 gerar_settings_local demed demed
+gerar_settings_local defil defil
+gerar_settings_local delet delet
+gerar_settings_local depro depro
 
 echo "Esperando o banco de dados em ${DB_HOST}:${DB_PORT}..."
 for i in $(seq 1 60); do
@@ -80,7 +83,10 @@ importar_se_vazio "$DB_NAME" /app/docker/seed.sql.gz "http://localhost"
 importar_se_vazio dfis /app/docker/seed-dfis.sql.gz "http://localhost:8299"
 importar_se_vazio demat /app/docker/seed-demat.sql.gz "http://localhost:8399"
 importar_se_vazio demed /app/docker/seed-demed.sql.gz "http://localhost:8499"
+importar_se_vazio defil /app/docker/seed-defil.sql.gz "http://localhost:8599"
+importar_se_vazio delet /app/docker/seed-delet.sql.gz "http://localhost:8699"
+importar_se_vazio depro /app/docker/seed-depro.sql.gz "http://localhost:8799"
 
-chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files
+chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files /app/web/sites/defil/files /app/web/sites/delet/files /app/web/sites/depro/files
 
 exec "$@"

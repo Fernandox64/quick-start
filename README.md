@@ -36,27 +36,36 @@ Para atualizar um deploy existente: `git pull`, depois `docker compose up -d --b
 O `docker/entrypoint.sh` só importa o `seed.sql.gz` se o banco estiver **vazio** - em um
 site já rodando, ele nunca sobrescreve dados existentes.
 
-## Multisite de demonstração (dois departamentos, um só codebase)
+## Multisite de demonstração (seis departamentos, um só codebase)
 
 Prova de conceito de como o Arizona Quickstart roda de verdade na Universidade do Arizona:
 um único código (`vendor/`, `web/core`, módulos/tema, incluindo o `az_ufop_departamento`)
 atendendo vários sites de departamento ao mesmo tempo, cada um com seu próprio banco de
 dados e conteúdo, sem duplicar a instalação.
 
-- `web/sites/dfis` - Departamento de Física (banco `dfis`, porta `DFIS_PORT` no `.env`,
-  padrão `8299`).
+- `web/sites/dfis` - Departamento de Física (banco `dfis`, porta `DFIS_PORT`, padrão `8299`).
 - `web/sites/demat` - Departamento de Matemática (banco `demat`, porta `DEMAT_PORT`,
   padrão `8399`).
+- `web/sites/demed` - Departamento de Medicina (banco `demed`, porta `DEMED_PORT`,
+  padrão `8499`).
+- `web/sites/defil` - Departamento de Filosofia (banco `defil`, porta `DEFIL_PORT`,
+  padrão `8599`).
+- `web/sites/delet` - Departamento de Letras (banco `delet`, porta `DELET_PORT`,
+  padrão `8699`).
+- `web/sites/depro` - Departamento de Engenharia de Produção (banco `depro`, porta
+  `DEPRO_PORT`, padrão `8799`).
 - `web/sites/sites.php` mapeia porta+domínio para o diretório do site certo - é assim que o
-  Drupal decide qual dos três (default/dfis/demat) responder, mesmo todos rodando no mesmo
-  container/`index.php`. Ajuste os domínios ali se o servidor final tiver um domínio
+  Drupal decide qual dos sete (default + 6 departamentos) responder, mesmo todos rodando no
+  mesmo container/`index.php`. Ajuste os domínios ali se o servidor final tiver um domínio
   diferente de `srv1654694.hstgr.cloud`.
-- Cada site importa seu próprio dump (`docker/seed-dfis.sql.gz`, `docker/seed-demat.sql.gz`)
-  isoladamente no primeiro boot, do mesmo jeito que o site principal.
-- Criar mais um departamento = repetir o padrão: `drush site:install` num banco novo,
-  entrada nova em `sites.php`, porta nova no `docker-compose.yml`. Não tem formulário de
-  autoatendimento pra isso - provisionar um site novo continua sendo tarefa de quem
-  administra o servidor.
+- Cada site importa seu próprio dump (`docker/seed-dfis.sql.gz`, `docker/seed-demat.sql.gz`
+  etc.) isoladamente no primeiro boot, do mesmo jeito que o site principal.
+- Criar mais um departamento = repetir o padrão: banco novo, `drush site:install` nesse
+  banco, rodar `scripts/az_provisionar_esqueleto.php` (esqueleto completo de menu/conteúdo -
+  basta adicionar o site à tabela `$DEPARTAMENTOS` no topo do script), entrada nova em
+  `sites.php`, porta nova no `docker-compose.yml`/`.env.example`, e exportar o dump inicial
+  pra `docker/seed-<site>.sql.gz`. Não tem formulário de autoatendimento pra isso -
+  provisionar um site novo continua sendo tarefa de quem administra o servidor.
 
 ## Notes
 If you are planning on pushing this site to Pantheon, you should use the

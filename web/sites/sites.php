@@ -61,7 +61,13 @@
 $sites['8299.srv1654694.hstgr.cloud'] = 'dfis';
 $sites['8399.srv1654694.hstgr.cloud'] = 'demat';
 $sites['8499.srv1654694.hstgr.cloud'] = 'demed';
+$sites['8599.srv1654694.hstgr.cloud'] = 'defil';
+$sites['8699.srv1654694.hstgr.cloud'] = 'delet';
+$sites['8799.srv1654694.hstgr.cloud'] = 'depro';
 // Aliases extras para testar localmente via DDEV com --uri.
 $sites['8299.localhost'] = 'dfis';
 $sites['8399.localhost'] = 'demat';
 $sites['8499.localhost'] = 'demed';
+$sites['8599.localhost'] = 'defil';
+$sites['8699.localhost'] = 'delet';
+$sites['8799.localhost'] = 'depro';
