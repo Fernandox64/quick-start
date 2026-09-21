@@ -100,10 +100,12 @@ function az_lc_pagina_curso(string $titulo, string $intro_html, array $cursos_ti
   return $nid;
 }
 
-// Se a página já existe (ex.: rodada anterior deste mesmo script, antes
-// deste texto explicativo existir), preenche o corpo dos cards que ainda
-// estiverem vazios - não recria a página nem mexe no que já tem texto.
-function az_lc_preencher_texto_cards(int $nid, string $area): void {
+// Se a página já existe (ex.: rodada anterior deste mesmo script), (1)
+// preenche o corpo dos cards que ainda estiverem vazios - sem mexer no que
+// já tem texto - e (2) adiciona um card pra qualquer curso que exista na
+// categoria mas ainda não tenha card na página (ex.: um curso cadastrado
+// depois que a página já tinha sido criada, como um Doutorado que faltava).
+function az_lc_sincronizar_cards(int $nid, array $cursos_titulos_atuais, string $area): void {
   $pagina = Node::load($nid);
   if (!$pagina) {
     return;
@@ -123,6 +125,14 @@ function az_lc_preencher_texto_cards(int $nid, string $area): void {
       }
     }
     unset($c);
+    $titulos_existentes = array_column($itens, 'title');
+    foreach ($cursos_titulos_atuais as $titulo_curso) {
+      if (!in_array($titulo_curso, $titulos_existentes, TRUE)) {
+        $itens[] = ['title' => $titulo_curso, 'body' => az_lc_texto_modalidade($titulo_curso, $area), 'body_format' => 'plain_text'];
+        $mudou = TRUE;
+        echo "Card '$titulo_curso' adicionado em '" . $pagina->getTitle() . "' (faltava).\n";
+      }
+    }
     if ($mudou) {
       $paragraph->set('field_az_cards', $itens);
       $paragraph->save();
@@ -130,7 +140,7 @@ function az_lc_preencher_texto_cards(int $nid, string $area): void {
     }
   }
   if ($mudou_algum) {
-    echo "Texto explicativo preenchido nos cards de '" . $pagina->getTitle() . "'.\n";
+    echo "Cards de '" . $pagina->getTitle() . "' atualizados.\n";
   }
 }
 
@@ -155,6 +165,42 @@ foreach ($renomear_generico as $antigo => $novo) {
 $tGrad = az_lc_termo('az_curso_categoria', 'Graduação');
 $tPos = az_lc_termo('az_curso_categoria', 'Pós-Graduação');
 
+// Alguns sites (ex.: o principal, montado à mão antes deste esqueleto
+// existir) tem Mestrado mas nunca tiveram um curso de Doutorado cadastrado
+// - cria um genérico pra a página de Pós-Graduação não ficar incompleta.
+if ($tPos) {
+  $titulos_pos_atuais = az_lc_cursos_por_categoria($tPos->id());
+  $tem_doutorado = FALSE;
+  foreach ($titulos_pos_atuais as $t) {
+    if (str_contains(mb_strtolower($t), 'doutorado')) {
+      $tem_doutorado = TRUE;
+      break;
+    }
+  }
+  if (!$tem_doutorado) {
+    // Espelha o padrao de nome ja usado (ex.: "Mestrado em Fisica" ->
+    // "Doutorado em Fisica"; "Mestrado" sozinho -> "Doutorado" sozinho).
+    $titulo_doutorado = 'Doutorado em ' . $area;
+    foreach ($titulos_pos_atuais as $t) {
+      if (preg_match('/^Mestrado\s+em\s+(.+)$/ui', $t, $m)) {
+        $titulo_doutorado = 'Doutorado em ' . $m[1];
+        break;
+      }
+      if (mb_strtolower(trim($t)) === 'mestrado') {
+        $titulo_doutorado = 'Doutorado';
+        break;
+      }
+    }
+    Node::create([
+      'type' => 'az_curso',
+      'title' => $titulo_doutorado,
+      'field_az_curso_categoria' => ['target_id' => $tPos->id()],
+      'status' => 1,
+    ])->save();
+    echo "Curso '$titulo_doutorado' criado (faltava um Doutorado em Pós-Graduação).\n";
+  }
+}
+
 $nidGraduacao = $tGrad ? az_lc_pagina_curso(
   'Graduação',
   "<p>O $nome oferece curso(s) de graduação em $area, com um currículo estruturado para formar profissionais capacitados tanto para o mercado de trabalho quanto para a pesquisa científica.</p><h2>Por que estudar aqui</h2><ul><li>Corpo docente qualificado, com professores atuantes em pesquisa e extensão.</li><li>Infraestrutura de laboratórios e bibliotecas para apoio ao ensino.</li><li>Oportunidades de iniciação científica e monitoria já durante a graduação.</li></ul><h2>Nossos cursos</h2>",
@@ -169,10 +215,10 @@ $nidPosGraduacao = $tPos ? az_lc_pagina_curso(
 ) : NULL;
 
 if ($nidGraduacao) {
-  az_lc_preencher_texto_cards($nidGraduacao, $area);
+  az_lc_sincronizar_cards($nidGraduacao, az_lc_cursos_por_categoria($tGrad->id()), $area);
 }
 if ($nidPosGraduacao) {
-  az_lc_preencher_texto_cards($nidPosGraduacao, $area);
+  az_lc_sincronizar_cards($nidPosGraduacao, az_lc_cursos_por_categoria($tPos->id()), $area);
 }
 
 if (!$tGrad || !$tPos) {
