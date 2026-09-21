@@ -11,3 +11,7 @@ noticias-carousel:
       css/az-ufop-noticias-carousel.css: {}
   dependencies:
     - az_barrio/arizona-bootstrap-js
+tutorial:
+  css:
+    theme:
+      css/az-ufop-tutorial.css: {}

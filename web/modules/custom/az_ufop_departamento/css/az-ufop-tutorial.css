@@ -1,0 +1,383 @@
+/**
+ * Pagina /tutorial (guia interno de edicao do site, so pra administradores -
+ * ver TutorialController). Estilo proprio, escopado embaixo de .az-tutorial
+ * pra nao vazar pro resto do site (nao mexe em body/html direto).
+ */
+.az-tutorial {
+  --paper: #FAF7F4;
+  --surface: #FFFFFF;
+  --surface-2: #F3EEE9;
+  --ink: #221A16;
+  --ink-soft: #5B5049;
+  --ink-faint: #8A7E75;
+  --line: #E4DCD3;
+  --wine: #8B0015;
+  --wine-deep: #4A000B;
+  --wine-tint: #F6E4E7;
+  --wine-tint-line: #E7BFC5;
+  --tip-bg: #EEF4EC;
+  --tip-line: #8FAE86;
+  --tip-ink: #33522C;
+  --warn-bg: #FCF1DE;
+  --warn-line: #D9A02A;
+  --warn-ink: #6B4A10;
+  --shot-frame: #D8CFC5;
+  --shadow: 0 1px 2px rgba(34, 26, 22, .06), 0 10px 28px -14px rgba(34, 26, 22, .22);
+
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  border-radius: .9rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+}
+
+.az-tutorial * {
+  box-sizing: border-box;
+}
+
+.az-tutorial .wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.az-tutorial h1,
+.az-tutorial h2,
+.az-tutorial h3 {
+  text-wrap: balance;
+  line-height: 1.2;
+}
+
+.az-tutorial header.az-tutorial-hero {
+  background: linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
+  color: #fff;
+  padding: 3.2rem 1.25rem 2.6rem;
+  margin-bottom: 0;
+}
+
+.az-tutorial .eyebrow {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #F3D3D9;
+  margin: 0 0 .9rem;
+}
+
+.az-tutorial header.az-tutorial-hero h1 {
+  color: #fff;
+  font-size: clamp(2.1rem, 5vw, 2.8rem);
+  margin: 0 0 .9rem;
+}
+
+.az-tutorial header.az-tutorial-hero p {
+  color: #F6E4E7;
+  font-size: 1.08rem;
+  max-width: 46rem;
+  margin: 0;
+}
+
+.az-tutorial main {
+  padding-top: 2.4rem;
+}
+
+.az-tutorial section {
+  margin-bottom: 3rem;
+}
+
+.az-tutorial h2 {
+  font-size: 1.5rem;
+  margin: 0 0 .3rem;
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+}
+
+.az-tutorial h2 .num {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--wine);
+  background: var(--wine-tint);
+  border: 1px solid var(--wine-tint-line);
+  border-radius: 999px;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.az-tutorial h2 + .lede {
+  color: var(--ink-soft);
+  margin: 0 0 1.2rem;
+  font-size: .98rem;
+}
+
+.az-tutorial h3 {
+  font-size: 1.12rem;
+  margin: 1.6rem 0 .5rem;
+}
+
+.az-tutorial p {
+  margin: 0 0 1rem;
+}
+
+.az-tutorial a {
+  color: var(--wine);
+}
+
+.az-tutorial ul,
+.az-tutorial ol {
+  padding-left: 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.az-tutorial li {
+  margin-bottom: .4rem;
+}
+
+.az-tutorial strong {
+  color: var(--ink);
+}
+
+.az-tutorial code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: .3rem;
+  padding: .1rem .4rem;
+  font-size: .88em;
+}
+
+.az-tutorial .intro-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.6rem;
+  margin-top: -2.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.az-tutorial .intro-card p:last-child {
+  margin-bottom: 0;
+}
+
+.az-tutorial .checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.az-tutorial .checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  padding: .7rem .9rem;
+  margin: 0;
+}
+
+.az-tutorial .checklist .box {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1.5px solid var(--wine);
+  border-radius: .3rem;
+  margin-top: .15rem;
+}
+
+.az-tutorial .checklist a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.az-tutorial .checklist a:hover {
+  color: var(--wine);
+}
+
+.az-tutorial .checklist .sub {
+  display: block;
+  font-weight: 400;
+  color: var(--ink-faint);
+  font-size: .88rem;
+  margin-top: .1rem;
+}
+
+.az-tutorial figure {
+  margin: 1.2rem 0 1.4rem;
+}
+
+.az-tutorial .shot {
+  border: 1px solid var(--shot-frame);
+  border-radius: .6rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.az-tutorial .shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.az-tutorial figcaption {
+  font-size: .85rem;
+  color: var(--ink-faint);
+  margin-top: .5rem;
+  text-align: center;
+}
+
+.az-tutorial .callout {
+  border-radius: .6rem;
+  padding: 1rem 1.1rem;
+  margin: 1.1rem 0;
+  border: 1px solid;
+  font-size: .95rem;
+}
+
+.az-tutorial .callout p:last-child {
+  margin-bottom: 0;
+}
+
+.az-tutorial .callout-title {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .35rem;
+}
+
+.az-tutorial .callout.tip {
+  background: var(--tip-bg);
+  border-color: var(--tip-line);
+  color: var(--tip-ink);
+}
+
+.az-tutorial .callout.tip .callout-title {
+  color: var(--tip-ink);
+}
+
+.az-tutorial .callout.warn {
+  background: var(--warn-bg);
+  border-color: var(--warn-line);
+  color: var(--warn-ink);
+}
+
+.az-tutorial .callout.warn .callout-title {
+  color: var(--warn-ink);
+}
+
+.az-tutorial .step {
+  display: flex;
+  gap: .8rem;
+  margin: 1rem 0;
+}
+
+.az-tutorial .step .n {
+  flex-shrink: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--wine-tint);
+  border: 1px solid var(--wine-tint-line);
+  color: var(--wine);
+  font-weight: 700;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.az-tutorial .step .txt {
+  padding-top: .1rem;
+}
+
+.az-tutorial .step .txt p {
+  margin: 0;
+}
+
+.az-tutorial .glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .7rem;
+  margin: 1rem 0;
+}
+
+.az-tutorial .glossary dt {
+  font-weight: 700;
+  color: var(--wine);
+  font-size: .92rem;
+}
+
+.az-tutorial .glossary dd {
+  margin: .15rem 0 0;
+  color: var(--ink-soft);
+  font-size: .9rem;
+}
+
+.az-tutorial .glossary > div {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .7rem .85rem;
+}
+
+.az-tutorial hr.rule {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.6rem 0;
+}
+
+.az-tutorial table.dev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+  margin: 1rem 0;
+}
+
+.az-tutorial table.dev-table th,
+.az-tutorial table.dev-table td {
+  text-align: left;
+  padding: .55rem .7rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.az-tutorial table.dev-table th {
+  color: var(--ink-faint);
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.az-tutorial footer.az-tutorial-footer {
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: .85rem;
+  padding-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .az-tutorial header.az-tutorial-hero {
+    padding: 2.4rem 1rem 2.2rem;
+  }
+  .az-tutorial .intro-card {
+    padding: 1.2rem 1.1rem;
+  }
+  .az-tutorial h2 {
+    font-size: 1.28rem;
+  }
+}

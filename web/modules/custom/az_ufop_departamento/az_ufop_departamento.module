@@ -28,6 +28,10 @@ function az_ufop_departamento_theme(): array {
       'variables' => ['links' => [], 'redes' => []],
       'template' => 'az-ufop-footer-rapido',
     ],
+    'az_ufop_tutorial' => [
+      'variables' => [],
+      'template' => 'az-ufop-tutorial',
+    ],
   ];
 }
 

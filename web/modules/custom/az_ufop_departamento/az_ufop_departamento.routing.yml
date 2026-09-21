@@ -1,0 +1,7 @@
+az_ufop_departamento.tutorial:
+  path: '/tutorial'
+  defaults:
+    _controller: '\Drupal\az_ufop_departamento\Controller\TutorialController::view'
+    _title: 'Tutorial: como editar o site'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,216 @@
+{#
+/**
+ * @file
+ * Pagina /tutorial - guia interno de edicao do site (so administradores).
+ * Sem variaveis: conteudo estatico, ver TutorialController.
+ */
+#}
+<div class="az-tutorial">
+  <header class="az-tutorial-hero">
+    <div class="wrap">
+      <p class="eyebrow">{{ 'Guia para quem administra o conteúdo'|t }}</p>
+      <h1>{{ 'Primeiros passos no site'|t }}</h1>
+      <p>{{ 'Você recebeu um site novo já pronto (ex: Departamento de Psicologia) e não sabe por onde começar? Este guia mostra como editar o conteúdo sem precisar programar — em português, com prints de tela reais.'|t }}</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="intro-card">
+      <p><strong>{{ 'Como o site chega até você:'|t }}</strong> {{ 'ele já vem pronto com um exemplo completo — notícias, eventos, pessoal, páginas de Graduação/Pós, Serviços etc. Isso não é o conteúdo final: é um modelo pra você'|t }} <strong>{{ 'substituir'|t }}</strong> {{ 'pelo conteúdo real do seu departamento. A boa notícia é que trocar texto, imagem e cadastrar notícia/evento é bem parecido com preencher um formulário — não precisa saber programar.'|t }}</p>
+    </div>
+
+    <main>
+
+      <section id="checklist">
+        <h2><span class="num">✓</span>{{ 'Por onde começar: checklist do primeiro dia'|t }}</h2>
+        <p class="lede">{{ 'Faça nessa ordem. Cada item tem um "como fazer" mais abaixo no guia.'|t }}</p>
+        <ul class="checklist">
+          <li><span class="box"></span><div><a href="#login">{{ 'Entrar no painel administrativo'|t }}</a><span class="sub">{{ 'Pegue usuário e senha com quem te passou o site.'|t }}</span></div></li>
+          <li><span class="box"></span><div><a href="#blocos">{{ 'Editar a página "Sobre"'|t }}</a><span class="sub">{{ 'Trocar o texto genérico pelo texto real do seu departamento.'|t }}</span></div></li>
+          <li><span class="box"></span><div><a href="#blocos">{{ 'Atualizar "Contato"'|t }}</a><span class="sub">{{ 'Telefone, e-mail e endereço reais.'|t }}</span></div></li>
+          <li><span class="box"></span><div><a href="#novo-conteudo">{{ 'Trocar notícias, eventos e pessoal de exemplo'|t }}</a><span class="sub">{{ 'Apague os de demonstração aos poucos e cadastre os reais.'|t }}</span></div></li>
+          <li><span class="box"></span><div><a href="#cards">{{ 'Revisar "Graduação" e "Pós-Graduação"'|t }}</a><span class="sub">{{ 'Conferir se os cursos/programas listados são os certos.'|t }}</span></div></li>
+          <li><span class="box"></span><div>{{ 'Conferir o menu principal e o rodapé'|t }}<span class="sub">{{ 'Ver se os links fazem sentido pro seu departamento.'|t }}</span></div></li>
+        </ul>
+      </section>
+
+      <section id="login">
+        <h2><span class="num">1</span>{{ 'Como entrar no painel'|t }}</h2>
+        <p class="lede">{{ 'O painel de administração fica no mesmo site, em uma URL separada.'|t }}</p>
+
+        <div class="step">
+          <div class="n">1</div>
+          <div class="txt"><p>{{ 'Acesse'|t }} <code>seusite.ufop.br/user/login</code> {{ '(troque pelo endereço real do seu site).'|t }}</p></div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div class="txt"><p>{{ 'Digite o usuário e a senha que você recebeu de quem te passou o site.'|t }}</p></div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div class="txt"><p>{{ 'Clique em'|t }} <strong>{{ 'Entrar'|t }}</strong>.</p></div>
+        </div>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/01-login.png" alt="{{ 'Tela de login do site, com campos de usuário e senha'|t }}" loading="lazy"></div>
+          <figcaption>{{ 'Tela de login — mesmo visual do site, só que pedindo usuário e senha.'|t }}</figcaption>
+        </figure>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ {{ 'Não tem usuário e senha ainda?'|t }}</div>
+          <p>{{ 'Peça pra quem administra o servidor (o desenvolvedor que entregou o site) criar uma conta pra você. Evite pedir pra usar a conta principal — melhor cada pessoa ter a sua.'|t }}</p>
+        </div>
+      </section>
+
+      <section id="lista">
+        <h2><span class="num">2</span>{{ 'A tela de conteúdo'|t }}</h2>
+        <p class="lede">{{ 'Depois de entrar, o primeiro lugar pra conhecer é a lista de conteúdo — é o "índice" de tudo que existe no site.'|t }}</p>
+
+        <div class="step">
+          <div class="n">1</div>
+          <div class="txt"><p>{{ 'No menu preto do topo, clique em'|t }} <strong>{{ 'Conteúdo'|t }}</strong>.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div class="txt"><p>{{ 'Você vê a lista de tudo que já existe: páginas, notícias, eventos, pessoal, cursos. Use os filtros (Título, Tipo de conteúdo, Status) pra achar algo específico.'|t }}</p></div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div class="txt"><p>{{ 'Pra editar algo da lista, clique em'|t }} <strong>{{ 'Editar'|t }}</strong> {{ 'na linha correspondente. Pra criar algo novo, use o botão azul'|t }} <strong>{{ '+ Adicionar conteúdo'|t }}</strong>.</p></div>
+        </div>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/02-lista-conteudo.png" alt="{{ 'Tela de listagem de conteúdo do Drupal, com filtros e botão Adicionar conteúdo'|t }}" loading="lazy"></div>
+          <figcaption>{{ '"Conteúdo" — a lista de tudo que existe no site, com filtros e o botão pra criar algo novo.'|t }}</figcaption>
+        </figure>
+      </section>
+
+      <section id="blocos">
+        <h2><span class="num">3</span>{{ 'Como as páginas são montadas: "blocos"'|t }}</h2>
+        <p class="lede">{{ 'Este é o conceito mais importante do guia. Entendendo isso, o resto fica fácil.'|t }}</p>
+        <p>{{ 'Uma página (como "Sobre", "Contato", "Graduação") não é um texto corrido só — ela é montada empilhando'|t }} <strong>{{ 'blocos'|t }}</strong> {{ 'menores, um embaixo do outro. Cada bloco é de um tipo diferente: texto simples, uma fileira de cards, um formulário de contato, etc.'|t }}</p>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/03-editar-pagina-blocos.png" alt="{{ 'Tela de edição de uma página, mostrando os blocos Texto e Cards empilhados'|t }}" loading="lazy"></div>
+          <figcaption>{{ 'Editando a página "Graduação": um bloco de'|t }} <strong>{{ 'Texto'|t }}</strong> {{ 'em cima, um bloco de'|t }} <strong>{{ 'Cards'|t }}</strong> {{ 'embaixo.'|t }}</figcaption>
+        </figure>
+
+        <p>{{ 'Em cada bloco (a faixa cinza com "Type: ...") você tem três botões:'|t }}</p>
+        <ul>
+          <li><strong>{{ 'Editar'|t }}</strong> — {{ 'abre o conteúdo daquele bloco pra você mudar o texto/imagem.'|t }}</li>
+          <li><strong>{{ 'Remover'|t }}</strong> — {{ 'apaga o bloco inteiro (cuidado, isso não tem confirmação extra).'|t }}</li>
+          <li><strong>{{ 'Duplicar'|t }}</strong> — {{ 'copia o bloco, útil quando quer repetir uma estrutura parecida.'|t }}</li>
+        </ul>
+        <p>{{ 'No fim da lista de blocos tem botões como'|t }} <strong>{{ 'Adicionar Texto'|t }}</strong>, <strong>{{ 'Adicionar Cards'|t }}</strong>, <strong>{{ 'Adicionar Contato'|t }}</strong> — {{ 'é assim que você acrescenta um bloco novo na página.'|t }}</p>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 {{ 'Bloco de Texto'|t }}</div>
+          <p>{{ 'Ao clicar em'|t }} <strong>{{ 'Editar'|t }}</strong> {{ 'num bloco de'|t }} <strong>{{ 'Texto'|t }}</strong>, {{ 'abre uma caixa parecida com o Word: negrito, itálico, links, listas. É o bloco mais simples e o que você vai mais usar.'|t }}</p>
+        </div>
+      </section>
+
+      <section id="cards">
+        <h2><span class="num">4</span>{{ 'Editando um bloco de "Cards"'|t }}</h2>
+        <p class="lede">{{ 'Cards são aquelas caixinhas com ícone + título + texto curto (ex: "Bacharelado", "Licenciatura" na página de Graduação).'|t }}</p>
+
+        <div class="step">
+          <div class="n">1</div>
+          <div class="txt"><p>{{ 'Clique em'|t }} <strong>{{ 'Editar'|t }}</strong> {{ 'no bloco'|t }} <code>Type: Cards</code> — {{ 'ele expande e mostra cada card da fileira.'|t }}</p></div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div class="txt"><p>{{ 'Em cada card tem'|t }} <strong>Edit Card</strong> ({{ 'editar título e texto daquele card específico'|t }}) {{ 'e'|t }} <strong>{{ 'Remover'|t }}</strong>.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div class="txt"><p>{{ 'Pra adicionar mais um card na fileira (ex: um novo curso), use'|t }} <strong>{{ 'Adicionar outro item'|t }}</strong>.</p></div>
+        </div>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/05-editar-card.png" alt="{{ 'Bloco de cards expandido, mostrando os cards Bacharelado e Licenciatura com botões Edit Card e Remover'|t }}" loading="lazy"></div>
+          <figcaption>{{ 'Bloco de Cards aberto — cada card tem seu próprio "Edit Card", e dá pra adicionar mais um com "Adicionar outro item".'|t }}</figcaption>
+        </figure>
+
+        <div class="callout warn">
+          <div class="callout-title">⚠ {{ 'Alguns rótulos aparecem em inglês'|t }}</div>
+          <p>{{ 'Você vai notar textos como'|t }} <em>"Edit Card"</em>, <em>"Cards per row on desktop"</em>. {{ 'É porque o sistema (Arizona Quickstart) é internacional e nem tudo foi traduzido. Não é erro — geralmente dá pra entender pelo contexto (ex: "Edit" = editar). Se travar em algo assim, pode perguntar pro desenvolvedor.'|t }}</p>
+        </div>
+      </section>
+
+      <section id="novo-conteudo">
+        <h2><span class="num">5</span>{{ 'Adicionando conteúdo novo'|t }}</h2>
+        <p class="lede">{{ 'O mesmo padrão vale pra notícia, evento, pessoa ou curso — só muda o formulário.'|t }}</p>
+
+        <div class="step">
+          <div class="n">1</div>
+          <div class="txt"><p>{{ 'Em'|t }} <strong>{{ 'Conteúdo'|t }}</strong>, {{ 'clique no botão azul'|t }} <strong>{{ '+ Adicionar conteúdo'|t }}</strong>.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div class="txt"><p>{{ 'Escolha o tipo:'|t }} <strong>{{ 'Curso'|t }}</strong>, <strong>{{ 'Evento'|t }}</strong>, <strong>News</strong> ({{ 'notícia'|t }}), <strong>{{ 'Pessoa'|t }}</strong> {{ 'ou'|t }} <strong>{{ 'Página'|t }}</strong>.</p></div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div class="txt"><p>{{ 'Preencha o formulário (título, data, texto, foto) e clique em'|t }} <strong>{{ 'Salvar'|t }}</strong> {{ 'no fim da página.'|t }}</p></div>
+        </div>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/07-adicionar-conteudo-tipos.png" alt="{{ 'Lista de tipos de conteúdo disponíveis para adicionar: Curso, Evento, News, Pessoa, Página'|t }}" loading="lazy"></div>
+          <figcaption>{{ 'Escolhendo o tipo de conteúdo pra criar.'|t }}</figcaption>
+        </figure>
+
+        <figure>
+          <div class="shot"><img src="/modules/custom/az_ufop_departamento/images/tutorial/08-nova-noticia.png" alt="{{ 'Formulário de criação de uma notícia nova, com campos Título, Data de publicação, Autor, Subtítulo e Imagem'|t }}" loading="lazy"></div>
+          <figcaption>{{ 'Formulário de notícia nova — título, data, autor, subtítulo e imagem de destaque.'|t }}</figcaption>
+        </figure>
+
+        <div class="callout tip">
+          <div class="callout-title">💡 {{ 'Trocando o conteúdo de exemplo'|t }}</div>
+          <p>{{ 'O jeito mais simples de "limpar" as notícias/eventos/pessoal de demonstração é: crie o conteúdo real primeiro, confira que ficou bom, só depois apague o de exemplo (em'|t }} <strong>{{ 'Conteúdo'|t }}</strong>, {{ 'marque a caixinha da linha e use a ação de apagar em lote). Assim o site nunca fica sem nada publicado no meio do processo.'|t }}</p>
+        </div>
+      </section>
+
+      <section id="salvar">
+        <h2><span class="num">6</span>{{ 'Salvando e publicando'|t }}</h2>
+        <ul>
+          <li>{{ 'O botão'|t }} <strong>{{ 'Salvar'|t }}</strong> {{ 'fica sempre no fim da página de edição — sem clicar nele, nada do que você mudou é gravado.'|t }}</li>
+          <li>{{ 'A caixinha'|t }} <strong>{{ 'Publicado'|t }}</strong> {{ 'precisa estar marcada pra a página/notícia aparecer pro público. Desmarcada, fica como rascunho (só quem está logado vê).'|t }}</li>
+          <li><strong>{{ 'Pré-visualizar'|t }}</strong> {{ 'mostra como vai ficar antes de salvar de verdade.'|t }}</li>
+          <li>{{ 'Toda página tem uma aba'|t }} <strong>{{ 'Revisões'|t }}</strong> — {{ 'dá pra ver o histórico de mudanças e, se precisar, voltar pra uma versão anterior.'|t }}</li>
+        </ul>
+      </section>
+
+      <section id="glossario">
+        <h2><span class="num">?</span>{{ 'Glossário rápido'|t }}</h2>
+        <p class="lede">{{ 'Alguns termos que aparecem no painel e o que eles significam.'|t }}</p>
+        <div class="glossary">
+          <div><dt>Node</dt><dd>{{ 'Termo técnico do sistema pra "página" ou "item de conteúdo". Você não precisa usar essa palavra, mas pode aparecer em alguma mensagem.'|t }}</dd></div>
+          <div><dt>{{ 'Publicado'|t }}</dt><dd>{{ 'Visível pro público. Se estiver desmarcado, só quem está logado no painel consegue ver.'|t }}</dd></div>
+          <div><dt>Paragraphs / {{ 'blocos'|t }}</dt><dd>{{ 'O sistema de "blocos empilháveis" explicado na seção 3 — Texto, Cards, Contato etc.'|t }}</dd></div>
+          <div><dt>{{ 'Revisão'|t }}</dt><dd>{{ 'Uma versão salva de uma página. Toda vez que você salva, uma revisão nova é criada.'|t }}</dd></div>
+          <div><dt>Alias / {{ 'apelido de URL'|t }}</dt><dd>{{ 'O endereço amigável da página (ex:'|t }} <code>/sobre</code> {{ 'em vez de'|t }} <code>/node/12</code>). {{ 'O sistema geralmente gera sozinho.'|t }}</dd></div>
+          <div><dt>{{ 'Bloco (region)'|t }}</dt><dd>{{ 'Diferente do bloco de conteúdo da seção 3 — aqui é uma área fixa do site, tipo o rodapé ou o menu, configurada em "Estrutura".'|t }}</dd></div>
+        </div>
+      </section>
+
+      <hr class="rule">
+
+      <section id="dev">
+        <h2><span class="num">→</span>{{ 'Quando chamar um desenvolvedor'|t }}</h2>
+        <p class="lede">{{ 'A maior parte do dia a dia (texto, imagem, notícia, evento) você resolve sozinho. Estas coisas aqui não:'|t }}</p>
+        <table class="dev-table">
+          <tr><th>{{ 'Situação'|t }}</th><th>{{ 'Por quê'|t }}</th></tr>
+          <tr><td>{{ 'Mudar cores, fontes ou o layout visual do site'|t }}</td><td>{{ 'Fica em arquivos de estilo (CSS), fora do painel.'|t }}</td></tr>
+          <tr><td>{{ 'Criar um site novo pra outro departamento'|t }}</td><td>{{ 'Envolve banco de dados e servidor — não tem formulário de autoatendimento.'|t }}</td></tr>
+          <tr><td>{{ 'Um link ou botão que não funciona'|t }}</td><td>{{ 'Pode ser um bug de verdade, não um problema de conteúdo.'|t }}</td></tr>
+          <tr><td>{{ 'Publicar as mudanças no site "de verdade" (fora do ambiente de teste)'|t }}</td><td>{{ 'Requer acesso ao servidor.'|t }}</td></tr>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="az-tutorial-footer">
+      <p>{{ 'Guia feito pra quem administra o conteúdo do site — sem precisar programar.'|t }}</p>
+    </footer>
+  </div>
+</div>
