@@ -422,15 +422,40 @@ if (!$nidSobre) {
   echo "Página 'Sobre' criada (nid=$nidSobre).\n";
 }
 
+// Landing page individual de cada serviço (antes eram só cards estáticos,
+// sem link nenhum - agora cada card leva pra uma página de verdade).
+function az_esq_pagina_servico(string $titulo, string $corpo_html): int {
+  $nid = az_esq_pagina_existe($titulo);
+  if ($nid) {
+    return $nid;
+  }
+  $texto = Paragraph::create(['type' => 'az_text', 'field_az_text_area' => ['value' => $corpo_html, 'format' => 'full_html']]);
+  $texto->save();
+  $pagina = Node::create([
+    'type' => 'az_flexible_page',
+    'title' => $titulo,
+    'field_az_main_content' => [['target_id' => $texto->id(), 'target_revision_id' => $texto->getRevisionId()]],
+    'status' => 1,
+  ]);
+  $pagina->save();
+  $nid = (int) $pagina->id();
+  echo "Página '$titulo' criada (nid=$nid).\n";
+  return $nid;
+}
+
+$nidIC = az_esq_pagina_servico('Iniciação Científica', "<p>O $nome oferece oportunidades de iniciação científica para alunos de graduação interessados em desenvolver pesquisa em $area, sob orientação de um professor do departamento.</p><h2>Como participar</h2><ul><li>Acompanhe os editais de bolsas (PIBIC/PIBITI e fluxo contínuo) divulgados pelo departamento.</li><li>Procure um professor orientador com linha de pesquisa de seu interesse.</li><li>Elabore o plano de trabalho em conjunto com o orientador e submeta dentro do prazo do edital.</li></ul><p>Dúvidas podem ser esclarecidas pelos canais de <a href=\"/contact\">contato</a> do departamento. Conteúdo de demonstração.</p>");
+$nidMon = az_esq_pagina_servico('Monitoria', "<p>O programa de monitoria do $nome envolve alunos de graduação com bom desempenho acadêmico no apoio a disciplinas, sob supervisão de um professor responsável.</p><h2>Atividades do monitor</h2><ul><li>Atendimento a colegas com dúvidas sobre o conteúdo das aulas.</li><li>Apoio na preparação de listas de exercícios e material de apoio.</li><li>Participação em plantões de dúvidas presenciais ou online.</li></ul><p>As vagas são divulgadas por edital semestral. Conteúdo de demonstração.</p>");
+$nidLab = az_esq_pagina_servico('Laboratórios', "<p>O $nome conta com laboratórios equipados para atividades de ensino, pesquisa e extensão em $area, disponíveis para alunos e pesquisadores do departamento.</p><h2>Utilização</h2><ul><li>Reserva de horário e equipamentos junto à secretaria do departamento.</li><li>Uso vinculado a disciplinas, projetos de pesquisa ou iniciação científica.</li><li>Normas de segurança e uso compartilhado disponíveis com o responsável técnico.</li></ul><p>Conteúdo de demonstração.</p>");
+
 $nidServicos = az_esq_pagina_existe('Serviços');
 if (!$nidServicos) {
   $cards = Paragraph::create([
     'type' => 'az_cards',
     'field_az_title' => '',
     'field_az_cards' => [
-      ['title' => 'Iniciação Científica', 'body' => 'Editais e orientação para alunos interessados em pesquisa.', 'body_format' => 'plain_text'],
-      ['title' => 'Monitoria', 'body' => 'Apoio acadêmico oferecido por alunos monitores das disciplinas.', 'body_format' => 'plain_text'],
-      ['title' => 'Laboratórios', 'body' => 'Infraestrutura de laboratórios para ensino e pesquisa.', 'body_format' => 'plain_text'],
+      ['title' => 'Iniciação Científica', 'body' => 'Editais e orientação para alunos interessados em pesquisa.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidIC],
+      ['title' => 'Monitoria', 'body' => 'Apoio acadêmico oferecido por alunos monitores das disciplinas.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidMon],
+      ['title' => 'Laboratórios', 'body' => 'Infraestrutura de laboratórios para ensino e pesquisa.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidLab],
     ],
   ]);
   $cards->save();
@@ -487,9 +512,9 @@ $destaquesCards = Paragraph::create([
   'type' => 'az_cards',
   'field_az_title' => '',
   'field_az_cards' => [
-    ['title' => 'Atendimento', 'body' => 'Horários e canais de atendimento ao público.', 'body_format' => 'plain_text', 'link_title' => 'Ver contato', 'link_uri' => 'internal:/node/' . $nidContato],
-    ['title' => 'Serviços', 'body' => 'Principais serviços oferecidos pelo departamento.', 'body_format' => 'plain_text', 'link_title' => 'Ver serviços', 'link_uri' => 'internal:/node/' . $nidServicos],
-    ['title' => 'Equipe', 'body' => 'Conheça os professores responsáveis por cada área.', 'body_format' => 'plain_text', 'link_title' => 'Ver equipe', 'link_uri' => 'internal:/people'],
+    ['title' => 'Atendimento', 'body' => 'Horários e canais de atendimento ao público.', 'body_format' => 'plain_text', 'link_title' => 'Ver contato', 'link_uri' => '/node/' . $nidContato],
+    ['title' => 'Serviços', 'body' => 'Principais serviços oferecidos pelo departamento.', 'body_format' => 'plain_text', 'link_title' => 'Ver serviços', 'link_uri' => '/node/' . $nidServicos],
+    ['title' => 'Equipe', 'body' => 'Conheça os professores responsáveis por cada área.', 'body_format' => 'plain_text', 'link_title' => 'Ver equipe', 'link_uri' => '/people'],
   ],
 ]);
 $destaquesCards->save();
@@ -504,9 +529,9 @@ $cardsServicos = Paragraph::create([
   'type' => 'az_cards',
   'field_az_title' => '',
   'field_az_cards' => [
-    ['title' => 'Iniciação Científica', 'body' => 'Editais e orientação para alunos interessados em pesquisa.', 'body_format' => 'plain_text'],
-    ['title' => 'Monitoria', 'body' => 'Apoio acadêmico oferecido por alunos monitores das disciplinas.', 'body_format' => 'plain_text'],
-    ['title' => 'Laboratórios', 'body' => 'Infraestrutura de laboratórios para ensino e pesquisa.', 'body_format' => 'plain_text'],
+    ['title' => 'Iniciação Científica', 'body' => 'Editais e orientação para alunos interessados em pesquisa.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidIC],
+    ['title' => 'Monitoria', 'body' => 'Apoio acadêmico oferecido por alunos monitores das disciplinas.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidMon],
+    ['title' => 'Laboratórios', 'body' => 'Infraestrutura de laboratórios para ensino e pesquisa.', 'body_format' => 'plain_text', 'link_title' => 'Saiba mais', 'link_uri' => '/node/' . $nidLab],
   ],
 ]);
 $cardsServicos->save();
