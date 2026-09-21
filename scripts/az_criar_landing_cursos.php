@@ -57,7 +57,27 @@ function az_lc_cursos_por_categoria(int $tid): array {
   return $titulos;
 }
 
-function az_lc_pagina_curso(string $titulo, string $intro_html, array $cursos_titulos): int {
+// Explicação curta (1-2 frases, pro corpo do card) de cada modalidade -
+// detecta pelo nome do curso, já que o texto em si é o mesmo tipo de
+// modalidade acadêmica em qualquer área/departamento.
+function az_lc_texto_modalidade(string $titulo_curso, string $area): string {
+  $t = mb_strtolower($titulo_curso);
+  if (str_contains($t, 'bacharelado')) {
+    return "Formação com ênfase em pesquisa científica e atuação técnica/profissional em $area, em cerca de 4 anos. Não habilita para a docência na educação básica.";
+  }
+  if (str_contains($t, 'licenciatura')) {
+    return "Forma professores para atuar na educação básica, com formação pedagógica, estágio supervisionado e o conteúdo específico de $area, em cerca de 4 anos.";
+  }
+  if (str_contains($t, 'doutorado')) {
+    return "Forma pesquisadores capazes de conduzir investigação científica original e autônoma em $area, com defesa pública de tese em cerca de 4 anos.";
+  }
+  if (str_contains($t, 'mestrado')) {
+    return "Formação em pesquisa aplicada em $area, com defesa pública de dissertação em cerca de 2 anos.";
+  }
+  return "Modalidade oferecida em $area.";
+}
+
+function az_lc_pagina_curso(string $titulo, string $intro_html, array $cursos_titulos, string $area): int {
   $nid = az_lc_pagina_existe($titulo);
   if ($nid) {
     return $nid;
@@ -67,7 +87,7 @@ function az_lc_pagina_curso(string $titulo, string $intro_html, array $cursos_ti
   $intro->save();
   $paragrafos[] = $intro;
   if ($cursos_titulos) {
-    $cards = array_map(fn($t) => ['title' => $t, 'body' => '', 'body_format' => 'plain_text'], $cursos_titulos);
+    $cards = array_map(fn($t) => ['title' => $t, 'body' => az_lc_texto_modalidade($t, $area), 'body_format' => 'plain_text'], $cursos_titulos);
     $cardsParagraph = Paragraph::create(['type' => 'az_cards', 'field_az_title' => '', 'field_az_cards' => $cards]);
     $cardsParagraph->save();
     $paragrafos[] = $cardsParagraph;
@@ -78,6 +98,40 @@ function az_lc_pagina_curso(string $titulo, string $intro_html, array $cursos_ti
   $nid = (int) $pagina->id();
   echo "Página '$titulo' criada (nid=$nid).\n";
   return $nid;
+}
+
+// Se a página já existe (ex.: rodada anterior deste mesmo script, antes
+// deste texto explicativo existir), preenche o corpo dos cards que ainda
+// estiverem vazios - não recria a página nem mexe no que já tem texto.
+function az_lc_preencher_texto_cards(int $nid, string $area): void {
+  $pagina = Node::load($nid);
+  if (!$pagina) {
+    return;
+  }
+  $mudou_algum = FALSE;
+  foreach ($pagina->get('field_az_main_content') as $item) {
+    $paragraph = $item->entity;
+    if (!$paragraph || $paragraph->bundle() !== 'az_cards') {
+      continue;
+    }
+    $itens = $paragraph->get('field_az_cards')->getValue();
+    $mudou = FALSE;
+    foreach ($itens as &$c) {
+      if (empty($c['body'])) {
+        $c['body'] = az_lc_texto_modalidade($c['title'], $area);
+        $mudou = TRUE;
+      }
+    }
+    unset($c);
+    if ($mudou) {
+      $paragraph->set('field_az_cards', $itens);
+      $paragraph->save();
+      $mudou_algum = TRUE;
+    }
+  }
+  if ($mudou_algum) {
+    echo "Texto explicativo preenchido nos cards de '" . $pagina->getTitle() . "'.\n";
+  }
 }
 
 // Se o site principal ainda tiver os cursos com nome placeholder (nunca
@@ -104,13 +158,22 @@ $tPos = az_lc_termo('az_curso_categoria', 'Pós-Graduação');
 $nidGraduacao = $tGrad ? az_lc_pagina_curso(
   'Graduação',
   "<p>O $nome oferece curso(s) de graduação em $area, com um currículo estruturado para formar profissionais capacitados tanto para o mercado de trabalho quanto para a pesquisa científica.</p><h2>Por que estudar aqui</h2><ul><li>Corpo docente qualificado, com professores atuantes em pesquisa e extensão.</li><li>Infraestrutura de laboratórios e bibliotecas para apoio ao ensino.</li><li>Oportunidades de iniciação científica e monitoria já durante a graduação.</li></ul><h2>Nossos cursos</h2>",
-  az_lc_cursos_por_categoria($tGrad->id())
+  az_lc_cursos_por_categoria($tGrad->id()),
+  $area
 ) : NULL;
 $nidPosGraduacao = $tPos ? az_lc_pagina_curso(
   'Pós-Graduação',
   "<p>O programa de pós-graduação do $nome forma pesquisadores e profissionais de alto nível em $area, com linhas de pesquisa consolidadas e produção científica relevante na área.</p><h2>Por que fazer pós aqui</h2><ul><li>Linhas de pesquisa ativas, com projetos financiados por agências de fomento.</li><li>Bolsas de mestrado e doutorado sujeitas à disponibilidade de editais.</li><li>Intercâmbio com outros programas e grupos de pesquisa nacionais e internacionais.</li></ul><h2>Nossos programas</h2>",
-  az_lc_cursos_por_categoria($tPos->id())
+  az_lc_cursos_por_categoria($tPos->id()),
+  $area
 ) : NULL;
+
+if ($nidGraduacao) {
+  az_lc_preencher_texto_cards($nidGraduacao, $area);
+}
+if ($nidPosGraduacao) {
+  az_lc_preencher_texto_cards($nidPosGraduacao, $area);
+}
 
 if (!$tGrad || !$tPos) {
   echo "AVISO: taxonomia Graduação/Pós-Graduação não encontrada neste site - nada a fazer.\n";
