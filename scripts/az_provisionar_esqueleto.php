@@ -370,11 +370,11 @@ function az_esq_termo(string $vid, string $nome, string $alias_wanted): Term {
   return $term;
 }
 
+$tGrad = az_esq_termo('az_curso_categoria', 'Graduação', '/categoria-de-curso/graduacao');
+$tPos = az_esq_termo('az_curso_categoria', 'Pós-Graduação', '/categoria-de-curso/pos-graduacao');
+
 $existentes_c = (int) \Drupal::entityQuery('node')->condition('type', 'az_curso')->accessCheck(FALSE)->count()->execute();
 if ($existentes_c === 0) {
-  $tGrad = az_esq_termo('az_curso_categoria', 'Graduação', '/categoria-de-curso/graduacao');
-  $tPos = az_esq_termo('az_curso_categoria', 'Pós-Graduação', '/categoria-de-curso/pos-graduacao');
-
   $cursos = [
     ["Bacharelado em " . ucfirst($area), $tGrad],
     ["Licenciatura em " . ucfirst($area), $tGrad],
@@ -395,6 +395,55 @@ if ($existentes_c === 0) {
 else {
   echo "Cursos já existem ($existentes_c) - etapa pulada.\n";
 }
+
+// Landing page de verdade pra Graduação e Pós-Graduação (antes o menu
+// levava direto pra página padrão de taxonomia do Drupal - uma listagem
+// genérica de "conteúdo marcado com...", sem nenhum texto explicativo).
+function az_esq_cursos_por_categoria(int $tid): array {
+  $nids = \Drupal::entityQuery('node')->condition('type', 'az_curso')->condition('field_az_curso_categoria', $tid)->accessCheck(FALSE)->execute();
+  $titulos = [];
+  foreach ($nids as $nid) {
+    $n = Node::load($nid);
+    if ($n) {
+      $titulos[] = $n->getTitle();
+    }
+  }
+  return $titulos;
+}
+
+function az_esq_pagina_curso(string $titulo, string $intro_html, array $cursos_titulos): int {
+  $nid = az_esq_pagina_existe($titulo);
+  if ($nid) {
+    return $nid;
+  }
+  $paragrafos = [];
+  $intro = Paragraph::create(['type' => 'az_text', 'field_az_text_area' => ['value' => $intro_html, 'format' => 'full_html']]);
+  $intro->save();
+  $paragrafos[] = $intro;
+  if ($cursos_titulos) {
+    $cards = array_map(fn($t) => ['title' => $t, 'body' => '', 'body_format' => 'plain_text'], $cursos_titulos);
+    $cardsParagraph = Paragraph::create(['type' => 'az_cards', 'field_az_title' => '', 'field_az_cards' => $cards]);
+    $cardsParagraph->save();
+    $paragrafos[] = $cardsParagraph;
+  }
+  $valores = array_map(fn($p) => ['target_id' => $p->id(), 'target_revision_id' => $p->getRevisionId()], $paragrafos);
+  $pagina = Node::create(['type' => 'az_flexible_page', 'title' => $titulo, 'field_az_main_content' => $valores, 'status' => 1]);
+  $pagina->save();
+  $nid = (int) $pagina->id();
+  echo "Página '$titulo' criada (nid=$nid).\n";
+  return $nid;
+}
+
+$nidGraduacao = az_esq_pagina_curso(
+  'Graduação',
+  "<p>O $nome oferece curso(s) de graduação em $area, com um currículo estruturado para formar profissionais capacitados tanto para o mercado de trabalho quanto para a pesquisa científica.</p><h2>Por que estudar aqui</h2><ul><li>Corpo docente qualificado, com professores atuantes em pesquisa e extensão.</li><li>Infraestrutura de laboratórios e bibliotecas para apoio ao ensino.</li><li>Oportunidades de iniciação científica e monitoria já durante a graduação.</li></ul><h2>Nossos cursos</h2>",
+  az_esq_cursos_por_categoria($tGrad->id())
+);
+$nidPosGraduacao = az_esq_pagina_curso(
+  'Pós-Graduação',
+  "<p>O programa de pós-graduação do $nome forma pesquisadores e profissionais de alto nível em $area, com linhas de pesquisa consolidadas e produção científica relevante na área.</p><h2>Por que fazer pós aqui</h2><ul><li>Linhas de pesquisa ativas, com projetos financiados por agências de fomento.</li><li>Bolsas de mestrado e doutorado sujeitas à disponibilidade de editais.</li><li>Intercâmbio com outros programas e grupos de pesquisa nacionais e internacionais.</li></ul><h2>Nossos programas</h2>",
+  az_esq_cursos_por_categoria($tPos->id())
+);
 
 // ---------------------------------------------------------------------
 // 7) Páginas institucionais: Sobre, Serviços, Contato.
@@ -569,8 +618,8 @@ $itens_menu = [
   ['Início', '/node/' . $nidHome, -10],
   ['Notícias', '/news', -9],
   ['Eventos', '/calendar', -8],
-  ['Graduação', '/categoria-de-curso/graduacao', -7],
-  ['Pós-Graduação', '/categoria-de-curso/pos-graduacao', -6],
+  ['Graduação', '/node/' . $nidGraduacao, -7],
+  ['Pós-Graduação', '/node/' . $nidPosGraduacao, -6],
   ['Pessoal', '/people', -5],
   ['Serviços', '/node/' . $nidServicos, -4],
   ['Sobre', '/node/' . $nidSobre, -3],
