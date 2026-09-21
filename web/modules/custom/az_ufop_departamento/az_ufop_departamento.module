@@ -16,6 +16,24 @@ function az_ufop_departamento_page_attachments(array &$attachments): void {
 }
 
 /**
+ * Implements hook_system_breadcrumb_alter().
+ *
+ * O link "Home" da breadcrumb (PathBasedBreadcrumbBuilder::build(), core)
+ * usa t('Home') normalmente, e a tradução pt-br existe no banco - mas por
+ * algum motivo (cache de traducao? negociacao de idioma nesse ponto do
+ * bootstrap?) continua saindo em ingles em requisicoes reais, mesmo depois
+ * de cache:rebuild. Troca direto aqui, sem depender do sistema de
+ * traducao, pra garantir.
+ */
+function az_ufop_departamento_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb $breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context): void {
+  foreach ($breadcrumb->getLinks() as $link) {
+    if ($link->getText() === 'Home') {
+      $link->setText('Início');
+    }
+  }
+}
+
+/**
  * Implements hook_library_info_alter().
  *
  * O widget de calendario do filtro de eventos (az_event/az_calendar_filter)
