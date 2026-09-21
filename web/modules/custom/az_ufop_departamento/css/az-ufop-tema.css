@@ -6,7 +6,14 @@
  * arizona-bootstrap.min.css (CDN) usa !important nas mesmas classes e
  * carrega depois deste arquivo na pagina, entao um !important de
  * especificidade igual nao seria suficiente para vencer.
+ *
+ * Titulos: o tema pede a fonte "proxima-nova" (paga, Adobe Fonts) que
+ * nunca carrega aqui - sem kit da Adobe, o navegador cai pro fallback
+ * generico do sistema, deixando os titulos com cara "sem graca". Troca
+ * por uma fonte de verdade (Plus Jakarta Sans, Google Fonts).
  */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
 :root,
 html:root {
   --bs-primary: #8b0015;
@@ -90,6 +97,29 @@ html body .h4,
 html body .h5,
 html body .h6 {
   color: #1c1c1c;
+  font-family: 'Plus Jakarta Sans', proxima-nova, calibri, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+html body h1,
+html body .h1 {
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin-bottom: 1.25rem;
+}
+html body h2,
+html body .h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+html body h3,
+html body .h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
 }
 
 /* Hero de boas-vindas, no estilo do banner do guiadesites.ufop.br */
