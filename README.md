@@ -65,7 +65,8 @@ dados e conteúdo, sem duplicar a instalação.
   basta adicionar o site à tabela `$DEPARTAMENTOS` no topo do script), entrada nova em
   `sites.php`, porta nova no `docker-compose.yml`/`.env.example`, e exportar o dump inicial
   pra `docker/seed-<site>.sql.gz`. Não tem formulário de autoatendimento pra isso -
-  provisionar um site novo continua sendo tarefa de quem administra o servidor.
+  provisionar um site novo continua sendo tarefa de quem administra o servidor. Passo a
+  passo completo com todos os arquivos e comandos: [docs/novo-departamento.md](docs/novo-departamento.md).
 
 ## Notes
 If you are planning on pushing this site to Pantheon, you should use the
