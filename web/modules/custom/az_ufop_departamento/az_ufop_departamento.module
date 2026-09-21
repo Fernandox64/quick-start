@@ -16,6 +16,28 @@ function az_ufop_departamento_page_attachments(array &$attachments): void {
 }
 
 /**
+ * Implements hook_library_info_alter().
+ *
+ * O widget de calendario do filtro de eventos (az_event/az_calendar_filter)
+ * tem os botoes "Today/This Week/This Month" e os nomes de mes/dia do
+ * datepicker escritos direto no JS, sem passar por Drupal.t() - o pacote de
+ * traducao pt-br nunca alcanca isso. Troca pelo arquivo traduzido deste
+ * modulo (mesma logica, so os textos em pt-br) em vez de editar o profile
+ * az_quickstart diretamente.
+ */
+function az_ufop_departamento_library_info_alter(array &$libraries, string $extension): void {
+  if ($extension === 'az_event' && isset($libraries['az_calendar_filter']['js']['js/az_calendar_filter.js'])) {
+    $options = $libraries['az_calendar_filter']['js']['js/az_calendar_filter.js'];
+    unset($libraries['az_calendar_filter']['js']['js/az_calendar_filter.js']);
+    // Caminho comecando com "/" e resolvido a partir da raiz do site (nao
+    // do diretorio do az_event) - assim referencia o arquivo do nosso
+    // proprio modulo sem precisar contar "../" ate a raiz.
+    $path = '/' . \Drupal::service('extension.list.module')->getPath('az_ufop_departamento') . '/js/az-calendar-filter-pt-br.js';
+    $libraries['az_calendar_filter']['js'][$path] = $options;
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function az_ufop_departamento_theme(): array {
