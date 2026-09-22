@@ -8,6 +8,27 @@ reprodutível seguindo os passos abaixo.
 O exemplo usado neste guia é o **Departamento de Metalurgia**
 (`demet`, porta `8899`) — troque pelos dados do departamento real.
 
+## Atalho: script automatizado
+
+As Partes 1 e 2 abaixo (editar os 6 arquivos de configuração, criar o
+banco local, instalar o Drupal, popular o conteúdo e exportar o dump) têm
+um script que faz tudo isso sozinho:
+
+```bash
+./scripts/az_criar_departamento.sh <site_dir> "<Nome completo>" ["<área>"]
+
+# Exemplo:
+./scripts/az_criar_departamento.sh demet "Departamento de Metalurgia" "metalurgia"
+```
+
+Ele calcula a próxima porta livre e gera uma senha de admin sozinho, e só
+pergunta antes das duas coisas que mexem em algo compartilhado: dar
+`git push` e aplicar na VPS (cada uma com sua própria confirmação [s/N] -
+responder "N" simplesmente para por aí, sem fazer nada além do que já foi
+feito localmente). O restante deste documento explica cada passo que o
+script executa, útil pra quem prefere rodar manualmente ou pra debugar se
+algo no script falhar no meio do caminho.
+
 ## Sites já existentes (referência de portas)
 
 | Pasta (`site_dir`) | Nome | Porta |
