@@ -16,6 +16,7 @@ services:
       - "${DEMET_PORT:-8899}:80"
       - "${DESOC_PORT:-8999}:80"
       - "${DEQUI_PORT:-9099}:80"
+      - "${DECOM_PORT:-9199}:80"
     volumes:
       # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
       # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
@@ -29,6 +30,7 @@ services:
       - ./web/sites/demet/files:/app/web/sites/demet/files
       - ./web/sites/desoc/files:/app/web/sites/desoc/files
       - ./web/sites/dequi/files:/app/web/sites/dequi/files
+      - ./web/sites/decom/files:/app/web/sites/decom/files
     depends_on:
       db:
         condition: service_healthy
