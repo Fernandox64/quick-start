@@ -56,6 +56,7 @@ gerar_settings_local decom decom
 gerar_settings_local decivil decivil
 gerar_settings_local deelet deelet
 gerar_settings_local degeo degeo
+gerar_settings_local defarm defarm
 echo "Esperando o banco de dados em ${DB_HOST}:${DB_PORT}..."
 for i in $(seq 1 60); do
   if mysqladmin ping $MYSQL_CLIENT_OPTS --silent 2>/dev/null; then
@@ -108,6 +109,8 @@ importar_se_vazio deelet /app/docker/seed-deelet.sql.gz "http://localhost:9399"
 
 importar_se_vazio degeo /app/docker/seed-degeo.sql.gz "http://localhost:9499"
 
-chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files /app/web/sites/defil/files /app/web/sites/delet/files /app/web/sites/depro/files /app/web/sites/demet/files /app/web/sites/desoc/files /app/web/sites/dequi/files /app/web/sites/decom/files /app/web/sites/decivil/files /app/web/sites/deelet/files /app/web/sites/degeo/files
+importar_se_vazio defarm /app/docker/seed-defarm.sql.gz "http://localhost:9599"
+
+chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files /app/web/sites/defil/files /app/web/sites/delet/files /app/web/sites/depro/files /app/web/sites/demet/files /app/web/sites/desoc/files /app/web/sites/dequi/files /app/web/sites/decom/files /app/web/sites/decivil/files /app/web/sites/deelet/files /app/web/sites/degeo/files /app/web/sites/defarm/files
 
 exec "$@"

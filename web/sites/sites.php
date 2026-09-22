@@ -85,3 +85,5 @@ $sites['9399.srv1654694.hstgr.cloud'] = 'deelet';
 $sites['9399.localhost'] = 'deelet';
 $sites['9499.srv1654694.hstgr.cloud'] = 'degeo';
 $sites['9499.localhost'] = 'degeo';
+$sites['9599.srv1654694.hstgr.cloud'] = 'defarm';
+$sites['9599.localhost'] = 'defarm';
