@@ -38,6 +38,7 @@ $DEPARTAMENTOS = [
   'defil' => ['nome' => 'Departamento de Filosofia', 'sigla' => 'DEFIL', 'area' => 'filosofia'],
   'delet' => ['nome' => 'Departamento de Letras', 'sigla' => 'DELET', 'area' => 'letras'],
   'depro' => ['nome' => 'Departamento de Engenharia de Produção', 'sigla' => 'DEPRO', 'area' => 'engenharia de produção'],
+  'demet' => ['nome' => 'Departamento de Metalurgia', 'sigla' => 'DEMET', 'area' => 'metalurgia'],
 ];
 $dep = $DEPARTAMENTOS[$site_dir] ?? [
   'nome' => 'Departamento Exemplo',
