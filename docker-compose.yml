@@ -23,6 +23,7 @@ services:
       - "${DEFARM_PORT:-9599}:80"
       - "${DENUTRI_PORT:-9699}:80"
       - "${EDFIS_PORT:-9799}:80"
+      - "${DEECO_PORT:-9899}:80"
     volumes:
       # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
       # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
@@ -43,6 +44,7 @@ services:
       - ./web/sites/defarm/files:/app/web/sites/defarm/files
       - ./web/sites/denutri/files:/app/web/sites/denutri/files
       - ./web/sites/edfis/files:/app/web/sites/edfis/files
+      - ./web/sites/deeco/files:/app/web/sites/deeco/files
     depends_on:
       db:
         condition: service_healthy

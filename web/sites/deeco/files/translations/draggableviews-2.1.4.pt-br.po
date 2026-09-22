@@ -1,0 +1,28 @@
+# Portuguese, Brazil translation of DraggableViews (2.1.4)
+# Copyright (c) 2024 by the Portuguese, Brazil translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DraggableViews (2.1.4)\n"
+"POT-Creation-Date: 2024-07-11 01:30+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Portuguese, Brazil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Parent"
+msgstr "Superior"
+msgid "Views"
+msgstr "Views"
+msgid "Save order"
+msgstr "Salvar ordem"
+msgid "DraggableViews"
+msgstr "DraggableViews"
+msgid "Draggableviews"
+msgstr "DraggableViews"
+msgid "Available actions"
+msgstr "Ações disponíveis"
+msgid "Action title"
+msgstr "Título da ação"
