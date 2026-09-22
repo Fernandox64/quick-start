@@ -43,6 +43,7 @@ $DEPARTAMENTOS = [
   'dequi' => ['nome' => 'Departamento de Química', 'sigla' => 'DEQUI', 'area' => 'química'],
   'decom' => ['nome' => 'Departamento de Ciência da Computação', 'sigla' => 'DECOM', 'area' => 'computação'],
   'decivil' => ['nome' => 'Departamento de Engenharia Civil', 'sigla' => 'DECIVIL', 'area' => 'engenharia civil'],
+  'deelet' => ['nome' => 'Departamento de Engenharia Elétrica', 'sigla' => 'DEELET', 'area' => 'engenharia elétrica'],
 ];
 $dep = $DEPARTAMENTOS[$site_dir] ?? [
   'nome' => 'Departamento Exemplo',
