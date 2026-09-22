@@ -75,3 +75,5 @@ $sites['8899.srv1654694.hstgr.cloud'] = 'demet';
 $sites['8899.localhost'] = 'demet';
 $sites['8999.srv1654694.hstgr.cloud'] = 'desoc';
 $sites['8999.localhost'] = 'desoc';
+$sites['9099.srv1654694.hstgr.cloud'] = 'dequi';
+$sites['9099.localhost'] = 'dequi';
