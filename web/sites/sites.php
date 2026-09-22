@@ -93,3 +93,5 @@ $sites['9799.srv1654694.hstgr.cloud'] = 'edfis';
 $sites['9799.localhost'] = 'edfis';
 $sites['9899.srv1654694.hstgr.cloud'] = 'deeco';
 $sites['9899.localhost'] = 'deeco';
+$sites['9999.srv1654694.hstgr.cloud'] = 'dedir';
+$sites['9999.localhost'] = 'dedir';
