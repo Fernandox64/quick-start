@@ -1,0 +1,28 @@
+# Portuguese, Brazil translation of Media Library Edit (3.0.5)
+# Copyright (c) 2026 by the Portuguese, Brazil translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Library Edit (3.0.5)\n"
+"POT-Creation-Date: 2026-01-21 22:46+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Portuguese, Brazil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Media"
+msgstr "Mídia"
+msgid "About"
+msgstr "Sobre"
+msgid "Form mode"
+msgstr "Modo de formulário"
+msgid "Edit form mode"
+msgstr "Editar modo de formulário"
+msgid ""
+"Unsaved changes to the form will be lost. Are you sure you want to "
+"leave?"
+msgstr ""
+"As alterações não salvas no formulário serão perdidas. Tem "
+"certeza de que deseja sair?"

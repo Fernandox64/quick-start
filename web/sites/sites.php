@@ -73,3 +73,5 @@ $sites['8699.localhost'] = 'delet';
 $sites['8799.localhost'] = 'depro';
 $sites['8899.srv1654694.hstgr.cloud'] = 'demet';
 $sites['8899.localhost'] = 'demet';
+$sites['8999.srv1654694.hstgr.cloud'] = 'desoc';
+$sites['8999.localhost'] = 'desoc';

@@ -1,0 +1,16 @@
+# Portuguese, Brazil translation of Bootstrap Utilities - Text editor filters (3.0.1)
+# Copyright (c) 2024 by the Portuguese, Brazil translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Bootstrap Utilities - Text editor filters (3.0.1)\n"
+"POT-Creation-Date: 2024-08-19 14:46+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Portuguese, Brazil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Bootstrap"
+msgstr "Bootstrap"

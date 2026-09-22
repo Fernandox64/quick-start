@@ -39,6 +39,7 @@ $DEPARTAMENTOS = [
   'delet' => ['nome' => 'Departamento de Letras', 'sigla' => 'DELET', 'area' => 'letras'],
   'depro' => ['nome' => 'Departamento de Engenharia de Produção', 'sigla' => 'DEPRO', 'area' => 'engenharia de produção'],
   'demet' => ['nome' => 'Departamento de Metalurgia', 'sigla' => 'DEMET', 'area' => 'metalurgia'],
+  'desoc' => ['nome' => 'Departamento de Serviço Social', 'sigla' => 'DESOC', 'area' => 'serviço social'],
 ];
 $dep = $DEPARTAMENTOS[$site_dir] ?? [
   'nome' => 'Departamento Exemplo',

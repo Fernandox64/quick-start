@@ -50,6 +50,7 @@ gerar_settings_local delet delet
 gerar_settings_local depro depro
 
 gerar_settings_local demet demet
+gerar_settings_local desoc desoc
 echo "Esperando o banco de dados em ${DB_HOST}:${DB_PORT}..."
 for i in $(seq 1 60); do
   if mysqladmin ping $MYSQL_CLIENT_OPTS --silent 2>/dev/null; then
@@ -90,6 +91,8 @@ importar_se_vazio depro /app/docker/seed-depro.sql.gz "http://localhost:8799"
 
 importar_se_vazio demet /app/docker/seed-demet.sql.gz "http://localhost:8899"
 
-chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files /app/web/sites/defil/files /app/web/sites/delet/files /app/web/sites/depro/files /app/web/sites/demet/files
+importar_se_vazio desoc /app/docker/seed-desoc.sql.gz "http://localhost:8999"
+
+chown -R www-data:www-data /app/web/sites/default/files /app/web/sites/dfis/files /app/web/sites/demat/files /app/web/sites/demed/files /app/web/sites/defil/files /app/web/sites/delet/files /app/web/sites/depro/files /app/web/sites/demet/files /app/web/sites/desoc/files
 
 exec "$@"
