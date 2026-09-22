@@ -19,6 +19,7 @@ services:
       - "${DECOM_PORT:-9199}:80"
       - "${DECIVIL_PORT:-9299}:80"
       - "${DEELET_PORT:-9399}:80"
+      - "${DEGEO_PORT:-9499}:80"
     volumes:
       # Imagens enviadas pelo site (noticias, avatares etc.) sobrevivem a
       # rebuilds/deploys - sem isso, tudo volta ao conteudo da imagem a cada deploy.
@@ -35,6 +36,7 @@ services:
       - ./web/sites/decom/files:/app/web/sites/decom/files
       - ./web/sites/decivil/files:/app/web/sites/decivil/files
       - ./web/sites/deelet/files:/app/web/sites/deelet/files
+      - ./web/sites/degeo/files:/app/web/sites/degeo/files
     depends_on:
       db:
         condition: service_healthy
